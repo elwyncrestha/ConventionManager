@@ -11,12 +11,12 @@ using ConventionManager.Model;
 
 namespace ConventionManager.View_Controller
 {
-    public partial class AddAttendee : Form
+    public partial class AttendeeForm : Form
     {
         ConventionManagerDbContext dbContext;
-        Attendee attendee;
+        Model.Attendee attendee;
 
-        public AddAttendee()
+        public AttendeeForm()
         {
             InitializeComponent();
         }
@@ -70,7 +70,7 @@ namespace ConventionManager.View_Controller
                 if (btnAdd.Text.Equals("ADD"))
                     attendee = new Attendee();
                 else if (btnAdd.Text.Equals("UPDATE"))
-                    attendee.AttendeeId = attendeeCode; // set code to update in save changes
+                    attendee.AttendeeId = attendeeCode; // set code to update while save changes
 
                 attendee.AttendeeFName = txtFirstName.Text.Trim();
                 attendee.AttendeeLName = txtLastName.Text.Trim();
@@ -87,8 +87,11 @@ namespace ConventionManager.View_Controller
                         dbContext.Attendees.Add(attendee);
 
                     dbContext.SaveChanges();
-
                     MessageBox.Show(String.Format("Attendee {0} successfully!!!",btnAdd.Text.Equals("ADD")?"added":"updated"));
+                    btnAdd.Text = "ADD";
+
+
+                    // clear
                     txtFirstName.Clear();
                     txtLastName.Clear();
                     txtEmail.Clear();
@@ -96,8 +99,11 @@ namespace ConventionManager.View_Controller
                     txtTicketType.Clear();
                     txtAddress.Clear();
                     txtAttendingDays.Clear();
+
+                    // refresh
                     reloadDGV();
                     txtFirstName.Focus();
+                    return;
                 }
                 catch (Exception ex)
                 {
@@ -108,7 +114,6 @@ namespace ConventionManager.View_Controller
 
         private void AddAttendee_Load(object sender, EventArgs e)
         {
-            lblId.Visible = lblIdValue.Visible = false;
             dbContext = new ConventionManagerDbContext();
             reloadDGV();
         }

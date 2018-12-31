@@ -56,11 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Attendee.cs" />
-    <Compile Include="View_Controller\AddAttendee.cs">
+    <Compile Include="Model\Stall.cs" />
+    <Compile Include="View_Controller\AttendeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View_Controller\AddAttendee.Designer.cs">
-      <DependentUpon>AddAttendee.cs</DependentUpon>
+    <Compile Include="View_Controller\AttendeeForm.Designer.cs">
+      <DependentUpon>AttendeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ConventionManagerDbContext.cs" />
     <Compile Include="View_Controller\FormLoader.cs" />
@@ -72,8 +73,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View_Controller\AddAttendee.resx">
-      <DependentUpon>AddAttendee.cs</DependentUpon>
+    <Compile Include="View_Controller\StallForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\StallForm.Designer.cs">
+      <DependentUpon>StallForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View_Controller\AttendeeForm.resx">
+      <DependentUpon>AttendeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -87,6 +94,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View_Controller\StallForm.resx">
+      <DependentUpon>StallForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

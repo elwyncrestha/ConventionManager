@@ -21,14 +21,28 @@ namespace ConventionManager
         private void mstrAddAttendee_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormLoader.loadAddAttendee();
+            FormLoader.loadAttendeeForm();
             this.Close();
         }
 
         private void mstrDisplayAttendees_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormLoader.loadAddAttendee();
+            FormLoader.loadAttendeeForm();
+            this.Close();
+        }
+
+        private void mstrAddStall_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadStallForm();
+            this.Close();
+        }
+
+        private void mstrDisplayStalls_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadStallForm();
             this.Close();
         }
     }

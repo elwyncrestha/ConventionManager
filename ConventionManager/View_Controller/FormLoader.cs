@@ -8,11 +8,16 @@ namespace ConventionManager.View_Controller
 {
     public class FormLoader
     {
-        public static void loadAddAttendee()
+        public static void loadAttendeeForm()
         {
-            AddAttendee form = new AddAttendee();
+            AttendeeForm form = new AttendeeForm();
             form.ShowDialog();
         }
         
+        public static void loadStallForm()
+        {
+            StallForm form = new StallForm();
+            form.ShowDialog();
+        }
     }
 }

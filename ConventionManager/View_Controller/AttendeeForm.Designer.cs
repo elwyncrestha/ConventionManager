@@ -1,6 +1,6 @@
 ﻿namespace ConventionManager.View_Controller
 {
-    partial class AddAttendee
+    partial class AttendeeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -55,8 +55,6 @@
             this.IsAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblIdValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -288,31 +286,11 @@
             this.Delete.ToolTipText = "Delete";
             this.Delete.UseColumnTextForLinkValue = true;
             // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(16, 22);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 18;
-            this.lblId.Text = "Id";
-            // 
-            // lblIdValue
-            // 
-            this.lblIdValue.AutoSize = true;
-            this.lblIdValue.Location = new System.Drawing.Point(112, 22);
-            this.lblIdValue.Name = "lblIdValue";
-            this.lblIdValue.Size = new System.Drawing.Size(16, 13);
-            this.lblIdValue.TabIndex = 19;
-            this.lblIdValue.Text = "-1";
-            // 
             // AddAttendee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 507);
-            this.Controls.Add(this.lblIdValue);
-            this.Controls.Add(this.lblId);
             this.Controls.Add(this.dgvAttendees);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtAttendingDays);
@@ -368,7 +346,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IsAvailable;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Label lblIdValue;
     }
 }

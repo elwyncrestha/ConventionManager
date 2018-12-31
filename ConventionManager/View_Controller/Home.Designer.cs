@@ -136,12 +136,14 @@
             this.mstrAddStall.Name = "mstrAddStall";
             this.mstrAddStall.Size = new System.Drawing.Size(205, 22);
             this.mstrAddStall.Text = "Add Stall";
+            this.mstrAddStall.Click += new System.EventHandler(this.mstrAddStall_Click);
             // 
             // mstrDisplayStalls
             // 
             this.mstrDisplayStalls.Name = "mstrDisplayStalls";
             this.mstrDisplayStalls.Size = new System.Drawing.Size(205, 22);
             this.mstrDisplayStalls.Text = "Display/Edit/Delete Stalls";
+            this.mstrDisplayStalls.Click += new System.EventHandler(this.mstrDisplayStalls_Click);
             // 
             // Home
             // 
