@@ -14,6 +14,7 @@ namespace ConventionManager.View_Controller
     public partial class AddAttendee : Form
     {
         ConventionManagerDbContext dbContext;
+        Attendee attendee;
 
         public AddAttendee()
         {
@@ -66,24 +67,28 @@ namespace ConventionManager.View_Controller
             }
             else
             {
-                Attendee attendee = new Attendee()
-                {
-                    AttendeeFName = txtFirstName.Text.Trim(),
-                    AttendeeLName = txtLastName.Text.Trim(),
-                    AttendeeEmail = txtEmail.Text.Trim(),
-                    AttendeeContact = txtContact.Text.Trim(),
-                    TicketType = txtTicketType.Text.Trim(),
-                    AttendeeAddress = txtAddress.Text.Trim(),
-                    AttendingDays = Convert.ToInt32(txtAttendingDays.Text.Trim()),
-                    IsAvailable = true
-                };
+                if (btnAdd.Text.Equals("ADD"))
+                    attendee = new Attendee();
+                else if (btnAdd.Text.Equals("UPDATE"))
+                    attendee.AttendeeId = attendeeCode; // set code to update in save changes
+
+                attendee.AttendeeFName = txtFirstName.Text.Trim();
+                attendee.AttendeeLName = txtLastName.Text.Trim();
+                attendee.AttendeeEmail = txtEmail.Text.Trim();
+                attendee.AttendeeContact = txtContact.Text.Trim();
+                attendee.TicketType = txtTicketType.Text.Trim();
+                attendee.AttendeeAddress = txtAddress.Text.Trim();
+                attendee.AttendingDays = Convert.ToInt32(txtAttendingDays.Text.Trim());
+                attendee.IsAvailable = true;
 
                 try
                 {
-                    dbContext.Attendees.Add(attendee);
+                    if(btnAdd.Text.Equals("ADD"))
+                        dbContext.Attendees.Add(attendee);
+
                     dbContext.SaveChanges();
 
-                    MessageBox.Show("Attendee added successfully!!!");
+                    MessageBox.Show(String.Format("Attendee {0} successfully!!!",btnAdd.Text.Equals("ADD")?"added":"updated"));
                     txtFirstName.Clear();
                     txtLastName.Clear();
                     txtEmail.Clear();
@@ -92,8 +97,9 @@ namespace ConventionManager.View_Controller
                     txtAddress.Clear();
                     txtAttendingDays.Clear();
                     reloadDGV();
-
-                } catch (Exception ex)
+                    txtFirstName.Focus();
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -102,6 +108,7 @@ namespace ConventionManager.View_Controller
 
         private void AddAttendee_Load(object sender, EventArgs e)
         {
+            lblId.Visible = lblIdValue.Visible = false;
             dbContext = new ConventionManagerDbContext();
             reloadDGV();
         }
@@ -109,6 +116,36 @@ namespace ConventionManager.View_Controller
         private void reloadDGV()
         {
             dgvAttendees.DataSource = dbContext.Attendees.ToList();
+        }
+
+        int attendeeCode;
+        private void dgvAttendees_Click(object sender, EventArgs e)
+        {
+            attendeeCode = int.Parse(dgvAttendees.CurrentRow.Cells["AttendeeId"].Value.ToString());
+            int columnIndex = dgvAttendees.CurrentCell.ColumnIndex;
+
+            if(dgvAttendees.CurrentRow.Cells[columnIndex].Value.ToString().Equals("Edit"))
+            {
+                btnAdd.Text = "UPDATE";
+                attendee = dbContext.Attendees.Find(attendeeCode);
+                txtFirstName.Text = attendee.AttendeeFName;
+                txtLastName.Text = attendee.AttendeeLName;
+                txtEmail.Text = attendee.AttendeeEmail;
+                txtContact.Text = attendee.AttendeeContact;
+                txtTicketType.Text = attendee.TicketType;
+                txtAddress.Text = attendee.AttendeeAddress;
+                txtAttendingDays.Text = attendee.AttendingDays.ToString();
+            }
+            else if (dgvAttendees.CurrentRow.Cells[columnIndex].Value.ToString().Equals("Delete"))
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure ?", "Confirm Delete", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    dbContext.Attendees.Remove(dbContext.Attendees.Find(attendeeCode));
+                    dbContext.SaveChanges();
+                    reloadDGV();
+                }
+            }
         }
     }
 }
