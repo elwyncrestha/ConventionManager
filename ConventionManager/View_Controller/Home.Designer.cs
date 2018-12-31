@@ -30,17 +30,17 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.attendeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addAttendeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displayEditDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddAttendee = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrDisplayAttendees = new System.Windows.Forms.ToolStripMenuItem();
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displayAllEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddEvent = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrDisplayEvents = new System.Windows.Forms.ToolStripMenuItem();
             this.seminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addSeminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displayEditDeleteSeminarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddSeminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrDisplaySeminars = new System.Windows.Forms.ToolStripMenuItem();
             this.stallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addStallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displayEditDeleteStallsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddStall = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrDisplayStalls = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,86 +60,88 @@
             // attendeeToolStripMenuItem
             // 
             this.attendeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addAttendeeToolStripMenuItem,
-            this.displayEditDeleteToolStripMenuItem});
+            this.mstrAddAttendee,
+            this.mstrDisplayAttendees});
             this.attendeeToolStripMenuItem.Name = "attendeeToolStripMenuItem";
             this.attendeeToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.attendeeToolStripMenuItem.Text = "Attendee";
             // 
-            // addAttendeeToolStripMenuItem
+            // mstrAddAttendee
             // 
-            this.addAttendeeToolStripMenuItem.Name = "addAttendeeToolStripMenuItem";
-            this.addAttendeeToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.addAttendeeToolStripMenuItem.Text = "Add Attendee";
+            this.mstrAddAttendee.Name = "mstrAddAttendee";
+            this.mstrAddAttendee.Size = new System.Drawing.Size(231, 22);
+            this.mstrAddAttendee.Text = "Add Attendee";
+            this.mstrAddAttendee.Click += new System.EventHandler(this.mstrAddAttendee_Click);
             // 
-            // displayEditDeleteToolStripMenuItem
+            // mstrDisplayAttendees
             // 
-            this.displayEditDeleteToolStripMenuItem.Name = "displayEditDeleteToolStripMenuItem";
-            this.displayEditDeleteToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.displayEditDeleteToolStripMenuItem.Text = "Display/Edit/Delete Attendees";
+            this.mstrDisplayAttendees.Name = "mstrDisplayAttendees";
+            this.mstrDisplayAttendees.Size = new System.Drawing.Size(231, 22);
+            this.mstrDisplayAttendees.Text = "Display/Edit/Delete Attendees";
+            this.mstrDisplayAttendees.Click += new System.EventHandler(this.mstrDisplayAttendees_Click);
             // 
             // eventToolStripMenuItem
             // 
             this.eventToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addEventToolStripMenuItem,
-            this.displayAllEventsToolStripMenuItem});
+            this.mstrAddEvent,
+            this.mstrDisplayEvents});
             this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
             this.eventToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.eventToolStripMenuItem.Text = "Event";
             // 
-            // addEventToolStripMenuItem
+            // mstrAddEvent
             // 
-            this.addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            this.addEventToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.addEventToolStripMenuItem.Text = "Add Event";
+            this.mstrAddEvent.Name = "mstrAddEvent";
+            this.mstrAddEvent.Size = new System.Drawing.Size(212, 22);
+            this.mstrAddEvent.Text = "Add Event";
             // 
-            // displayAllEventsToolStripMenuItem
+            // mstrDisplayEvents
             // 
-            this.displayAllEventsToolStripMenuItem.Name = "displayAllEventsToolStripMenuItem";
-            this.displayAllEventsToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.displayAllEventsToolStripMenuItem.Text = "Display/Edit/Delete Events";
+            this.mstrDisplayEvents.Name = "mstrDisplayEvents";
+            this.mstrDisplayEvents.Size = new System.Drawing.Size(212, 22);
+            this.mstrDisplayEvents.Text = "Display/Edit/Delete Events";
             // 
             // seminarToolStripMenuItem
             // 
             this.seminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSeminarToolStripMenuItem,
-            this.displayEditDeleteSeminarsToolStripMenuItem});
+            this.mstrAddSeminar,
+            this.mstrDisplaySeminars});
             this.seminarToolStripMenuItem.Name = "seminarToolStripMenuItem";
             this.seminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.seminarToolStripMenuItem.Text = "Seminar";
             // 
-            // addSeminarToolStripMenuItem
+            // mstrAddSeminar
             // 
-            this.addSeminarToolStripMenuItem.Name = "addSeminarToolStripMenuItem";
-            this.addSeminarToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.addSeminarToolStripMenuItem.Text = "Add Seminar";
+            this.mstrAddSeminar.Name = "mstrAddSeminar";
+            this.mstrAddSeminar.Size = new System.Drawing.Size(226, 22);
+            this.mstrAddSeminar.Text = "Add Seminar";
             // 
-            // displayEditDeleteSeminarsToolStripMenuItem
+            // mstrDisplaySeminars
             // 
-            this.displayEditDeleteSeminarsToolStripMenuItem.Name = "displayEditDeleteSeminarsToolStripMenuItem";
-            this.displayEditDeleteSeminarsToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.displayEditDeleteSeminarsToolStripMenuItem.Text = "Display/Edit/Delete Seminars";
+            this.mstrDisplaySeminars.Name = "mstrDisplaySeminars";
+            this.mstrDisplaySeminars.Size = new System.Drawing.Size(226, 22);
+            this.mstrDisplaySeminars.Text = "Display/Edit/Delete Seminars";
             // 
             // stallToolStripMenuItem
             // 
             this.stallToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addStallToolStripMenuItem,
-            this.displayEditDeleteStallsToolStripMenuItem});
+            this.mstrAddStall,
+            this.mstrDisplayStalls});
             this.stallToolStripMenuItem.Name = "stallToolStripMenuItem";
             this.stallToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.stallToolStripMenuItem.Text = "Stall";
             // 
-            // addStallToolStripMenuItem
+            // mstrAddStall
             // 
-            this.addStallToolStripMenuItem.Name = "addStallToolStripMenuItem";
-            this.addStallToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.addStallToolStripMenuItem.Text = "Add Stall";
+            this.mstrAddStall.Name = "mstrAddStall";
+            this.mstrAddStall.Size = new System.Drawing.Size(205, 22);
+            this.mstrAddStall.Text = "Add Stall";
             // 
-            // displayEditDeleteStallsToolStripMenuItem
+            // mstrDisplayStalls
             // 
-            this.displayEditDeleteStallsToolStripMenuItem.Name = "displayEditDeleteStallsToolStripMenuItem";
-            this.displayEditDeleteStallsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.displayEditDeleteStallsToolStripMenuItem.Text = "Display/Edit/Delete Stalls";
+            this.mstrDisplayStalls.Name = "mstrDisplayStalls";
+            this.mstrDisplayStalls.Size = new System.Drawing.Size(205, 22);
+            this.mstrDisplayStalls.Text = "Display/Edit/Delete Stalls";
             // 
             // Home
             // 
@@ -149,6 +151,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -161,16 +164,16 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem attendeeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addAttendeeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem displayEditDeleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mstrAddAttendee;
+        private System.Windows.Forms.ToolStripMenuItem mstrDisplayAttendees;
         private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addEventToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem displayAllEventsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mstrAddEvent;
+        private System.Windows.Forms.ToolStripMenuItem mstrDisplayEvents;
         private System.Windows.Forms.ToolStripMenuItem seminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addSeminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem displayEditDeleteSeminarsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mstrAddSeminar;
+        private System.Windows.Forms.ToolStripMenuItem mstrDisplaySeminars;
         private System.Windows.Forms.ToolStripMenuItem stallToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addStallToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem displayEditDeleteStallsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mstrAddStall;
+        private System.Windows.Forms.ToolStripMenuItem mstrDisplayStalls;
     }
 }

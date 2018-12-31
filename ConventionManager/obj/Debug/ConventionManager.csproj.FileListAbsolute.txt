@@ -1,1 +1,14 @@
 D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\bin\Debug\ConventionManager.exe.config
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\bin\Debug\ConventionManager.exe
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\bin\Debug\ConventionManager.pdb
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\bin\Debug\EntityFramework.dll
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\bin\Debug\EntityFramework.SqlServer.dll
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\bin\Debug\EntityFramework.xml
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\bin\Debug\EntityFramework.SqlServer.xml
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.csprojResolveAssemblyReference.cache
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.Home.resources
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.Properties.Resources.resources
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.csproj.GenerateResource.Cache
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.exe
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.pdb
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.AddAttendee.resources

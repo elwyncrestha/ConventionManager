@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConventionManager.View_Controller;
 
 namespace ConventionManager
 {
@@ -15,6 +16,20 @@ namespace ConventionManager
         public Home()
         {
             InitializeComponent();
+        }
+
+        private void mstrAddAttendee_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadAddAttendee();
+            this.Close();
+        }
+
+        private void mstrDisplayAttendees_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadAddAttendee();
+            this.Close();
         }
     }
 }

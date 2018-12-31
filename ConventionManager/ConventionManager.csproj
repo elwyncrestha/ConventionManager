@@ -55,6 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Attendee.cs" />
+    <Compile Include="View_Controller\AddAttendee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\AddAttendee.Designer.cs">
+      <DependentUpon>AddAttendee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ConventionManagerDbContext.cs" />
+    <Compile Include="View_Controller\FormLoader.cs" />
     <Compile Include="View_Controller\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View_Controller\AddAttendee.resx">
+      <DependentUpon>AddAttendee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,9 +101,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
