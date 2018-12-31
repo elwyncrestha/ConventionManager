@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Attendee.cs" />
+    <Compile Include="Model\Room.cs" />
     <Compile Include="Model\Stall.cs" />
     <Compile Include="View_Controller\AttendeeForm.cs">
       <SubType>Form</SubType>
@@ -73,6 +74,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View_Controller\RoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\RoomForm.Designer.cs">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_Controller\StallForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +101,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View_Controller\RoomForm.resx">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\StallForm.resx">
       <DependentUpon>StallForm.cs</DependentUpon>
     </EmbeddedResource>

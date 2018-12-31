@@ -18,5 +18,7 @@ namespace ConventionManager.Model
         public DbSet<Attendee> Attendees { get; set; }
 
         public DbSet<Stall> Stalls { get; set; }
+
+        public DbSet<Room> Rooms { get; set; }
     }
 }

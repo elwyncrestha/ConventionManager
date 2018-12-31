@@ -150,6 +150,7 @@ namespace ConventionManager.View_Controller
                     dbContext.SaveChanges();
                     reloadDGV();
                 }
+                btnAdd.Text = "ADD";
             }
         }
     }

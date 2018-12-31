@@ -45,5 +45,12 @@ namespace ConventionManager
             FormLoader.loadStallForm();
             this.Close();
         }
+
+        private void mstrAddRoom_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadRoomForm();
+            this.Close();
+        }
     }
 }

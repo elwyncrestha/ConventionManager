@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.attendeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddAttendee = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayAttendees = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,21 +40,13 @@
             this.stallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddStall = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayStalls = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.roomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddRoom = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrDisplayEditDeleteRooms = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.attendeeToolStripMenuItem,
-            this.eventToolStripMenuItem,
-            this.seminarToolStripMenuItem,
-            this.stallToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // attendeeToolStripMenuItem
             // 
@@ -145,11 +136,53 @@
             this.mstrDisplayStalls.Text = "Display/Edit/Delete Stalls";
             this.mstrDisplayStalls.Click += new System.EventHandler(this.mstrDisplayStalls_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.attendeeToolStripMenuItem,
+            this.eventToolStripMenuItem,
+            this.seminarToolStripMenuItem,
+            this.stallToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.roomToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(402, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // roomToolStripMenuItem
+            // 
+            this.roomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mstrAddRoom,
+            this.mstrDisplayEditDeleteRooms});
+            this.roomToolStripMenuItem.Name = "roomToolStripMenuItem";
+            this.roomToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.roomToolStripMenuItem.Text = "Room";
+            // 
+            // mstrAddRoom
+            // 
+            this.mstrAddRoom.Name = "mstrAddRoom";
+            this.mstrAddRoom.Size = new System.Drawing.Size(215, 22);
+            this.mstrAddRoom.Text = "Add Room";
+            this.mstrAddRoom.Click += new System.EventHandler(this.mstrAddRoom_Click);
+            // 
+            // mstrDisplayEditDeleteRooms
+            // 
+            this.mstrDisplayEditDeleteRooms.Name = "mstrDisplayEditDeleteRooms";
+            this.mstrDisplayEditDeleteRooms.Size = new System.Drawing.Size(215, 22);
+            this.mstrDisplayEditDeleteRooms.Text = "Display/Edit/Delete Rooms";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(402, 341);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
@@ -164,7 +197,6 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem attendeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendee;
         private System.Windows.Forms.ToolStripMenuItem mstrDisplayAttendees;
@@ -177,5 +209,10 @@
         private System.Windows.Forms.ToolStripMenuItem stallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mstrAddStall;
         private System.Windows.Forms.ToolStripMenuItem mstrDisplayStalls;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem roomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mstrAddRoom;
+        private System.Windows.Forms.ToolStripMenuItem mstrDisplayEditDeleteRooms;
     }
 }
