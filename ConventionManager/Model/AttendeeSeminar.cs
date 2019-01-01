@@ -14,6 +14,7 @@ namespace ConventionManager.Model
         public int AttendeeId { get; set; }
         [Key, Column(Order = 1)]
         public int SeminarId { get; set; }
+        public bool IsPresenter { get; set; }
 
         public virtual Attendee Attendee { get; set; }
         public virtual Seminar Seminar { get; set; }

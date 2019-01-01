@@ -94,6 +94,7 @@ create table AttendeeSeminar
 	---Id int not null identity,
 	AttendeeId int not null,
 	SeminarId int not null,
+	IsPresenter bit,
 	---constraint pk_AttendeeSeminar primary key (Id),
 	constraint fk_AttendeeSeminar_Attendee foreign key (AttendeeId) references Attendee(AttendeeId) on delete cascade,
 	constraint fk_AttendeeSeminar_Event foreign key (SeminarId) references Seminar(SeminarId),
@@ -109,3 +110,4 @@ select * from Event;
 select * from Seminar;
 select * from AttendeeStall;
 select * from AttendeeEvent;
+select * from AttendeeSeminar;

@@ -47,12 +47,16 @@
             this.lblSeminarStartDate = new System.Windows.Forms.Label();
             this.lblSeminarEndDate = new System.Windows.Forms.Label();
             this.lblSeminarStartDateValue = new System.Windows.Forms.Label();
+            this.lblIsPresenter = new System.Windows.Forms.Label();
+            this.chkIsPresenter = new System.Windows.Forms.CheckBox();
             this.gbxAttendee.SuspendLayout();
             this.gbxSeminar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxAttendee
             // 
+            this.gbxAttendee.Controls.Add(this.chkIsPresenter);
+            this.gbxAttendee.Controls.Add(this.lblIsPresenter);
             this.gbxAttendee.Controls.Add(this.lblContactValue);
             this.gbxAttendee.Controls.Add(this.lblContact);
             this.gbxAttendee.Controls.Add(this.lblLastNameValue);
@@ -241,6 +245,25 @@
             this.lblSeminarStartDateValue.TabIndex = 10;
             this.lblSeminarStartDateValue.Text = "null";
             // 
+            // lblIsPresenter
+            // 
+            this.lblIsPresenter.AutoSize = true;
+            this.lblIsPresenter.Location = new System.Drawing.Point(9, 170);
+            this.lblIsPresenter.Name = "lblIsPresenter";
+            this.lblIsPresenter.Size = new System.Drawing.Size(69, 13);
+            this.lblIsPresenter.TabIndex = 9;
+            this.lblIsPresenter.Text = "Is Presenter?";
+            // 
+            // chkIsPresenter
+            // 
+            this.chkIsPresenter.AutoSize = true;
+            this.chkIsPresenter.Location = new System.Drawing.Point(84, 169);
+            this.chkIsPresenter.Name = "chkIsPresenter";
+            this.chkIsPresenter.Size = new System.Drawing.Size(44, 17);
+            this.chkIsPresenter.TabIndex = 10;
+            this.chkIsPresenter.Text = "Yes";
+            this.chkIsPresenter.UseVisualStyleBackColor = true;
+            // 
             // AddAttendeeToSeminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +304,7 @@
         private System.Windows.Forms.Label lblSeminarStartDate;
         private System.Windows.Forms.Label lblSeminarEndDate;
         private System.Windows.Forms.Label lblSeminarStartDateValue;
+        private System.Windows.Forms.CheckBox chkIsPresenter;
+        private System.Windows.Forms.Label lblIsPresenter;
     }
 }

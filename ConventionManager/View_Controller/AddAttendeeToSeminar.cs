@@ -74,7 +74,8 @@ namespace ConventionManager.View_Controller
             AttendeeSeminar attendeeSeminar = new AttendeeSeminar()
             {
                 AttendeeId = (int)cbxAttendee.SelectedValue,
-                SeminarId = (int)cbxSeminar.SelectedValue
+                SeminarId = (int)cbxSeminar.SelectedValue,
+                IsPresenter = chkIsPresenter.Checked
             };
 
             dbContext.AttendeeSeminars.Add(attendeeSeminar);
