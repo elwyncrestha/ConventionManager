@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Model\Attendee.cs" />
     <Compile Include="Model\AttendeeEvent.cs" />
+    <Compile Include="Model\AttendeeSeminar.cs" />
     <Compile Include="Model\AttendeeStall.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Room.cs" />
@@ -68,6 +69,12 @@
     </Compile>
     <Compile Include="View_Controller\AddAttendeeToEvent.Designer.cs">
       <DependentUpon>AddAttendeeToEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_Controller\AddAttendeeToSeminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\AddAttendeeToSeminar.Designer.cs">
+      <DependentUpon>AddAttendeeToSeminar.cs</DependentUpon>
     </Compile>
     <Compile Include="View_Controller\AddAttendeeToStall.cs">
       <SubType>Form</SubType>
@@ -117,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="View_Controller\AddAttendeeToEvent.resx">
       <DependentUpon>AddAttendeeToEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Controller\AddAttendeeToSeminar.resx">
+      <DependentUpon>AddAttendeeToSeminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\AddAttendeeToStall.resx">
       <DependentUpon>AddAttendeeToStall.cs</DependentUpon>

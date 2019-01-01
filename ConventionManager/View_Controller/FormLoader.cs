@@ -49,5 +49,11 @@ namespace ConventionManager.View_Controller
             AddAttendeeToEvent form = new AddAttendeeToEvent();
             form.ShowDialog();
         }
+
+        public static void loadAddAttendeeToSeminarForm()
+        {
+            AddAttendeeToSeminar form = new AddAttendeeToSeminar();
+            form.ShowDialog();
+        }
     }
 }

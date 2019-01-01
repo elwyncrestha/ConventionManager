@@ -15,7 +15,7 @@ namespace ConventionManager.View_Controller
     public partial class EventForm : Form
     {
         ConventionManagerDbContext dbContext = new ConventionManagerDbContext();
-        Event eventObj;
+        Event _event;
 
         public EventForm()
         {
@@ -80,20 +80,20 @@ namespace ConventionManager.View_Controller
             else
             {
                 if (btnAdd.Text.Equals("ADD"))
-                    eventObj = new Event();
+                    _event = new Event();
                 else if (btnAdd.Text.Equals("UPDATE"))
-                    eventObj.EventId = eventCode;
+                    _event.EventId = eventCode;
 
-                eventObj.EventName = txtName.Text.Trim();
-                eventObj.EventDescription = txtDescription.Text.Trim();
-                eventObj.EventStartDate = dtpStartDate.Value;
-                eventObj.EventEndDate = dtpEndDate.Value;
-                eventObj.RoomId = Convert.ToInt32(cbxRoom.SelectedValue.ToString());
+                _event.EventName = txtName.Text.Trim();
+                _event.EventDescription = txtDescription.Text.Trim();
+                _event.EventStartDate = dtpStartDate.Value;
+                _event.EventEndDate = dtpEndDate.Value;
+                _event.RoomId = Convert.ToInt32(cbxRoom.SelectedValue.ToString());
 
                 try
                 {
                     if (btnAdd.Text.Equals("ADD"))
-                        dbContext.Events.Add(eventObj);
+                        dbContext.Events.Add(_event);
 
                     dbContext.SaveChanges();
 
@@ -136,12 +136,12 @@ namespace ConventionManager.View_Controller
             if (dgvEvent.CurrentRow.Cells[columnIndex].Value.ToString().Equals("Edit"))
             {
                 btnAdd.Text = "UPDATE";
-                eventObj = dbContext.Events.Find(eventCode);
-                txtName.Text = eventObj.EventName;
-                txtDescription.Text = eventObj.EventDescription;
-                dtpStartDate.Value = eventObj.EventStartDate;
-                dtpEndDate.Value = eventObj.EventEndDate;
-                cbxRoom.SelectedValue = eventObj.RoomId;
+                _event = dbContext.Events.Find(eventCode);
+                txtName.Text = _event.EventName;
+                txtDescription.Text = _event.EventDescription;
+                dtpStartDate.Value = _event.EventStartDate;
+                dtpEndDate.Value = _event.EventEndDate;
+                cbxRoom.SelectedValue = _event.RoomId;
             }
             else if (dgvEvent.CurrentRow.Cells[columnIndex].Value.ToString().Equals("Delete"))
             {

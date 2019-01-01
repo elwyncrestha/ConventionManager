@@ -87,5 +87,12 @@ namespace ConventionManager
             FormLoader.loadAddAttendeeToEventForm();
             this.Close();
         }
+
+        private void mstrAddAttendeeToSeminar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadAddAttendeeToSeminarForm();
+            this.Close();
+        }
     }
 }

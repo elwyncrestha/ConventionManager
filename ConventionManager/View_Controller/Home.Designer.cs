@@ -47,6 +47,7 @@
             this.mstrAddRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayEditDeleteRooms = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddAttendeeToEvent = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddAttendeeToSeminar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +102,8 @@
             // 
             this.seminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mstrAddSeminar,
-            this.mstrDisplaySeminars});
+            this.mstrDisplaySeminars,
+            this.mstrAddAttendeeToSeminar});
             this.seminarToolStripMenuItem.Name = "seminarToolStripMenuItem";
             this.seminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.seminarToolStripMenuItem.Text = "Seminar";
@@ -199,6 +201,13 @@
             this.mstrAddAttendeeToEvent.Text = "Add Attendee to Event";
             this.mstrAddAttendeeToEvent.Click += new System.EventHandler(this.mstrAddAttendeeToEvent_Click);
             // 
+            // mstrAddAttendeeToSeminar
+            // 
+            this.mstrAddAttendeeToSeminar.Name = "mstrAddAttendeeToSeminar";
+            this.mstrAddAttendeeToSeminar.Size = new System.Drawing.Size(226, 22);
+            this.mstrAddAttendeeToSeminar.Text = "Add Attendee to Seminar";
+            this.mstrAddAttendeeToSeminar.Click += new System.EventHandler(this.mstrAddAttendeeToSeminar_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,5 +246,6 @@
         private System.Windows.Forms.ToolStripMenuItem mstrDisplayEditDeleteRooms;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToStall;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToEvent;
+        private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToSeminar;
     }
 }

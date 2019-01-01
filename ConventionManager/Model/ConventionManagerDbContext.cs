@@ -22,5 +22,7 @@ namespace ConventionManager.Model
         public DbSet<Seminar> Seminars { get; set; }
         public DbSet<AttendeeStall> AttendeeStalls { get; set; }
         public DbSet<AttendeeEvent> AttendeeEvents { get; set; }
+        public DbSet<AttendeeSeminar> AttendeeSeminars { get; set; }
+
     }
 }

@@ -13,6 +13,7 @@ namespace ConventionManager.Model
         {
             this.AttendeeStall = new HashSet<AttendeeStall>();
             this.AttendeeEvent = new HashSet<AttendeeEvent>();
+            this.AttendeeSeminar = new HashSet<AttendeeSeminar>();
         }
 
         [Key]
@@ -29,5 +30,6 @@ namespace ConventionManager.Model
 
         public virtual ICollection<AttendeeStall> AttendeeStall { get; set; }
         public virtual ICollection<AttendeeEvent> AttendeeEvent { get; set; }
+        public virtual ICollection<AttendeeSeminar> AttendeeSeminar { get; set; }
     }
 }
