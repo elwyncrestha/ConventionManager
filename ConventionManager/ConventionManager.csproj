@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Attendee.cs" />
+    <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\Stall.cs" />
     <Compile Include="View_Controller\AttendeeForm.cs">
@@ -65,6 +66,12 @@
       <DependentUpon>AttendeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ConventionManagerDbContext.cs" />
+    <Compile Include="View_Controller\EventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\EventForm.Designer.cs">
+      <DependentUpon>EventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_Controller\FormLoader.cs" />
     <Compile Include="View_Controller\Home.cs">
       <SubType>Form</SubType>
@@ -88,6 +95,9 @@
     </Compile>
     <EmbeddedResource Include="View_Controller\AttendeeForm.resx">
       <DependentUpon>AttendeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Controller\EventForm.resx">
+      <DependentUpon>EventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

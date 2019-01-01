@@ -52,5 +52,19 @@ namespace ConventionManager
             FormLoader.loadRoomForm();
             this.Close();
         }
+
+        private void mstrAddEvent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadEventForm();
+            this.Close();
+        }
+
+        private void mstrDisplayEvents_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadEventForm();
+            this.Close();
+        }
     }
 }

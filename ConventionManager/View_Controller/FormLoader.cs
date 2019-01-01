@@ -25,5 +25,11 @@ namespace ConventionManager.View_Controller
             RoomForm form = new RoomForm();
             form.ShowDialog();
         }
+
+        public static void loadEventForm()
+        {
+            EventForm form = new EventForm();
+            form.ShowDialog();
+        }
     }
 }

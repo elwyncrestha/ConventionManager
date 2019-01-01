@@ -20,5 +20,7 @@ namespace ConventionManager.Model
         public DbSet<Stall> Stalls { get; set; }
 
         public DbSet<Room> Rooms { get; set; }
+
+        public DbSet<Event> Events { get; set; }
     }
 }

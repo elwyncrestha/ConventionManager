@@ -85,12 +85,14 @@
             this.mstrAddEvent.Name = "mstrAddEvent";
             this.mstrAddEvent.Size = new System.Drawing.Size(212, 22);
             this.mstrAddEvent.Text = "Add Event";
+            this.mstrAddEvent.Click += new System.EventHandler(this.mstrAddEvent_Click);
             // 
             // mstrDisplayEvents
             // 
             this.mstrDisplayEvents.Name = "mstrDisplayEvents";
             this.mstrDisplayEvents.Size = new System.Drawing.Size(212, 22);
             this.mstrDisplayEvents.Text = "Display/Edit/Delete Events";
+            this.mstrDisplayEvents.Click += new System.EventHandler(this.mstrDisplayEvents_Click);
             // 
             // seminarToolStripMenuItem
             // 
