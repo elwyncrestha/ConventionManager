@@ -15,3 +15,6 @@ D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager
 D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.StallForm.resources
 D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.RoomForm.resources
 D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.EventForm.resources
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.SeminarForm.resources
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.AddAttendeeToStall.resources
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.AddAttendeeToEvent.resources

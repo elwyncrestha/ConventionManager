@@ -21,5 +21,6 @@ namespace ConventionManager.Model
         public int RoomCapacity { get; set; }
         public string RoomResources { get; set; }
         public virtual ICollection<Event> Event { get; set; }
+        public virtual ICollection<Seminar> Seminar { get; set; }
     }
 }

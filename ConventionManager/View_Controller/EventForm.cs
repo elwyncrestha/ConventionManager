@@ -41,12 +41,12 @@ namespace ConventionManager.View_Controller
             dataTable.Columns.Add("EventId", typeof(int));
             dataTable.Columns.Add("EventName", typeof(string));
             dataTable.Columns.Add("EventDescription", typeof(string));
-            dataTable.Columns.Add("RoomName", typeof(string));
-            dataTable.Columns.Add("RoomCapacity", typeof(int));
             dataTable.Columns.Add("EventStartDate", typeof(DateTime));
             dataTable.Columns.Add("EventEndDate", typeof(DateTime));
+            dataTable.Columns.Add("RoomName", typeof(string));
+            dataTable.Columns.Add("RoomCapacity", typeof(int));
             foreach (Event ev in dbContext.Events.ToList())
-                dataTable.Rows.Add(ev.EventId, ev.EventName, ev.EventDescription, ev.Room.RoomName, ev.Room.RoomCapacity, ev.EventStartDate, ev.EventEndDate);
+                dataTable.Rows.Add(ev.EventId, ev.EventName, ev.EventDescription, ev.EventStartDate, ev.EventEndDate, ev.Room.RoomName, ev.Room.RoomCapacity);
 
             dgvEvent.DataSource = dataTable;
         }

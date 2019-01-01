@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,9 +57,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Attendee.cs" />
+    <Compile Include="Model\AttendeeEvent.cs" />
+    <Compile Include="Model\AttendeeStall.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\Seminar.cs" />
     <Compile Include="Model\Stall.cs" />
+    <Compile Include="View_Controller\AddAttendeeToEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\AddAttendeeToEvent.Designer.cs">
+      <DependentUpon>AddAttendeeToEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_Controller\AddAttendeeToStall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\AddAttendeeToStall.Designer.cs">
+      <DependentUpon>AddAttendeeToStall.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_Controller\AttendeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +103,24 @@
     <Compile Include="View_Controller\RoomForm.Designer.cs">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_Controller\SeminarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\SeminarForm.Designer.cs">
+      <DependentUpon>SeminarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_Controller\StallForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View_Controller\StallForm.Designer.cs">
       <DependentUpon>StallForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View_Controller\AddAttendeeToEvent.resx">
+      <DependentUpon>AddAttendeeToEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Controller\AddAttendeeToStall.resx">
+      <DependentUpon>AddAttendeeToStall.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\AttendeeForm.resx">
       <DependentUpon>AttendeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="View_Controller\RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Controller\SeminarForm.resx">
+      <DependentUpon>SeminarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\StallForm.resx">
       <DependentUpon>StallForm.cs</DependentUpon>

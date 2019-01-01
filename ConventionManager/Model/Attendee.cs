@@ -9,6 +9,12 @@ namespace ConventionManager.Model
 {
     public class Attendee
     {
+        public Attendee()
+        {
+            this.AttendeeStall = new HashSet<AttendeeStall>();
+            this.AttendeeEvent = new HashSet<AttendeeEvent>();
+        }
+
         [Key]
         public int AttendeeId { get; set; }
         public string AttendeeFName { get; set; }
@@ -20,5 +26,8 @@ namespace ConventionManager.Model
         public string TicketType { get; set; }
         public int AttendingDays { get; set; }
         public bool IsAvailable { get; set; }
+
+        public virtual ICollection<AttendeeStall> AttendeeStall { get; set; }
+        public virtual ICollection<AttendeeEvent> AttendeeEvent { get; set; }
     }
 }

@@ -9,6 +9,11 @@ namespace ConventionManager.Model
 {
     public class Stall
     {
+        public Stall()
+        {
+            this.AttendeeStall = new HashSet<AttendeeStall>();
+        }
+
         [Key]
         public int StallId { get; set; }
         public string StallName { get; set; }
@@ -18,5 +23,7 @@ namespace ConventionManager.Model
         public DateTime StallStartDate { get; set; }
         public DateTime StallEndDate { get; set; }
         public string StallType { get; set; }
+
+        public ICollection<AttendeeStall> AttendeeStall { get; set; }
     }
 }

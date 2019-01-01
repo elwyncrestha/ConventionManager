@@ -40,11 +40,13 @@
             this.stallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddStall = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayStalls = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddAttendeeToStall = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.roomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayEditDeleteRooms = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddAttendeeToEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,8 @@
             // 
             this.eventToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mstrAddEvent,
-            this.mstrDisplayEvents});
+            this.mstrDisplayEvents,
+            this.mstrAddAttendeeToEvent});
             this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
             this.eventToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.eventToolStripMenuItem.Text = "Event";
@@ -108,6 +111,7 @@
             this.mstrAddSeminar.Name = "mstrAddSeminar";
             this.mstrAddSeminar.Size = new System.Drawing.Size(226, 22);
             this.mstrAddSeminar.Text = "Add Seminar";
+            this.mstrAddSeminar.Click += new System.EventHandler(this.mstrAddSeminar_Click);
             // 
             // mstrDisplaySeminars
             // 
@@ -119,7 +123,8 @@
             // 
             this.stallToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mstrAddStall,
-            this.mstrDisplayStalls});
+            this.mstrDisplayStalls,
+            this.mstrAddAttendeeToStall});
             this.stallToolStripMenuItem.Name = "stallToolStripMenuItem";
             this.stallToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.stallToolStripMenuItem.Text = "Stall";
@@ -137,6 +142,13 @@
             this.mstrDisplayStalls.Size = new System.Drawing.Size(205, 22);
             this.mstrDisplayStalls.Text = "Display/Edit/Delete Stalls";
             this.mstrDisplayStalls.Click += new System.EventHandler(this.mstrDisplayStalls_Click);
+            // 
+            // mstrAddAttendeeToStall
+            // 
+            this.mstrAddAttendeeToStall.Name = "mstrAddAttendeeToStall";
+            this.mstrAddAttendeeToStall.Size = new System.Drawing.Size(205, 22);
+            this.mstrAddAttendeeToStall.Text = "Add Attendee to Stall";
+            this.mstrAddAttendeeToStall.Click += new System.EventHandler(this.mstrAddAttendeeToStall_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -180,6 +192,13 @@
             this.mstrDisplayEditDeleteRooms.Size = new System.Drawing.Size(215, 22);
             this.mstrDisplayEditDeleteRooms.Text = "Display/Edit/Delete Rooms";
             // 
+            // mstrAddAttendeeToEvent
+            // 
+            this.mstrAddAttendeeToEvent.Name = "mstrAddAttendeeToEvent";
+            this.mstrAddAttendeeToEvent.Size = new System.Drawing.Size(212, 22);
+            this.mstrAddAttendeeToEvent.Text = "Add Attendee to Event";
+            this.mstrAddAttendeeToEvent.Click += new System.EventHandler(this.mstrAddAttendeeToEvent_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,5 +235,7 @@
         private System.Windows.Forms.ToolStripMenuItem roomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mstrAddRoom;
         private System.Windows.Forms.ToolStripMenuItem mstrDisplayEditDeleteRooms;
+        private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToStall;
+        private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToEvent;
     }
 }

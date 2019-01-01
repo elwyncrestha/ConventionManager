@@ -69,35 +69,43 @@ create table Seminar
 --- Two keys dependent tables ---
 create table AttendeeStall
 (
-	Id int not null identity,
+	---Id int not null identity,
 	AttendeeId int not null,
 	StallId int not null,
-	constraint pk_AttendeeStall primary key (Id),
+	---constraint pk_AttendeeStall primary key (Id),
 	constraint fk_AttendeeStall_Attendee foreign key (AttendeeId) references Attendee(AttendeeId) on delete cascade,
-	constraint fk_AttendeeStall_Stall foreign key (StallId) references Stall(StallId)	
+	constraint fk_AttendeeStall_Stall foreign key (StallId) references Stall(StallId),
+	constraint pk_AttendeeStall primary key (AttendeeId,StallId)
 );
 
 create table AttendeeEvent
 (
-	Id int not null identity,
+	---Id int not null identity,
 	AttendeeId int not null,
 	EventId int not null,
-	constraint pk_AttendeeEvent primary key (Id),
+	---constraint pk_AttendeeEvent primary key (Id),
 	constraint fk_AttendeeEvent_Attendee foreign key (AttendeeId) references Attendee(AttendeeId) on delete cascade,
-	constraint fk_AttendeeEvent_Event foreign key (EventId) references Event(EventId)	
+	constraint fk_AttendeeEvent_Event foreign key (EventId) references Event(EventId),
+	constraint pk_AttendeeEvent primary key (AttendeeId,EventId)
 );
 
 create table AttendeeSeminar
 (
-	Id int not null identity,
+	---Id int not null identity,
 	AttendeeId int not null,
 	SeminarId int not null,
-	constraint pk_AttendeeSeminar primary key (Id),
+	---constraint pk_AttendeeSeminar primary key (Id),
 	constraint fk_AttendeeSeminar_Attendee foreign key (AttendeeId) references Attendee(AttendeeId) on delete cascade,
-	constraint fk_AttendeeSeminar_Event foreign key (SeminarId) references Seminar(SeminarId)	
+	constraint fk_AttendeeSeminar_Event foreign key (SeminarId) references Seminar(SeminarId),
+	constraint pk_AttendeeSeminar primary key (AttendeeId,SeminarId)
 );
 
 SELECT Distinct TABLE_NAME FROM information_schema.TABLES;
 
 select * from Attendee;
-sp_help Attendee;
+select * from Stall;
+select * from Room;
+select * from Event;
+select * from Seminar;
+select * from AttendeeStall;
+select * from AttendeeEvent;

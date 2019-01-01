@@ -9,6 +9,11 @@ namespace ConventionManager.Model
 {
     public class Event
     {
+        public Event()
+        {
+            this.AttendeeEvent = new HashSet<AttendeeEvent>();
+        }
+
         [Key]
         public int EventId { get; set; }
         public string EventName { get; set; }
@@ -16,6 +21,8 @@ namespace ConventionManager.Model
         public DateTime EventEndDate { get; set; }
         public string EventDescription { get; set; }
         public int RoomId { get; set; }
+
         public virtual Room Room { get; set; }
+        public virtual ICollection<AttendeeEvent> AttendeeEvent { get; set; }
     }
 }
