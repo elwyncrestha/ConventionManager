@@ -8,6 +8,12 @@ namespace ConventionManager.View_Controller
 {
     public class FormLoader
     {
+        public static void loadHome()
+        {
+            Home form = new Home();
+            form.ShowDialog();
+        }
+
         public static void loadAttendeeForm()
         {
             AttendeeForm form = new AttendeeForm();

@@ -77,25 +77,45 @@ namespace ConventionManager.View_Controller
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AttendeeStall attendeeStall = new AttendeeStall()
+            //using (dbContext = new ConventionManagerDbContext())
+            //{
+            MethodController methodController = new MethodController();
+            if (methodController.stallCapacityStatus((int)cbxStall.SelectedValue))
             {
-                AttendeeId = (int)cbxAttendee.SelectedValue,
-                StallId = (int)cbxStall.SelectedValue
-            };
+                AttendeeStall attendeeStall = new AttendeeStall()
+                {
+                    AttendeeId = (int)cbxAttendee.SelectedValue,
+                    StallId = (int)cbxStall.SelectedValue
+                };
 
-            dbContext.AttendeeStalls.Add(attendeeStall);
-            try
-            {
-                dbContext.SaveChanges();
+                dbContext.AttendeeStalls.Add(attendeeStall);
+                try
+                {
+                    dbContext.SaveChanges();
 
-                MessageBox.Show("Attendee added to the stall successfully!!!");
-                updateGBXStall((int)cbxStall.SelectedValue);
-                return;
-            } catch(Exception ex)
+                    MessageBox.Show("Attendee added to the stall successfully!!!");
+                    updateGBXStall((int)cbxStall.SelectedValue);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Duplicate entry!!!");
+                    return;
+                }
+            }
+            else
             {
-                MessageBox.Show("Duplicate entry!!!");
+                MessageBox.Show("Stall full!!!");
                 return;
             }
+            //}
+        }
+
+        private void AddAttendeeToStall_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
         }
     }
 }

@@ -281,6 +281,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "EventForm";
             this.Text = "EventForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventForm_FormClosed);
             this.Load += new System.EventHandler(this.EventForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvent)).EndInit();
             this.ResumeLayout(false);

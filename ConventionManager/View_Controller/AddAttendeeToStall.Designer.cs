@@ -41,14 +41,14 @@
             this.lblFirstNameValue = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.gbxStall = new System.Windows.Forms.GroupBox();
+            this.lblFilledValue = new System.Windows.Forms.Label();
+            this.lblFilled = new System.Windows.Forms.Label();
             this.lblStallTypeValue = new System.Windows.Forms.Label();
             this.lblStallType = new System.Windows.Forms.Label();
             this.lblCapacityValue = new System.Windows.Forms.Label();
             this.lblLocationCode = new System.Windows.Forms.Label();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.lblLocationCodeValue = new System.Windows.Forms.Label();
-            this.lblFilledValue = new System.Windows.Forms.Label();
-            this.lblFilled = new System.Windows.Forms.Label();
             this.gbxAttendee.SuspendLayout();
             this.gbxStall.SuspendLayout();
             this.SuspendLayout();
@@ -191,6 +191,24 @@
             this.gbxStall.TabStop = false;
             this.gbxStall.Text = "Stall";
             // 
+            // lblFilledValue
+            // 
+            this.lblFilledValue.AutoSize = true;
+            this.lblFilledValue.Location = new System.Drawing.Point(106, 171);
+            this.lblFilledValue.Name = "lblFilledValue";
+            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFilledValue.TabIndex = 16;
+            this.lblFilledValue.Text = "null";
+            // 
+            // lblFilled
+            // 
+            this.lblFilled.AutoSize = true;
+            this.lblFilled.Location = new System.Drawing.Point(6, 171);
+            this.lblFilled.Name = "lblFilled";
+            this.lblFilled.Size = new System.Drawing.Size(31, 13);
+            this.lblFilled.TabIndex = 15;
+            this.lblFilled.Text = "Filled";
+            // 
             // lblStallTypeValue
             // 
             this.lblStallTypeValue.AutoSize = true;
@@ -245,24 +263,6 @@
             this.lblLocationCodeValue.TabIndex = 10;
             this.lblLocationCodeValue.Text = "null";
             // 
-            // lblFilledValue
-            // 
-            this.lblFilledValue.AutoSize = true;
-            this.lblFilledValue.Location = new System.Drawing.Point(106, 171);
-            this.lblFilledValue.Name = "lblFilledValue";
-            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
-            this.lblFilledValue.TabIndex = 16;
-            this.lblFilledValue.Text = "null";
-            // 
-            // lblFilled
-            // 
-            this.lblFilled.AutoSize = true;
-            this.lblFilled.Location = new System.Drawing.Point(6, 171);
-            this.lblFilled.Name = "lblFilled";
-            this.lblFilled.Size = new System.Drawing.Size(31, 13);
-            this.lblFilled.TabIndex = 15;
-            this.lblFilled.Text = "Filled";
-            // 
             // AddAttendeeToStall
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +273,7 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "AddAttendeeToStall";
             this.Text = "AddAttendeeToStall";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddAttendeeToStall_FormClosed);
             this.Load += new System.EventHandler(this.AddAttendeeToStall_Load);
             this.gbxAttendee.ResumeLayout(false);
             this.gbxAttendee.PerformLayout();

@@ -121,5 +121,12 @@ namespace ConventionManager.View_Controller
                 btnAdd.Text = "ADD";
             }
         }
+
+        private void RoomForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
+        }
     }
 }

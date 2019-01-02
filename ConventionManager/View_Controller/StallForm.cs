@@ -149,5 +149,12 @@ namespace ConventionManager.View_Controller
                 btnAdd.Text = "ADD";
             }
         }
+
+        private void StallForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
+        }
     }
 }

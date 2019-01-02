@@ -77,27 +77,46 @@ namespace ConventionManager.View_Controller
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AttendeeSeminar attendeeSeminar = new AttendeeSeminar()
+            //using (dbContext = new ConventionManagerDbContext())
+            //{
+            MethodController methodController = new MethodController();
+            if (methodController.roomCapacityStatus((int)cbxSeminar.SelectedValue,false))
             {
-                AttendeeId = (int)cbxAttendee.SelectedValue,
-                SeminarId = (int)cbxSeminar.SelectedValue,
-                IsPresenter = chkIsPresenter.Checked
-            };
+                AttendeeSeminar attendeeSeminar = new AttendeeSeminar()
+                {
+                    AttendeeId = (int)cbxAttendee.SelectedValue,
+                    SeminarId = (int)cbxSeminar.SelectedValue,
+                    IsPresenter = chkIsPresenter.Checked
+                };
 
-            dbContext.AttendeeSeminars.Add(attendeeSeminar);
-            try
+                dbContext.AttendeeSeminars.Add(attendeeSeminar);
+                try
+                {
+                    dbContext.SaveChanges();
+
+                    MessageBox.Show("Attendee added to the seminar successfully!!!");
+                    updateGBXSeminar((int)cbxSeminar.SelectedValue);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Duplicate entry!!!");
+                    return;
+                }
+            }
+            else
             {
-                dbContext.SaveChanges();
-
-                MessageBox.Show("Attendee added to the seminar successfully!!!");
-                updateGBXSeminar((int)cbxSeminar.SelectedValue);
+                MessageBox.Show("Booking full!!!");
                 return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Duplicate entry!!!");
-                return;
-            }
+            //}
+        }
+
+        private void AddAttendeeToSeminar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
         }
     }
 }

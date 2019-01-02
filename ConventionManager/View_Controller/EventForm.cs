@@ -65,7 +65,7 @@ namespace ConventionManager.View_Controller
                 txtDescription.Focus();
                 return;
             }
-            else if(DateTime.Compare(dtpStartDate.Value,DateTime.Now) < 0)
+            else if (DateTime.Compare(dtpStartDate.Value, DateTime.Now) < 0)
             {
                 MessageBox.Show("Invalid start date: Date crossed already!!!");
                 dtpStartDate.Focus();
@@ -80,7 +80,16 @@ namespace ConventionManager.View_Controller
             else
             {
                 if (btnAdd.Text.Equals("ADD"))
-                    _event = new Event();
+                {
+                    MethodController controller = new MethodController();
+                    if (controller.roomStatus((int)cbxRoom.SelectedValue, dtpStartDate.Value, dtpEndDate.Value))
+                        _event = new Event();
+                    else
+                    {
+                        MessageBox.Show("Room unavailable in that time period!!!");
+                        return;
+                    }
+                }
                 else if (btnAdd.Text.Equals("UPDATE"))
                     _event.EventId = eventCode;
 
@@ -104,6 +113,7 @@ namespace ConventionManager.View_Controller
                     txtDescription.Clear();
 
                     loadDGV();
+                    dtpStartDate.Enabled = dtpEndDate.Enabled = cbxRoom.Enabled = true;
                     txtName.Focus();
                     return;
                 }
@@ -141,6 +151,7 @@ namespace ConventionManager.View_Controller
                 txtDescription.Text = _event.EventDescription;
                 dtpStartDate.Value = _event.EventStartDate;
                 dtpEndDate.Value = _event.EventEndDate;
+                dtpStartDate.Enabled = dtpEndDate.Enabled = cbxRoom.Enabled = false;
                 cbxRoom.SelectedValue = _event.RoomId;
             }
             else if (dgvEvent.CurrentRow.Cells[columnIndex].Value.ToString().Equals("Delete"))
@@ -154,6 +165,13 @@ namespace ConventionManager.View_Controller
                 }
                 btnAdd.Text = "ADD";
             }
+        }
+
+        private void EventForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
         }
     }
 }

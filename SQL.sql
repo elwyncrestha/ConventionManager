@@ -112,5 +112,7 @@ select * from Event;
 select * from Seminar;
 select * from AttendeeStall;
 select * from AttendeeEvent;
-delete from AttendeeEvent where AttendeeId=6;
 select * from AttendeeSeminar;
+
+select RoomId, EventStartDate, EventEndDate from Event;
+select RoomId, SeminarStartDate, SeminarEndDate from Seminar;

@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvSeminar = new System.Windows.Forms.DataGridView();
+            this.SeminarId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeminarName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeminarStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeminarEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblCapacityValue = new System.Windows.Forms.Label();
             this.cbxRoom = new System.Windows.Forms.ComboBox();
@@ -40,13 +47,6 @@
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.SeminarId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SeminarName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SeminarStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SeminarEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeminar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +70,59 @@
             this.dgvSeminar.Size = new System.Drawing.Size(697, 162);
             this.dgvSeminar.TabIndex = 27;
             this.dgvSeminar.Click += new System.EventHandler(this.dgvSeminar_Click);
+            // 
+            // SeminarId
+            // 
+            this.SeminarId.DataPropertyName = "SeminarId";
+            this.SeminarId.HeaderText = "Id";
+            this.SeminarId.Name = "SeminarId";
+            this.SeminarId.ReadOnly = true;
+            // 
+            // SeminarName
+            // 
+            this.SeminarName.DataPropertyName = "SeminarName";
+            this.SeminarName.HeaderText = "Name";
+            this.SeminarName.Name = "SeminarName";
+            this.SeminarName.ReadOnly = true;
+            // 
+            // SeminarStartDate
+            // 
+            this.SeminarStartDate.DataPropertyName = "SeminarStartDate";
+            this.SeminarStartDate.HeaderText = "Start Date";
+            this.SeminarStartDate.Name = "SeminarStartDate";
+            this.SeminarStartDate.ReadOnly = true;
+            // 
+            // SeminarEndDate
+            // 
+            this.SeminarEndDate.DataPropertyName = "SeminarEndDate";
+            this.SeminarEndDate.HeaderText = "End Date";
+            this.SeminarEndDate.Name = "SeminarEndDate";
+            this.SeminarEndDate.ReadOnly = true;
+            // 
+            // RoomName
+            // 
+            this.RoomName.DataPropertyName = "RoomName";
+            this.RoomName.HeaderText = "Room Name";
+            this.RoomName.Name = "RoomName";
+            this.RoomName.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
             // 
             // btnAdd
             // 
@@ -170,59 +223,6 @@
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Name";
             // 
-            // SeminarId
-            // 
-            this.SeminarId.DataPropertyName = "SeminarId";
-            this.SeminarId.HeaderText = "Id";
-            this.SeminarId.Name = "SeminarId";
-            this.SeminarId.ReadOnly = true;
-            // 
-            // SeminarName
-            // 
-            this.SeminarName.DataPropertyName = "SeminarName";
-            this.SeminarName.HeaderText = "Name";
-            this.SeminarName.Name = "SeminarName";
-            this.SeminarName.ReadOnly = true;
-            // 
-            // SeminarStartDate
-            // 
-            this.SeminarStartDate.DataPropertyName = "SeminarStartDate";
-            this.SeminarStartDate.HeaderText = "Start Date";
-            this.SeminarStartDate.Name = "SeminarStartDate";
-            this.SeminarStartDate.ReadOnly = true;
-            // 
-            // SeminarEndDate
-            // 
-            this.SeminarEndDate.DataPropertyName = "SeminarEndDate";
-            this.SeminarEndDate.HeaderText = "End Date";
-            this.SeminarEndDate.Name = "SeminarEndDate";
-            this.SeminarEndDate.ReadOnly = true;
-            // 
-            // RoomName
-            // 
-            this.RoomName.DataPropertyName = "RoomName";
-            this.RoomName.HeaderText = "Room Name";
-            this.RoomName.Name = "RoomName";
-            this.RoomName.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.ToolTipText = "Edit";
-            this.Edit.UseColumnTextForLinkValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.ToolTipText = "Delete";
-            this.Delete.UseColumnTextForLinkValue = true;
-            // 
             // SeminarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,6 +242,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "SeminarForm";
             this.Text = "SeminarForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SeminarForm_FormClosed);
             this.Load += new System.EventHandler(this.SeminarForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeminar)).EndInit();
             this.ResumeLayout(false);

@@ -34,20 +34,20 @@
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayEvents = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddAttendeeToEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.seminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddSeminar = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplaySeminars = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrAddAttendeeToSeminar = new System.Windows.Forms.ToolStripMenuItem();
             this.stallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddStall = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayStalls = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddAttendeeToStall = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.roomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayEditDeleteRooms = new System.Windows.Forms.ToolStripMenuItem();
-            this.mstrAddAttendeeToEvent = new System.Windows.Forms.ToolStripMenuItem();
-            this.mstrAddAttendeeToSeminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrTEST = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +98,13 @@
             this.mstrDisplayEvents.Text = "Display/Edit/Delete Events";
             this.mstrDisplayEvents.Click += new System.EventHandler(this.mstrDisplayEvents_Click);
             // 
+            // mstrAddAttendeeToEvent
+            // 
+            this.mstrAddAttendeeToEvent.Name = "mstrAddAttendeeToEvent";
+            this.mstrAddAttendeeToEvent.Size = new System.Drawing.Size(212, 22);
+            this.mstrAddAttendeeToEvent.Text = "Add Attendee to Event";
+            this.mstrAddAttendeeToEvent.Click += new System.EventHandler(this.mstrAddAttendeeToEvent_Click);
+            // 
             // seminarToolStripMenuItem
             // 
             this.seminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -120,6 +127,13 @@
             this.mstrDisplaySeminars.Name = "mstrDisplaySeminars";
             this.mstrDisplaySeminars.Size = new System.Drawing.Size(226, 22);
             this.mstrDisplaySeminars.Text = "Display/Edit/Delete Seminars";
+            // 
+            // mstrAddAttendeeToSeminar
+            // 
+            this.mstrAddAttendeeToSeminar.Name = "mstrAddAttendeeToSeminar";
+            this.mstrAddAttendeeToSeminar.Size = new System.Drawing.Size(226, 22);
+            this.mstrAddAttendeeToSeminar.Text = "Add Attendee to Seminar";
+            this.mstrAddAttendeeToSeminar.Click += new System.EventHandler(this.mstrAddAttendeeToSeminar_Click);
             // 
             // stallToolStripMenuItem
             // 
@@ -152,11 +166,6 @@
             this.mstrAddAttendeeToStall.Text = "Add Attendee to Stall";
             this.mstrAddAttendeeToStall.Click += new System.EventHandler(this.mstrAddAttendeeToStall_Click);
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -164,8 +173,8 @@
             this.eventToolStripMenuItem,
             this.seminarToolStripMenuItem,
             this.stallToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.roomToolStripMenuItem});
+            this.roomToolStripMenuItem,
+            this.mstrTEST});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(402, 24);
@@ -194,19 +203,12 @@
             this.mstrDisplayEditDeleteRooms.Size = new System.Drawing.Size(215, 22);
             this.mstrDisplayEditDeleteRooms.Text = "Display/Edit/Delete Rooms";
             // 
-            // mstrAddAttendeeToEvent
+            // mstrTEST
             // 
-            this.mstrAddAttendeeToEvent.Name = "mstrAddAttendeeToEvent";
-            this.mstrAddAttendeeToEvent.Size = new System.Drawing.Size(212, 22);
-            this.mstrAddAttendeeToEvent.Text = "Add Attendee to Event";
-            this.mstrAddAttendeeToEvent.Click += new System.EventHandler(this.mstrAddAttendeeToEvent_Click);
-            // 
-            // mstrAddAttendeeToSeminar
-            // 
-            this.mstrAddAttendeeToSeminar.Name = "mstrAddAttendeeToSeminar";
-            this.mstrAddAttendeeToSeminar.Size = new System.Drawing.Size(226, 22);
-            this.mstrAddAttendeeToSeminar.Text = "Add Attendee to Seminar";
-            this.mstrAddAttendeeToSeminar.Click += new System.EventHandler(this.mstrAddAttendeeToSeminar_Click);
+            this.mstrTEST.Name = "mstrTEST";
+            this.mstrTEST.Size = new System.Drawing.Size(45, 20);
+            this.mstrTEST.Text = "TEST";
+            this.mstrTEST.Click += new System.EventHandler(this.mstrTEST_Click);
             // 
             // Home
             // 
@@ -239,7 +241,6 @@
         private System.Windows.Forms.ToolStripMenuItem stallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mstrAddStall;
         private System.Windows.Forms.ToolStripMenuItem mstrDisplayStalls;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem roomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mstrAddRoom;
@@ -247,5 +248,6 @@
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToStall;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToEvent;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToSeminar;
+        private System.Windows.Forms.ToolStripMenuItem mstrTEST;
     }
 }

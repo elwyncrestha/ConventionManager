@@ -80,6 +80,9 @@ namespace ConventionManager.View_Controller
         {
             //using (dbContext = new ConventionManagerDbContext())
             //{
+            MethodController methodController = new MethodController();
+            if (methodController.roomCapacityStatus((int)cbxEvent.SelectedValue,true))
+            {
                 AttendeeEvent attendeeEvent = new AttendeeEvent()
                 {
                     AttendeeId = (int)cbxAttendee.SelectedValue,
@@ -102,7 +105,20 @@ namespace ConventionManager.View_Controller
                     MessageBox.Show("Duplicate entry!!!");
                     return;
                 }
+            }
+            else
+            {
+                MessageBox.Show("Booking full!!!");
+                return;
+            }
             //}
+        }
+
+        private void AddAttendeeToEvent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
         }
     }
 }

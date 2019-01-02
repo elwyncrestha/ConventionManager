@@ -94,5 +94,13 @@ namespace ConventionManager
             FormLoader.loadAddAttendeeToSeminarForm();
             this.Close();
         }
+
+        private void mstrTEST_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TEST form = new TEST();
+            form.ShowDialog();
+            this.Close();
+        }
     }
 }

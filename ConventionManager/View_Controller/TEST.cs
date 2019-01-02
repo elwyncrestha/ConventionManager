@@ -24,5 +24,12 @@ namespace ConventionManager.View_Controller
         {
             
         }
+
+        private void TEST_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
+        }
     }
 }

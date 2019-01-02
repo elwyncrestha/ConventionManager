@@ -40,6 +40,8 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.gbxEvent = new System.Windows.Forms.GroupBox();
+            this.lblFilledValue = new System.Windows.Forms.Label();
+            this.lblFilled = new System.Windows.Forms.Label();
             this.lblEvent = new System.Windows.Forms.Label();
             this.cbxEvent = new System.Windows.Forms.ComboBox();
             this.gbxAttendee = new System.Windows.Forms.GroupBox();
@@ -47,8 +49,6 @@
             this.lblAttendee = new System.Windows.Forms.Label();
             this.cbxAttendee = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblFilledValue = new System.Windows.Forms.Label();
-            this.lblFilled = new System.Windows.Forms.Label();
             this.gbxEvent.SuspendLayout();
             this.gbxAttendee.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +171,24 @@
             this.gbxEvent.TabStop = false;
             this.gbxEvent.Text = "Event";
             // 
+            // lblFilledValue
+            // 
+            this.lblFilledValue.AutoSize = true;
+            this.lblFilledValue.Location = new System.Drawing.Point(106, 167);
+            this.lblFilledValue.Name = "lblFilledValue";
+            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFilledValue.TabIndex = 18;
+            this.lblFilledValue.Text = "null";
+            // 
+            // lblFilled
+            // 
+            this.lblFilled.AutoSize = true;
+            this.lblFilled.Location = new System.Drawing.Point(6, 167);
+            this.lblFilled.Name = "lblFilled";
+            this.lblFilled.Size = new System.Drawing.Size(62, 13);
+            this.lblFilled.TabIndex = 17;
+            this.lblFilled.Text = "Room Filled";
+            // 
             // lblEvent
             // 
             this.lblEvent.AutoSize = true;
@@ -245,24 +263,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblFilledValue
-            // 
-            this.lblFilledValue.AutoSize = true;
-            this.lblFilledValue.Location = new System.Drawing.Point(106, 167);
-            this.lblFilledValue.Name = "lblFilledValue";
-            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
-            this.lblFilledValue.TabIndex = 18;
-            this.lblFilledValue.Text = "null";
-            // 
-            // lblFilled
-            // 
-            this.lblFilled.AutoSize = true;
-            this.lblFilled.Location = new System.Drawing.Point(6, 167);
-            this.lblFilled.Name = "lblFilled";
-            this.lblFilled.Size = new System.Drawing.Size(62, 13);
-            this.lblFilled.TabIndex = 17;
-            this.lblFilled.Text = "Room Filled";
-            // 
             // AddAttendeeToEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +273,7 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "AddAttendeeToEvent";
             this.Text = "AddAttendeeToEvent";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddAttendeeToEvent_FormClosed);
             this.Load += new System.EventHandler(this.AddAttendeeToEvent_Load);
             this.gbxEvent.ResumeLayout(false);
             this.gbxEvent.PerformLayout();

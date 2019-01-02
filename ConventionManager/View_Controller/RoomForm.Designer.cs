@@ -215,6 +215,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "RoomForm";
             this.Text = "Room";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RoomForm_FormClosed);
             this.Load += new System.EventHandler(this.RoomForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             this.ResumeLayout(false);

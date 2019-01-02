@@ -66,7 +66,16 @@ namespace ConventionManager.View_Controller
             else
             {
                 if (btnAdd.Text.Equals("ADD"))
-                    seminar = new Seminar();
+                {
+                    MethodController controller = new MethodController();
+                    if (controller.roomStatus((int)cbxRoom.SelectedValue, dtpStartDate.Value, dtpEndDate.Value))
+                        seminar = new Seminar();
+                    else
+                    {
+                        MessageBox.Show("Room unavailable in that time period!!!");
+                        return;
+                    }
+                }
                 else if (btnAdd.Text.Equals("UPDATE"))
                     seminar.SeminarId = seminarCode;
 
@@ -88,6 +97,7 @@ namespace ConventionManager.View_Controller
                     txtName.Clear();
 
                     loadDGV();
+                    dtpStartDate.Enabled = dtpEndDate.Enabled = cbxRoom.Enabled = true;
                     txtName.Focus();
                     return;
                 }
@@ -117,6 +127,7 @@ namespace ConventionManager.View_Controller
                 txtName.Text = seminar.SeminarName;
                 dtpStartDate.Value = seminar.SeminarStartDate;
                 dtpEndDate.Value = seminar.SeminarEndDate;
+                dtpStartDate.Enabled = dtpEndDate.Enabled = cbxRoom.Enabled = false;
                 cbxRoom.SelectedValue = seminar.RoomId;
             }
             else if (dgvSeminar.CurrentRow.Cells[columnIndex].Value.ToString().Equals("Delete"))
@@ -144,6 +155,13 @@ namespace ConventionManager.View_Controller
             {
                 lblCapacityValue.Text = "Select room first";
             }
+        }
+
+        private void SeminarForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
         }
     }
 }

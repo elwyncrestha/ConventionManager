@@ -286,7 +286,7 @@
             this.Delete.ToolTipText = "Delete";
             this.Delete.UseColumnTextForLinkValue = true;
             // 
-            // AddAttendee
+            // AttendeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -307,9 +307,10 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblFirstName);
-            this.Name = "AddAttendee";
+            this.Name = "AttendeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddAttendee";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AttendeeForm_FormClosed);
             this.Load += new System.EventHandler(this.AddAttendee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendees)).EndInit();
             this.ResumeLayout(false);

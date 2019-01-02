@@ -43,14 +43,14 @@
             this.lblSeminar = new System.Windows.Forms.Label();
             this.cbxSeminar = new System.Windows.Forms.ComboBox();
             this.gbxSeminar = new System.Windows.Forms.GroupBox();
+            this.lblFilledValue = new System.Windows.Forms.Label();
+            this.lblFilled = new System.Windows.Forms.Label();
             this.lblRoomNameValue = new System.Windows.Forms.Label();
             this.lblRoomName = new System.Windows.Forms.Label();
             this.lblSeminarEndDateValue = new System.Windows.Forms.Label();
             this.lblSeminarStartDate = new System.Windows.Forms.Label();
             this.lblSeminarEndDate = new System.Windows.Forms.Label();
             this.lblSeminarStartDateValue = new System.Windows.Forms.Label();
-            this.lblFilledValue = new System.Windows.Forms.Label();
-            this.lblFilled = new System.Windows.Forms.Label();
             this.gbxAttendee.SuspendLayout();
             this.gbxSeminar.SuspendLayout();
             this.SuspendLayout();
@@ -214,6 +214,24 @@
             this.gbxSeminar.TabStop = false;
             this.gbxSeminar.Text = "Seminar";
             // 
+            // lblFilledValue
+            // 
+            this.lblFilledValue.AutoSize = true;
+            this.lblFilledValue.Location = new System.Drawing.Point(106, 170);
+            this.lblFilledValue.Name = "lblFilledValue";
+            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFilledValue.TabIndex = 16;
+            this.lblFilledValue.Text = "null";
+            // 
+            // lblFilled
+            // 
+            this.lblFilled.AutoSize = true;
+            this.lblFilled.Location = new System.Drawing.Point(6, 170);
+            this.lblFilled.Name = "lblFilled";
+            this.lblFilled.Size = new System.Drawing.Size(62, 13);
+            this.lblFilled.TabIndex = 15;
+            this.lblFilled.Text = "Room Filled";
+            // 
             // lblRoomNameValue
             // 
             this.lblRoomNameValue.AutoSize = true;
@@ -268,24 +286,6 @@
             this.lblSeminarStartDateValue.TabIndex = 10;
             this.lblSeminarStartDateValue.Text = "null";
             // 
-            // lblFilledValue
-            // 
-            this.lblFilledValue.AutoSize = true;
-            this.lblFilledValue.Location = new System.Drawing.Point(106, 170);
-            this.lblFilledValue.Name = "lblFilledValue";
-            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
-            this.lblFilledValue.TabIndex = 16;
-            this.lblFilledValue.Text = "null";
-            // 
-            // lblFilled
-            // 
-            this.lblFilled.AutoSize = true;
-            this.lblFilled.Location = new System.Drawing.Point(6, 170);
-            this.lblFilled.Name = "lblFilled";
-            this.lblFilled.Size = new System.Drawing.Size(62, 13);
-            this.lblFilled.TabIndex = 15;
-            this.lblFilled.Text = "Room Filled";
-            // 
             // AddAttendeeToSeminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +296,7 @@
             this.Controls.Add(this.gbxSeminar);
             this.Name = "AddAttendeeToSeminar";
             this.Text = "AddAttendeeToSeminar";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddAttendeeToSeminar_FormClosed);
             this.Load += new System.EventHandler(this.AddAttendeeToSeminar_Load);
             this.gbxAttendee.ResumeLayout(false);
             this.gbxAttendee.PerformLayout();
