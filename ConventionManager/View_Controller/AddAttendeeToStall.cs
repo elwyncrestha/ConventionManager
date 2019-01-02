@@ -58,14 +58,21 @@ namespace ConventionManager.View_Controller
         {
             try
             {
-                Stall stall = dbContext.Stalls.Find(cbxStall.SelectedValue);
-                lblStallTypeValue.Text = stall.StallType;
-                lblCapacityValue.Text = stall.StallCapacity.ToString();
-                lblLocationCodeValue.Text = stall.StallLocationCode;
-            } catch (Exception ex)
-            {
-                lblLocationCodeValue.Text = lblCapacityValue.Text = lblStallTypeValue.Text = "Choose stall";
+                updateGBXStall((int)cbxStall.SelectedValue);
             }
+            catch (Exception ex)
+            {
+                lblLocationCodeValue.Text = lblCapacityValue.Text = lblStallTypeValue.Text = lblFilledValue.Text = "Choose stall";
+            }
+        }
+
+        private void updateGBXStall(int stallId)
+        {
+            Stall stall = dbContext.Stalls.Find(stallId);
+            lblStallTypeValue.Text = stall.StallType;
+            lblCapacityValue.Text = stall.StallCapacity.ToString();
+            lblLocationCodeValue.Text = stall.StallLocationCode;
+            lblFilledValue.Text = dbContext.AttendeeStalls.Where(a => a.StallId == stallId).Count().ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -82,6 +89,7 @@ namespace ConventionManager.View_Controller
                 dbContext.SaveChanges();
 
                 MessageBox.Show("Attendee added to the stall successfully!!!");
+                updateGBXStall((int)cbxStall.SelectedValue);
                 return;
             } catch(Exception ex)
             {

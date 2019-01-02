@@ -47,6 +47,8 @@
             this.lblAttendee = new System.Windows.Forms.Label();
             this.cbxAttendee = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lblFilledValue = new System.Windows.Forms.Label();
+            this.lblFilled = new System.Windows.Forms.Label();
             this.gbxEvent.SuspendLayout();
             this.gbxAttendee.SuspendLayout();
             this.SuspendLayout();
@@ -152,6 +154,8 @@
             // 
             // gbxEvent
             // 
+            this.gbxEvent.Controls.Add(this.lblFilledValue);
+            this.gbxEvent.Controls.Add(this.lblFilled);
             this.gbxEvent.Controls.Add(this.lblRoomNameValue);
             this.gbxEvent.Controls.Add(this.lblEvent);
             this.gbxEvent.Controls.Add(this.lblRoomName);
@@ -241,6 +245,24 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // lblFilledValue
+            // 
+            this.lblFilledValue.AutoSize = true;
+            this.lblFilledValue.Location = new System.Drawing.Point(106, 167);
+            this.lblFilledValue.Name = "lblFilledValue";
+            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFilledValue.TabIndex = 18;
+            this.lblFilledValue.Text = "null";
+            // 
+            // lblFilled
+            // 
+            this.lblFilled.AutoSize = true;
+            this.lblFilled.Location = new System.Drawing.Point(6, 167);
+            this.lblFilled.Name = "lblFilled";
+            this.lblFilled.Size = new System.Drawing.Size(62, 13);
+            this.lblFilled.TabIndex = 17;
+            this.lblFilled.Text = "Room Filled";
+            // 
             // AddAttendeeToEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +303,7 @@
         private System.Windows.Forms.Label lblAttendee;
         private System.Windows.Forms.ComboBox cbxAttendee;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblFilledValue;
+        private System.Windows.Forms.Label lblFilled;
     }
 }

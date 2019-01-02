@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbxAttendee = new System.Windows.Forms.GroupBox();
+            this.chkIsPresenter = new System.Windows.Forms.CheckBox();
+            this.lblIsPresenter = new System.Windows.Forms.Label();
             this.lblContactValue = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblLastNameValue = new System.Windows.Forms.Label();
@@ -47,8 +49,8 @@
             this.lblSeminarStartDate = new System.Windows.Forms.Label();
             this.lblSeminarEndDate = new System.Windows.Forms.Label();
             this.lblSeminarStartDateValue = new System.Windows.Forms.Label();
-            this.lblIsPresenter = new System.Windows.Forms.Label();
-            this.chkIsPresenter = new System.Windows.Forms.CheckBox();
+            this.lblFilledValue = new System.Windows.Forms.Label();
+            this.lblFilled = new System.Windows.Forms.Label();
             this.gbxAttendee.SuspendLayout();
             this.gbxSeminar.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +73,25 @@
             this.gbxAttendee.TabIndex = 11;
             this.gbxAttendee.TabStop = false;
             this.gbxAttendee.Text = "Attendee";
+            // 
+            // chkIsPresenter
+            // 
+            this.chkIsPresenter.AutoSize = true;
+            this.chkIsPresenter.Location = new System.Drawing.Point(84, 169);
+            this.chkIsPresenter.Name = "chkIsPresenter";
+            this.chkIsPresenter.Size = new System.Drawing.Size(44, 17);
+            this.chkIsPresenter.TabIndex = 10;
+            this.chkIsPresenter.Text = "Yes";
+            this.chkIsPresenter.UseVisualStyleBackColor = true;
+            // 
+            // lblIsPresenter
+            // 
+            this.lblIsPresenter.AutoSize = true;
+            this.lblIsPresenter.Location = new System.Drawing.Point(9, 170);
+            this.lblIsPresenter.Name = "lblIsPresenter";
+            this.lblIsPresenter.Size = new System.Drawing.Size(69, 13);
+            this.lblIsPresenter.TabIndex = 9;
+            this.lblIsPresenter.Text = "Is Presenter?";
             // 
             // lblContactValue
             // 
@@ -176,6 +197,8 @@
             // 
             // gbxSeminar
             // 
+            this.gbxSeminar.Controls.Add(this.lblFilledValue);
+            this.gbxSeminar.Controls.Add(this.lblFilled);
             this.gbxSeminar.Controls.Add(this.lblRoomNameValue);
             this.gbxSeminar.Controls.Add(this.lblSeminar);
             this.gbxSeminar.Controls.Add(this.lblRoomName);
@@ -245,24 +268,23 @@
             this.lblSeminarStartDateValue.TabIndex = 10;
             this.lblSeminarStartDateValue.Text = "null";
             // 
-            // lblIsPresenter
+            // lblFilledValue
             // 
-            this.lblIsPresenter.AutoSize = true;
-            this.lblIsPresenter.Location = new System.Drawing.Point(9, 170);
-            this.lblIsPresenter.Name = "lblIsPresenter";
-            this.lblIsPresenter.Size = new System.Drawing.Size(69, 13);
-            this.lblIsPresenter.TabIndex = 9;
-            this.lblIsPresenter.Text = "Is Presenter?";
+            this.lblFilledValue.AutoSize = true;
+            this.lblFilledValue.Location = new System.Drawing.Point(106, 170);
+            this.lblFilledValue.Name = "lblFilledValue";
+            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFilledValue.TabIndex = 16;
+            this.lblFilledValue.Text = "null";
             // 
-            // chkIsPresenter
+            // lblFilled
             // 
-            this.chkIsPresenter.AutoSize = true;
-            this.chkIsPresenter.Location = new System.Drawing.Point(84, 169);
-            this.chkIsPresenter.Name = "chkIsPresenter";
-            this.chkIsPresenter.Size = new System.Drawing.Size(44, 17);
-            this.chkIsPresenter.TabIndex = 10;
-            this.chkIsPresenter.Text = "Yes";
-            this.chkIsPresenter.UseVisualStyleBackColor = true;
+            this.lblFilled.AutoSize = true;
+            this.lblFilled.Location = new System.Drawing.Point(6, 170);
+            this.lblFilled.Name = "lblFilled";
+            this.lblFilled.Size = new System.Drawing.Size(62, 13);
+            this.lblFilled.TabIndex = 15;
+            this.lblFilled.Text = "Room Filled";
             // 
             // AddAttendeeToSeminar
             // 
@@ -306,5 +328,7 @@
         private System.Windows.Forms.Label lblSeminarStartDateValue;
         private System.Windows.Forms.CheckBox chkIsPresenter;
         private System.Windows.Forms.Label lblIsPresenter;
+        private System.Windows.Forms.Label lblFilledValue;
+        private System.Windows.Forms.Label lblFilled;
     }
 }

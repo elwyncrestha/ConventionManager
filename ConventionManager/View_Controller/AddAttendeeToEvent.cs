@@ -59,38 +59,50 @@ namespace ConventionManager.View_Controller
         {
             try
             {
-                Event _event = dbContext.Events.Find(cbxEvent.SelectedValue);
-                lblEventStartDateValue.Text = _event.EventStartDate.ToString();
-                lblEventEndDateValue.Text = _event.EventEndDate.ToString();
-                lblRoomNameValue.Text = _event.Room.RoomName;
+                updateGBXEvent((int)cbxEvent.SelectedValue);
             }
             catch (Exception ex)
             {
-                lblEventStartDateValue.Text = lblEventEndDateValue.Text = lblRoomNameValue.Text = "Choose event";
+                lblEventStartDateValue.Text = lblEventEndDateValue.Text = lblRoomNameValue.Text = lblFilledValue.Text = "Choose event";
             }
+        }
+
+        private void updateGBXEvent(int eventId)
+        {
+            Event _event = dbContext.Events.Find(eventId);
+            lblEventStartDateValue.Text = _event.EventStartDate.ToString();
+            lblEventEndDateValue.Text = _event.EventEndDate.ToString();
+            lblRoomNameValue.Text = _event.Room.RoomName;
+            lblFilledValue.Text = dbContext.AttendeeEvents.Where(a => a.EventId == eventId).Count().ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AttendeeEvent attendeeEvent = new AttendeeEvent()
-            {
-                AttendeeId = (int)cbxAttendee.SelectedValue,
-                EventId = (int)cbxEvent.SelectedValue
-            };
+            //using (dbContext = new ConventionManagerDbContext())
+            //{
+                AttendeeEvent attendeeEvent = new AttendeeEvent()
+                {
+                    AttendeeId = (int)cbxAttendee.SelectedValue,
+                    EventId = (int)cbxEvent.SelectedValue
+                };
 
-            dbContext.AttendeeEvents.Add(attendeeEvent);
-            try
-            {
-                dbContext.SaveChanges();
+                dbContext.AttendeeEvents.Add(attendeeEvent);
 
-                MessageBox.Show("Attendee added to the event successfully!!!");
-                return;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Duplicate entry!!!");
-                return;
-            }
+                try
+                {
+                    MessageBox.Show("Attendee:" + attendeeEvent.AttendeeId.ToString() + "\nEvent:" + attendeeEvent.EventId.ToString());
+                    dbContext.SaveChanges();
+
+                    MessageBox.Show("Attendee added to the event successfully!!!");
+                    updateGBXEvent((int)cbxEvent.SelectedValue);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Duplicate entry!!!");
+                    return;
+                }
+            //}
         }
     }
 }

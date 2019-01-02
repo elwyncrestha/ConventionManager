@@ -34,19 +34,21 @@
             this.cbxStall = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbxAttendee = new System.Windows.Forms.GroupBox();
-            this.gbxStall = new System.Windows.Forms.GroupBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblFirstNameValue = new System.Windows.Forms.Label();
-            this.lblLastNameValue = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
             this.lblContactValue = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
+            this.lblLastNameValue = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstNameValue = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.gbxStall = new System.Windows.Forms.GroupBox();
             this.lblStallTypeValue = new System.Windows.Forms.Label();
             this.lblStallType = new System.Windows.Forms.Label();
             this.lblCapacityValue = new System.Windows.Forms.Label();
+            this.lblLocationCode = new System.Windows.Forms.Label();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.lblLocationCodeValue = new System.Windows.Forms.Label();
-            this.lblLocationCode = new System.Windows.Forms.Label();
+            this.lblFilledValue = new System.Windows.Forms.Label();
+            this.lblFilled = new System.Windows.Forms.Label();
             this.gbxAttendee.SuspendLayout();
             this.gbxStall.SuspendLayout();
             this.SuspendLayout();
@@ -116,40 +118,23 @@
             this.gbxAttendee.TabStop = false;
             this.gbxAttendee.Text = "Attendee";
             // 
-            // gbxStall
+            // lblContactValue
             // 
-            this.gbxStall.Controls.Add(this.lblStallTypeValue);
-            this.gbxStall.Controls.Add(this.lblStall);
-            this.gbxStall.Controls.Add(this.lblStallType);
-            this.gbxStall.Controls.Add(this.cbxStall);
-            this.gbxStall.Controls.Add(this.lblCapacityValue);
-            this.gbxStall.Controls.Add(this.lblLocationCode);
-            this.gbxStall.Controls.Add(this.lblCapacity);
-            this.gbxStall.Controls.Add(this.lblLocationCodeValue);
-            this.gbxStall.Location = new System.Drawing.Point(237, 12);
-            this.gbxStall.Name = "gbxStall";
-            this.gbxStall.Size = new System.Drawing.Size(210, 199);
-            this.gbxStall.TabIndex = 6;
-            this.gbxStall.TabStop = false;
-            this.gbxStall.Text = "Stall";
+            this.lblContactValue.AutoSize = true;
+            this.lblContactValue.Location = new System.Drawing.Point(82, 138);
+            this.lblContactValue.Name = "lblContactValue";
+            this.lblContactValue.Size = new System.Drawing.Size(23, 13);
+            this.lblContactValue.TabIndex = 8;
+            this.lblContactValue.Text = "null";
             // 
-            // lblFirstName
+            // lblContact
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(9, 71);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
-            this.lblFirstName.TabIndex = 3;
-            this.lblFirstName.Text = "First Name";
-            // 
-            // lblFirstNameValue
-            // 
-            this.lblFirstNameValue.AutoSize = true;
-            this.lblFirstNameValue.Location = new System.Drawing.Point(82, 71);
-            this.lblFirstNameValue.Name = "lblFirstNameValue";
-            this.lblFirstNameValue.Size = new System.Drawing.Size(23, 13);
-            this.lblFirstNameValue.TabIndex = 4;
-            this.lblFirstNameValue.Text = "null";
+            this.lblContact.AutoSize = true;
+            this.lblContact.Location = new System.Drawing.Point(9, 138);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(44, 13);
+            this.lblContact.TabIndex = 7;
+            this.lblContact.Text = "Contact";
             // 
             // lblLastNameValue
             // 
@@ -169,23 +154,42 @@
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "Last Name";
             // 
-            // lblContactValue
+            // lblFirstNameValue
             // 
-            this.lblContactValue.AutoSize = true;
-            this.lblContactValue.Location = new System.Drawing.Point(82, 138);
-            this.lblContactValue.Name = "lblContactValue";
-            this.lblContactValue.Size = new System.Drawing.Size(23, 13);
-            this.lblContactValue.TabIndex = 8;
-            this.lblContactValue.Text = "null";
+            this.lblFirstNameValue.AutoSize = true;
+            this.lblFirstNameValue.Location = new System.Drawing.Point(82, 71);
+            this.lblFirstNameValue.Name = "lblFirstNameValue";
+            this.lblFirstNameValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFirstNameValue.TabIndex = 4;
+            this.lblFirstNameValue.Text = "null";
             // 
-            // lblContact
+            // lblFirstName
             // 
-            this.lblContact.AutoSize = true;
-            this.lblContact.Location = new System.Drawing.Point(9, 138);
-            this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(44, 13);
-            this.lblContact.TabIndex = 7;
-            this.lblContact.Text = "Contact";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(9, 71);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.TabIndex = 3;
+            this.lblFirstName.Text = "First Name";
+            // 
+            // gbxStall
+            // 
+            this.gbxStall.Controls.Add(this.lblFilledValue);
+            this.gbxStall.Controls.Add(this.lblFilled);
+            this.gbxStall.Controls.Add(this.lblStallTypeValue);
+            this.gbxStall.Controls.Add(this.lblStall);
+            this.gbxStall.Controls.Add(this.lblStallType);
+            this.gbxStall.Controls.Add(this.cbxStall);
+            this.gbxStall.Controls.Add(this.lblCapacityValue);
+            this.gbxStall.Controls.Add(this.lblLocationCode);
+            this.gbxStall.Controls.Add(this.lblCapacity);
+            this.gbxStall.Controls.Add(this.lblLocationCodeValue);
+            this.gbxStall.Location = new System.Drawing.Point(237, 12);
+            this.gbxStall.Name = "gbxStall";
+            this.gbxStall.Size = new System.Drawing.Size(210, 199);
+            this.gbxStall.TabIndex = 6;
+            this.gbxStall.TabStop = false;
+            this.gbxStall.Text = "Stall";
             // 
             // lblStallTypeValue
             // 
@@ -214,6 +218,15 @@
             this.lblCapacityValue.TabIndex = 12;
             this.lblCapacityValue.Text = "null";
             // 
+            // lblLocationCode
+            // 
+            this.lblLocationCode.AutoSize = true;
+            this.lblLocationCode.Location = new System.Drawing.Point(6, 71);
+            this.lblLocationCode.Name = "lblLocationCode";
+            this.lblLocationCode.Size = new System.Drawing.Size(76, 13);
+            this.lblLocationCode.TabIndex = 9;
+            this.lblLocationCode.Text = "Location Code";
+            // 
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
@@ -232,14 +245,23 @@
             this.lblLocationCodeValue.TabIndex = 10;
             this.lblLocationCodeValue.Text = "null";
             // 
-            // lblLocationCode
+            // lblFilledValue
             // 
-            this.lblLocationCode.AutoSize = true;
-            this.lblLocationCode.Location = new System.Drawing.Point(6, 71);
-            this.lblLocationCode.Name = "lblLocationCode";
-            this.lblLocationCode.Size = new System.Drawing.Size(76, 13);
-            this.lblLocationCode.TabIndex = 9;
-            this.lblLocationCode.Text = "Location Code";
+            this.lblFilledValue.AutoSize = true;
+            this.lblFilledValue.Location = new System.Drawing.Point(106, 171);
+            this.lblFilledValue.Name = "lblFilledValue";
+            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFilledValue.TabIndex = 16;
+            this.lblFilledValue.Text = "null";
+            // 
+            // lblFilled
+            // 
+            this.lblFilled.AutoSize = true;
+            this.lblFilled.Location = new System.Drawing.Point(6, 171);
+            this.lblFilled.Name = "lblFilled";
+            this.lblFilled.Size = new System.Drawing.Size(31, 13);
+            this.lblFilled.TabIndex = 15;
+            this.lblFilled.Text = "Filled";
             // 
             // AddAttendeeToStall
             // 
@@ -281,5 +303,7 @@
         private System.Windows.Forms.Label lblLocationCode;
         private System.Windows.Forms.Label lblCapacity;
         private System.Windows.Forms.Label lblLocationCodeValue;
+        private System.Windows.Forms.Label lblFilledValue;
+        private System.Windows.Forms.Label lblFilled;
     }
 }

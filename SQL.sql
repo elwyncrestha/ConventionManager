@@ -52,6 +52,7 @@ create table Event
 	EventDescription varchar(500) not null,
 	RoomId int not null,
 	constraint pk_Event primary key (EventId),
+	constraint ix_EventName unique (EventName),
 	constraint fk_Event_Room foreign key (RoomId) references Room (RoomId)
 );
 
@@ -63,6 +64,7 @@ create table Seminar
 	SeminarEndDate datetime not null,
 	RoomId int not null,
 	constraint pk_Seminar primary key (SeminarId),
+	constraint ix_SeminarName unique (SeminarName),
 	constraint fk_Seminar_Room foreign key (RoomId) references Room (RoomId)
 );
 
@@ -110,4 +112,5 @@ select * from Event;
 select * from Seminar;
 select * from AttendeeStall;
 select * from AttendeeEvent;
+delete from AttendeeEvent where AttendeeId=6;
 select * from AttendeeSeminar;

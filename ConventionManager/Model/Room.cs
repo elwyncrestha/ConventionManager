@@ -12,6 +12,7 @@ namespace ConventionManager.Model
         public Room()
         {
             this.Event = new HashSet<Event>();
+            this.Seminar = new HashSet<Seminar>();
         }
 
         [Key]
@@ -22,5 +23,6 @@ namespace ConventionManager.Model
         public string RoomResources { get; set; }
         public virtual ICollection<Event> Event { get; set; }
         public virtual ICollection<Seminar> Seminar { get; set; }
+
     }
 }

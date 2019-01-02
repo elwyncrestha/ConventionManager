@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View_Controller\MethodController.cs" />
     <Compile Include="View_Controller\RoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +122,12 @@
     </Compile>
     <Compile Include="View_Controller\StallForm.Designer.cs">
       <DependentUpon>StallForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_Controller\TEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\TEST.Designer.cs">
+      <DependentUpon>TEST.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View_Controller\AddAttendeeToEvent.resx">
       <DependentUpon>AddAttendeeToEvent.cs</DependentUpon>
@@ -157,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\StallForm.resx">
       <DependentUpon>StallForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Controller\TEST.resx">
+      <DependentUpon>TEST.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

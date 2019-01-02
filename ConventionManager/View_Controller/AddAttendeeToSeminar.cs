@@ -58,15 +58,21 @@ namespace ConventionManager.View_Controller
         {
             try
             {
-                Seminar seminar = dbContext.Seminars.Find(cbxSeminar.SelectedValue);
-                lblSeminarStartDateValue.Text = seminar.SeminarStartDate.ToString();
-                lblSeminarEndDateValue.Text = seminar.SeminarEndDate.ToString();
-                lblRoomNameValue.Text = seminar.Room.RoomName;
+                updateGBXSeminar((int)cbxSeminar.SelectedValue);
             }
             catch (Exception ex)
             {
-                lblSeminarStartDateValue.Text = lblSeminarEndDateValue.Text = lblRoomNameValue.Text = "Choose seminar";
+                lblSeminarStartDateValue.Text = lblSeminarEndDateValue.Text = lblRoomNameValue.Text = lblFilledValue.Text = "Choose seminar";
             }
+        }
+
+        private void updateGBXSeminar(int seminarId)
+        {
+            Seminar seminar = dbContext.Seminars.Find(seminarId);
+            lblSeminarStartDateValue.Text = seminar.SeminarStartDate.ToString();
+            lblSeminarEndDateValue.Text = seminar.SeminarEndDate.ToString();
+            lblRoomNameValue.Text = seminar.Room.RoomName;
+            lblFilledValue.Text = dbContext.AttendeeSeminars.Where(a => a.SeminarId == seminarId).Count().ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -84,6 +90,7 @@ namespace ConventionManager.View_Controller
                 dbContext.SaveChanges();
 
                 MessageBox.Show("Attendee added to the seminar successfully!!!");
+                updateGBXSeminar((int)cbxSeminar.SelectedValue);
                 return;
             }
             catch (Exception ex)
