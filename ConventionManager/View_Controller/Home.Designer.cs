@@ -48,6 +48,7 @@
             this.mstrAddRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrDisplayEditDeleteRooms = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrTEST = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrRoomUsage = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,7 +186,8 @@
             // 
             this.roomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mstrAddRoom,
-            this.mstrDisplayEditDeleteRooms});
+            this.mstrDisplayEditDeleteRooms,
+            this.mstrRoomUsage});
             this.roomToolStripMenuItem.Name = "roomToolStripMenuItem";
             this.roomToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.roomToolStripMenuItem.Text = "Room";
@@ -209,6 +211,13 @@
             this.mstrTEST.Size = new System.Drawing.Size(45, 20);
             this.mstrTEST.Text = "TEST";
             this.mstrTEST.Click += new System.EventHandler(this.mstrTEST_Click);
+            // 
+            // mstrRoomUsage
+            // 
+            this.mstrRoomUsage.Name = "mstrRoomUsage";
+            this.mstrRoomUsage.Size = new System.Drawing.Size(215, 22);
+            this.mstrRoomUsage.Text = "Room Usage";
+            this.mstrRoomUsage.Click += new System.EventHandler(this.mstrRoomUsage_Click);
             // 
             // Home
             // 
@@ -249,5 +258,6 @@
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToEvent;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToSeminar;
         private System.Windows.Forms.ToolStripMenuItem mstrTEST;
+        private System.Windows.Forms.ToolStripMenuItem mstrRoomUsage;
     }
 }

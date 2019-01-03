@@ -29,6 +29,8 @@ namespace ConventionManager.View_Controller
         private void loadDGV()
         {
             dgvRoom.DataSource = dbContext.Rooms.ToList();
+            dgvRoom.Columns["Event"].Visible = false;
+            dgvRoom.Columns["Seminar"].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

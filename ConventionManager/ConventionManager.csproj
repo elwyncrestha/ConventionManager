@@ -111,6 +111,12 @@
     <Compile Include="View_Controller\RoomForm.Designer.cs">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_Controller\RoomUsageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\RoomUsageForm.Designer.cs">
+      <DependentUpon>RoomUsageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_Controller\SeminarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="View_Controller\RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Controller\RoomUsageForm.resx">
+      <DependentUpon>RoomUsageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\SeminarForm.resx">
       <DependentUpon>SeminarForm.cs</DependentUpon>

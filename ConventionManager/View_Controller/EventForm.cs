@@ -45,10 +45,15 @@ namespace ConventionManager.View_Controller
             dataTable.Columns.Add("EventEndDate", typeof(DateTime));
             dataTable.Columns.Add("RoomName", typeof(string));
             dataTable.Columns.Add("RoomCapacity", typeof(int));
+            dataTable.Columns.Add("No. of Attendee", typeof(int));
+
             foreach (Event ev in dbContext.Events.ToList())
-                dataTable.Rows.Add(ev.EventId, ev.EventName, ev.EventDescription, ev.EventStartDate, ev.EventEndDate, ev.Room.RoomName, ev.Room.RoomCapacity);
+                dataTable.Rows.Add(ev.EventId, ev.EventName, ev.EventDescription, 
+                    ev.EventStartDate, ev.EventEndDate, ev.Room.RoomName, ev.Room.RoomCapacity, 
+                    dbContext.AttendeeEvents.Where(a => a.EventId==ev.EventId).Count());
 
             dgvEvent.DataSource = dataTable;
+            dgvEvent.Columns["EventId"].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

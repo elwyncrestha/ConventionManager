@@ -102,5 +102,13 @@ namespace ConventionManager
             form.ShowDialog();
             this.Close();
         }
+
+        private void mstrRoomUsage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RoomUsageForm form = new RoomUsageForm();
+            form.ShowDialog();
+            this.Close();
+        }
     }
 }

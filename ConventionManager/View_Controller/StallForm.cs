@@ -29,6 +29,8 @@ namespace ConventionManager.View_Controller
         private void reloadDGV()
         {
             dgvStall.DataSource = dbContext.Stalls.ToList();
+            dgvStall.Columns["StallId"].Visible = false;
+            dgvStall.Columns["AttendeeStall"].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

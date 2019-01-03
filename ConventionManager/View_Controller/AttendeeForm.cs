@@ -121,6 +121,10 @@ namespace ConventionManager.View_Controller
         private void reloadDGV()
         {
             dgvAttendees.DataSource = dbContext.Attendees.ToList();
+            dgvAttendees.Columns["AttendeeId"].Visible = false;
+            dgvAttendees.Columns["AttendeeStall"].Visible = false;
+            dgvAttendees.Columns["AttendeeEvent"].Visible = false;
+            dgvAttendees.Columns["AttendeeSeminar"].Visible = false;
         }
 
         int attendeeCode;

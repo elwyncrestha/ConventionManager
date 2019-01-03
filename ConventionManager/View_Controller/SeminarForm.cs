@@ -30,11 +30,15 @@ namespace ConventionManager.View_Controller
             dataTable.Columns.Add("SeminarEndDate", typeof(DateTime));
             dataTable.Columns.Add("RoomName", typeof(string));
             dataTable.Columns.Add("RoomCapacity", typeof(int));
+            dataTable.Columns.Add("No. of Attendee",typeof(int));
 
             foreach (Seminar sem in dbContext.Seminars.ToList())
-                dataTable.Rows.Add(sem.SeminarId, sem.SeminarName, sem.SeminarStartDate, sem.SeminarEndDate, sem.Room.RoomName, sem.Room.RoomCapacity);
+                dataTable.Rows.Add(sem.SeminarId, sem.SeminarName, sem.SeminarStartDate, 
+                    sem.SeminarEndDate, sem.Room.RoomName, sem.Room.RoomCapacity, 
+                    dbContext.AttendeeSeminars.Where(a => a.SeminarId==sem.SeminarId).Count());
 
             dgvSeminar.DataSource = dataTable;
+            dgvSeminar.Columns["SeminarId"].Visible = false;
         }
         private void loadComboBox()
         {
