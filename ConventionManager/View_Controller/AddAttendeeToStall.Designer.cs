@@ -49,6 +49,8 @@
             this.lblLocationCode = new System.Windows.Forms.Label();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.lblLocationCodeValue = new System.Windows.Forms.Label();
+            this.lblIsExhibitor = new System.Windows.Forms.Label();
+            this.chkIsExhibitor = new System.Windows.Forms.CheckBox();
             this.gbxAttendee.SuspendLayout();
             this.gbxStall.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +105,8 @@
             // 
             // gbxAttendee
             // 
+            this.gbxAttendee.Controls.Add(this.chkIsExhibitor);
+            this.gbxAttendee.Controls.Add(this.lblIsExhibitor);
             this.gbxAttendee.Controls.Add(this.lblContactValue);
             this.gbxAttendee.Controls.Add(this.lblContact);
             this.gbxAttendee.Controls.Add(this.lblLastNameValue);
@@ -263,6 +267,25 @@
             this.lblLocationCodeValue.TabIndex = 10;
             this.lblLocationCodeValue.Text = "null";
             // 
+            // lblIsExhibitor
+            // 
+            this.lblIsExhibitor.AutoSize = true;
+            this.lblIsExhibitor.Location = new System.Drawing.Point(9, 171);
+            this.lblIsExhibitor.Name = "lblIsExhibitor";
+            this.lblIsExhibitor.Size = new System.Drawing.Size(64, 13);
+            this.lblIsExhibitor.TabIndex = 9;
+            this.lblIsExhibitor.Text = "Is Exhibitor?";
+            // 
+            // chkIsExhibitor
+            // 
+            this.chkIsExhibitor.AutoSize = true;
+            this.chkIsExhibitor.Location = new System.Drawing.Point(85, 167);
+            this.chkIsExhibitor.Name = "chkIsExhibitor";
+            this.chkIsExhibitor.Size = new System.Drawing.Size(44, 17);
+            this.chkIsExhibitor.TabIndex = 10;
+            this.chkIsExhibitor.Text = "Yes";
+            this.chkIsExhibitor.UseVisualStyleBackColor = true;
+            // 
             // AddAttendeeToStall
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,5 +329,7 @@
         private System.Windows.Forms.Label lblLocationCodeValue;
         private System.Windows.Forms.Label lblFilledValue;
         private System.Windows.Forms.Label lblFilled;
+        private System.Windows.Forms.CheckBox chkIsExhibitor;
+        private System.Windows.Forms.Label lblIsExhibitor;
     }
 }

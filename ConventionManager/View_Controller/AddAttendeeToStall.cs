@@ -85,7 +85,8 @@ namespace ConventionManager.View_Controller
                 AttendeeStall attendeeStall = new AttendeeStall()
                 {
                     AttendeeId = (int)cbxAttendee.SelectedValue,
-                    StallId = (int)cbxStall.SelectedValue
+                    StallId = (int)cbxStall.SelectedValue,
+                    IsExhibitor = chkIsExhibitor.Checked
                 };
 
                 dbContext.AttendeeStalls.Add(attendeeStall);

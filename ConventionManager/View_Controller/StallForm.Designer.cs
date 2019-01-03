@@ -42,6 +42,8 @@
             this.lblStallType = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvStall = new System.Windows.Forms.DataGridView();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.StallId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StallLocationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,10 +52,9 @@
             this.StallStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StallEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StallType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Exhibitors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStall)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,6 +181,7 @@
             this.StallStartDate,
             this.StallEndDate,
             this.StallType,
+            this.Exhibitors,
             this.Edit,
             this.Delete});
             this.dgvStall.Location = new System.Drawing.Point(13, 342);
@@ -188,6 +190,24 @@
             this.dgvStall.Size = new System.Drawing.Size(685, 150);
             this.dgvStall.TabIndex = 15;
             this.dgvStall.Click += new System.EventHandler(this.dgvStall_Click);
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartDate.Location = new System.Drawing.Point(460, 45);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpStartDate.TabIndex = 16;
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEndDate.Location = new System.Drawing.Point(460, 104);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpEndDate.TabIndex = 17;
             // 
             // StallId
             // 
@@ -245,6 +265,13 @@
             this.StallType.Name = "StallType";
             this.StallType.ReadOnly = true;
             // 
+            // Exhibitors
+            // 
+            this.Exhibitors.DataPropertyName = "Exhibitors";
+            this.Exhibitors.HeaderText = "Exhibitors";
+            this.Exhibitors.Name = "Exhibitors";
+            this.Exhibitors.ReadOnly = true;
+            // 
             // Edit
             // 
             this.Edit.HeaderText = "Edit";
@@ -262,24 +289,6 @@
             this.Delete.Text = "Delete";
             this.Delete.ToolTipText = "Delete";
             this.Delete.UseColumnTextForLinkValue = true;
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(460, 45);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpStartDate.TabIndex = 16;
-            // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(460, 104);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpEndDate.TabIndex = 17;
             // 
             // StallForm
             // 
@@ -338,6 +347,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StallStartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn StallEndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn StallType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Exhibitors;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }

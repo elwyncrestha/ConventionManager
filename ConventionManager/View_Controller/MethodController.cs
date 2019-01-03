@@ -66,7 +66,6 @@ namespace ConventionManager.View_Controller
             }
 
             return true;
-
         }
 
 

@@ -28,9 +28,32 @@ namespace ConventionManager.View_Controller
 
         private void reloadDGV()
         {
-            dgvStall.DataSource = dbContext.Stalls.ToList();
-            dgvStall.Columns["StallId"].Visible = false;
-            dgvStall.Columns["AttendeeStall"].Visible = false;
+            DataTable dt = new DataTable();
+            dt.Columns.Add("StallId", typeof(int));
+            dt.Columns.Add("StallName", typeof(string));
+            dt.Columns.Add("StallLocationCode", typeof(string));
+            dt.Columns.Add("StallCapacity", typeof(int));
+            dt.Columns.Add("StallResources", typeof(string));
+            dt.Columns.Add("StallStartDate", typeof(DateTime));
+            dt.Columns.Add("StallEndDate", typeof(DateTime));
+            dt.Columns.Add("StallType", typeof(string));
+            dt.Columns.Add("Exhibitors", typeof(string));
+
+            List<Stall> stallList = dbContext.Stalls.ToList();
+            foreach(Stall stall in stallList)
+            {
+                string exhibitors = null;
+                List<string> exhibitorList = dbContext.AttendeeStalls.Where(a => a.StallId == stall.StallId).Where(a => a.IsExhibitor==true).Select(a => a.Attendee.AttendeeFName).ToList();
+                foreach (string name in exhibitorList)
+                    exhibitors += exhibitors != null ? (", " + name) : name;
+
+                // row add
+                dt.Rows.Add(stall.StallId, stall.StallName, stall.StallLocationCode, 
+                    stall.StallCapacity, stall.StallResources, stall.StallStartDate, 
+                    stall.StallEndDate, stall.StallType, exhibitors==null ? "Vacant" : exhibitors);
+            }
+
+            dgvStall.DataSource = dt;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
