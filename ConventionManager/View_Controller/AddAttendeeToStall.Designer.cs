@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAttendeeToStall));
             this.lblAttendee = new System.Windows.Forms.Label();
             this.lblStall = new System.Windows.Forms.Label();
             this.cbxAttendee = new System.Windows.Forms.ComboBox();
             this.cbxStall = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbxAttendee = new System.Windows.Forms.GroupBox();
+            this.chkIsExhibitor = new System.Windows.Forms.CheckBox();
+            this.lblIsExhibitor = new System.Windows.Forms.Label();
             this.lblContactValue = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblLastNameValue = new System.Windows.Forms.Label();
@@ -49,8 +52,6 @@
             this.lblLocationCode = new System.Windows.Forms.Label();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.lblLocationCodeValue = new System.Windows.Forms.Label();
-            this.lblIsExhibitor = new System.Windows.Forms.Label();
-            this.chkIsExhibitor = new System.Windows.Forms.CheckBox();
             this.gbxAttendee.SuspendLayout();
             this.gbxStall.SuspendLayout();
             this.SuspendLayout();
@@ -58,18 +59,18 @@
             // lblAttendee
             // 
             this.lblAttendee.AutoSize = true;
-            this.lblAttendee.Location = new System.Drawing.Point(6, 29);
+            this.lblAttendee.Location = new System.Drawing.Point(6, 33);
             this.lblAttendee.Name = "lblAttendee";
-            this.lblAttendee.Size = new System.Drawing.Size(50, 13);
+            this.lblAttendee.Size = new System.Drawing.Size(77, 21);
             this.lblAttendee.TabIndex = 0;
             this.lblAttendee.Text = "Attendee";
             // 
             // lblStall
             // 
             this.lblStall.AutoSize = true;
-            this.lblStall.Location = new System.Drawing.Point(6, 29);
+            this.lblStall.Location = new System.Drawing.Point(6, 33);
             this.lblStall.Name = "lblStall";
-            this.lblStall.Size = new System.Drawing.Size(27, 13);
+            this.lblStall.Size = new System.Drawing.Size(42, 21);
             this.lblStall.TabIndex = 1;
             this.lblStall.Text = "Stall";
             // 
@@ -77,9 +78,9 @@
             // 
             this.cbxAttendee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAttendee.FormattingEnabled = true;
-            this.cbxAttendee.Location = new System.Drawing.Point(85, 20);
+            this.cbxAttendee.Location = new System.Drawing.Point(85, 23);
             this.cbxAttendee.Name = "cbxAttendee";
-            this.cbxAttendee.Size = new System.Drawing.Size(121, 21);
+            this.cbxAttendee.Size = new System.Drawing.Size(185, 29);
             this.cbxAttendee.TabIndex = 2;
             this.cbxAttendee.SelectedIndexChanged += new System.EventHandler(this.cbxAttendee_SelectedIndexChanged);
             // 
@@ -87,17 +88,18 @@
             // 
             this.cbxStall.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxStall.FormattingEnabled = true;
-            this.cbxStall.Location = new System.Drawing.Point(79, 20);
+            this.cbxStall.Location = new System.Drawing.Point(79, 23);
             this.cbxStall.Name = "cbxStall";
-            this.cbxStall.Size = new System.Drawing.Size(121, 21);
+            this.cbxStall.Size = new System.Drawing.Size(191, 29);
             this.cbxStall.TabIndex = 3;
             this.cbxStall.SelectedIndexChanged += new System.EventHandler(this.cbxStall_SelectedIndexChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(184, 245);
+            this.btnAdd.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(238, 283);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(107, 52);
+            this.btnAdd.Size = new System.Drawing.Size(107, 39);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -105,6 +107,7 @@
             // 
             // gbxAttendee
             // 
+            this.gbxAttendee.BackColor = System.Drawing.Color.Transparent;
             this.gbxAttendee.Controls.Add(this.chkIsExhibitor);
             this.gbxAttendee.Controls.Add(this.lblIsExhibitor);
             this.gbxAttendee.Controls.Add(this.lblContactValue);
@@ -115,69 +118,90 @@
             this.gbxAttendee.Controls.Add(this.lblFirstName);
             this.gbxAttendee.Controls.Add(this.lblAttendee);
             this.gbxAttendee.Controls.Add(this.cbxAttendee);
-            this.gbxAttendee.Location = new System.Drawing.Point(15, 12);
+            this.gbxAttendee.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.gbxAttendee.Location = new System.Drawing.Point(15, 14);
             this.gbxAttendee.Name = "gbxAttendee";
-            this.gbxAttendee.Size = new System.Drawing.Size(216, 199);
+            this.gbxAttendee.Size = new System.Drawing.Size(276, 230);
             this.gbxAttendee.TabIndex = 5;
             this.gbxAttendee.TabStop = false;
             this.gbxAttendee.Text = "Attendee";
             // 
+            // chkIsExhibitor
+            // 
+            this.chkIsExhibitor.AutoSize = true;
+            this.chkIsExhibitor.Location = new System.Drawing.Point(142, 193);
+            this.chkIsExhibitor.Name = "chkIsExhibitor";
+            this.chkIsExhibitor.Size = new System.Drawing.Size(54, 25);
+            this.chkIsExhibitor.TabIndex = 10;
+            this.chkIsExhibitor.Text = "Yes";
+            this.chkIsExhibitor.UseVisualStyleBackColor = true;
+            // 
+            // lblIsExhibitor
+            // 
+            this.lblIsExhibitor.AutoSize = true;
+            this.lblIsExhibitor.Location = new System.Drawing.Point(9, 197);
+            this.lblIsExhibitor.Name = "lblIsExhibitor";
+            this.lblIsExhibitor.Size = new System.Drawing.Size(99, 21);
+            this.lblIsExhibitor.TabIndex = 9;
+            this.lblIsExhibitor.Text = "Is Exhibitor?";
+            // 
             // lblContactValue
             // 
             this.lblContactValue.AutoSize = true;
-            this.lblContactValue.Location = new System.Drawing.Point(82, 138);
+            this.lblContactValue.Location = new System.Drawing.Point(139, 159);
             this.lblContactValue.Name = "lblContactValue";
-            this.lblContactValue.Size = new System.Drawing.Size(23, 13);
+            this.lblContactValue.Size = new System.Drawing.Size(36, 21);
             this.lblContactValue.TabIndex = 8;
             this.lblContactValue.Text = "null";
             // 
             // lblContact
             // 
             this.lblContact.AutoSize = true;
-            this.lblContact.Location = new System.Drawing.Point(9, 138);
+            this.lblContact.Location = new System.Drawing.Point(9, 159);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(44, 13);
+            this.lblContact.Size = new System.Drawing.Size(67, 21);
             this.lblContact.TabIndex = 7;
             this.lblContact.Text = "Contact";
             // 
             // lblLastNameValue
             // 
             this.lblLastNameValue.AutoSize = true;
-            this.lblLastNameValue.Location = new System.Drawing.Point(82, 103);
+            this.lblLastNameValue.Location = new System.Drawing.Point(139, 119);
             this.lblLastNameValue.Name = "lblLastNameValue";
-            this.lblLastNameValue.Size = new System.Drawing.Size(23, 13);
+            this.lblLastNameValue.Size = new System.Drawing.Size(36, 21);
             this.lblLastNameValue.TabIndex = 6;
             this.lblLastNameValue.Text = "null";
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(9, 103);
+            this.lblLastName.Location = new System.Drawing.Point(9, 119);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.Size = new System.Drawing.Size(86, 21);
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "Last Name";
             // 
             // lblFirstNameValue
             // 
             this.lblFirstNameValue.AutoSize = true;
-            this.lblFirstNameValue.Location = new System.Drawing.Point(82, 71);
+            this.lblFirstNameValue.Location = new System.Drawing.Point(139, 82);
             this.lblFirstNameValue.Name = "lblFirstNameValue";
-            this.lblFirstNameValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFirstNameValue.Size = new System.Drawing.Size(36, 21);
             this.lblFirstNameValue.TabIndex = 4;
             this.lblFirstNameValue.Text = "null";
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(9, 71);
+            this.lblFirstName.Location = new System.Drawing.Point(9, 82);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(88, 21);
             this.lblFirstName.TabIndex = 3;
             this.lblFirstName.Text = "First Name";
             // 
             // gbxStall
             // 
+            this.gbxStall.BackColor = System.Drawing.Color.Transparent;
             this.gbxStall.Controls.Add(this.lblFilledValue);
             this.gbxStall.Controls.Add(this.lblFilled);
             this.gbxStall.Controls.Add(this.lblStallTypeValue);
@@ -188,9 +212,10 @@
             this.gbxStall.Controls.Add(this.lblLocationCode);
             this.gbxStall.Controls.Add(this.lblCapacity);
             this.gbxStall.Controls.Add(this.lblLocationCodeValue);
-            this.gbxStall.Location = new System.Drawing.Point(237, 12);
+            this.gbxStall.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.gbxStall.Location = new System.Drawing.Point(297, 14);
             this.gbxStall.Name = "gbxStall";
-            this.gbxStall.Size = new System.Drawing.Size(210, 199);
+            this.gbxStall.Size = new System.Drawing.Size(276, 230);
             this.gbxStall.TabIndex = 6;
             this.gbxStall.TabStop = false;
             this.gbxStall.Text = "Stall";
@@ -198,104 +223,93 @@
             // lblFilledValue
             // 
             this.lblFilledValue.AutoSize = true;
-            this.lblFilledValue.Location = new System.Drawing.Point(106, 171);
+            this.lblFilledValue.Location = new System.Drawing.Point(154, 197);
             this.lblFilledValue.Name = "lblFilledValue";
-            this.lblFilledValue.Size = new System.Drawing.Size(23, 13);
+            this.lblFilledValue.Size = new System.Drawing.Size(36, 21);
             this.lblFilledValue.TabIndex = 16;
             this.lblFilledValue.Text = "null";
             // 
             // lblFilled
             // 
             this.lblFilled.AutoSize = true;
-            this.lblFilled.Location = new System.Drawing.Point(6, 171);
+            this.lblFilled.Location = new System.Drawing.Point(6, 197);
             this.lblFilled.Name = "lblFilled";
-            this.lblFilled.Size = new System.Drawing.Size(31, 13);
+            this.lblFilled.Size = new System.Drawing.Size(49, 21);
             this.lblFilled.TabIndex = 15;
             this.lblFilled.Text = "Filled";
             // 
             // lblStallTypeValue
             // 
             this.lblStallTypeValue.AutoSize = true;
-            this.lblStallTypeValue.Location = new System.Drawing.Point(106, 138);
+            this.lblStallTypeValue.Location = new System.Drawing.Point(154, 159);
             this.lblStallTypeValue.Name = "lblStallTypeValue";
-            this.lblStallTypeValue.Size = new System.Drawing.Size(23, 13);
+            this.lblStallTypeValue.Size = new System.Drawing.Size(36, 21);
             this.lblStallTypeValue.TabIndex = 14;
             this.lblStallTypeValue.Text = "null";
             // 
             // lblStallType
             // 
             this.lblStallType.AutoSize = true;
-            this.lblStallType.Location = new System.Drawing.Point(6, 138);
+            this.lblStallType.Location = new System.Drawing.Point(6, 159);
             this.lblStallType.Name = "lblStallType";
-            this.lblStallType.Size = new System.Drawing.Size(54, 13);
+            this.lblStallType.Size = new System.Drawing.Size(79, 21);
             this.lblStallType.TabIndex = 13;
             this.lblStallType.Text = "Stall Type";
             // 
             // lblCapacityValue
             // 
             this.lblCapacityValue.AutoSize = true;
-            this.lblCapacityValue.Location = new System.Drawing.Point(106, 103);
+            this.lblCapacityValue.Location = new System.Drawing.Point(154, 119);
             this.lblCapacityValue.Name = "lblCapacityValue";
-            this.lblCapacityValue.Size = new System.Drawing.Size(23, 13);
+            this.lblCapacityValue.Size = new System.Drawing.Size(36, 21);
             this.lblCapacityValue.TabIndex = 12;
             this.lblCapacityValue.Text = "null";
             // 
             // lblLocationCode
             // 
             this.lblLocationCode.AutoSize = true;
-            this.lblLocationCode.Location = new System.Drawing.Point(6, 71);
+            this.lblLocationCode.Location = new System.Drawing.Point(6, 82);
             this.lblLocationCode.Name = "lblLocationCode";
-            this.lblLocationCode.Size = new System.Drawing.Size(76, 13);
+            this.lblLocationCode.Size = new System.Drawing.Size(113, 21);
             this.lblLocationCode.TabIndex = 9;
             this.lblLocationCode.Text = "Location Code";
             // 
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(6, 103);
+            this.lblCapacity.Location = new System.Drawing.Point(6, 119);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(48, 13);
+            this.lblCapacity.Size = new System.Drawing.Size(72, 21);
             this.lblCapacity.TabIndex = 11;
             this.lblCapacity.Text = "Capacity";
             // 
             // lblLocationCodeValue
             // 
             this.lblLocationCodeValue.AutoSize = true;
-            this.lblLocationCodeValue.Location = new System.Drawing.Point(106, 71);
+            this.lblLocationCodeValue.Location = new System.Drawing.Point(154, 82);
             this.lblLocationCodeValue.Name = "lblLocationCodeValue";
-            this.lblLocationCodeValue.Size = new System.Drawing.Size(23, 13);
+            this.lblLocationCodeValue.Size = new System.Drawing.Size(36, 21);
             this.lblLocationCodeValue.TabIndex = 10;
             this.lblLocationCodeValue.Text = "null";
             // 
-            // lblIsExhibitor
-            // 
-            this.lblIsExhibitor.AutoSize = true;
-            this.lblIsExhibitor.Location = new System.Drawing.Point(9, 171);
-            this.lblIsExhibitor.Name = "lblIsExhibitor";
-            this.lblIsExhibitor.Size = new System.Drawing.Size(64, 13);
-            this.lblIsExhibitor.TabIndex = 9;
-            this.lblIsExhibitor.Text = "Is Exhibitor?";
-            // 
-            // chkIsExhibitor
-            // 
-            this.chkIsExhibitor.AutoSize = true;
-            this.chkIsExhibitor.Location = new System.Drawing.Point(85, 167);
-            this.chkIsExhibitor.Name = "chkIsExhibitor";
-            this.chkIsExhibitor.Size = new System.Drawing.Size(44, 17);
-            this.chkIsExhibitor.TabIndex = 10;
-            this.chkIsExhibitor.Text = "Yes";
-            this.chkIsExhibitor.UseVisualStyleBackColor = true;
-            // 
             // AddAttendeeToStall
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 379);
+            this.BackgroundImage = global::ConventionManager.Properties.Resources.background1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(595, 354);
             this.Controls.Add(this.gbxStall);
             this.Controls.Add(this.gbxAttendee);
             this.Controls.Add(this.btnAdd);
+            this.Font = new System.Drawing.Font("Franklin Gothic Demi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddAttendeeToStall";
-            this.Text = "AddAttendeeToStall";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Attendee To Stall";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddAttendeeToStall_FormClosed);
             this.Load += new System.EventHandler(this.AddAttendeeToStall_Load);
             this.gbxAttendee.ResumeLayout(false);

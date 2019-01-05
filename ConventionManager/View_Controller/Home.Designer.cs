@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.attendeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrManageAttendee = new System.Windows.Forms.ToolStripMenuItem();
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,12 +40,12 @@
             this.stallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrManageStall = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddAttendeeToStall = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.stripHome = new System.Windows.Forms.MenuStrip();
             this.roomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrManageRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrRoomUsage = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrTEST = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.stripHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // attendeeToolStripMenuItem
@@ -131,20 +132,21 @@
             this.mstrAddAttendeeToStall.Text = "Add Attendee to Stall";
             this.mstrAddAttendeeToStall.Click += new System.EventHandler(this.mstrAddAttendeeToStall_Click);
             // 
-            // menuStrip1
+            // stripHome
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stripHome.BackColor = System.Drawing.Color.Transparent;
+            this.stripHome.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.attendeeToolStripMenuItem,
             this.eventToolStripMenuItem,
             this.seminarToolStripMenuItem,
             this.stallToolStripMenuItem,
             this.roomToolStripMenuItem,
             this.mstrTEST});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(402, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.stripHome.Location = new System.Drawing.Point(0, 0);
+            this.stripHome.Name = "stripHome";
+            this.stripHome.Size = new System.Drawing.Size(402, 24);
+            this.stripHome.TabIndex = 0;
+            this.stripHome.Text = "menuStrip1";
             // 
             // roomToolStripMenuItem
             // 
@@ -158,14 +160,14 @@
             // mstrManageRoom
             // 
             this.mstrManageRoom.Name = "mstrManageRoom";
-            this.mstrManageRoom.Size = new System.Drawing.Size(215, 22);
+            this.mstrManageRoom.Size = new System.Drawing.Size(152, 22);
             this.mstrManageRoom.Text = "Manage Room";
             this.mstrManageRoom.Click += new System.EventHandler(this.mstrManageRoom_Click);
             // 
             // mstrRoomUsage
             // 
             this.mstrRoomUsage.Name = "mstrRoomUsage";
-            this.mstrRoomUsage.Size = new System.Drawing.Size(215, 22);
+            this.mstrRoomUsage.Size = new System.Drawing.Size(152, 22);
             this.mstrRoomUsage.Text = "Room Usage";
             this.mstrRoomUsage.Click += new System.EventHandler(this.mstrRoomUsage_Click);
             // 
@@ -178,16 +180,23 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 341);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.BackgroundImage = global::ConventionManager.Properties.Resources.background1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(402, 312);
+            this.Controls.Add(this.stripHome);
+            this.Font = new System.Drawing.Font("Franklin Gothic Demi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.stripHome;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Text = "Convention Manager Home";
+            this.stripHome.ResumeLayout(false);
+            this.stripHome.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +212,7 @@
         private System.Windows.Forms.ToolStripMenuItem mstrManageSeminar;
         private System.Windows.Forms.ToolStripMenuItem stallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mstrManageStall;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip stripHome;
         private System.Windows.Forms.ToolStripMenuItem roomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mstrManageRoom;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToStall;

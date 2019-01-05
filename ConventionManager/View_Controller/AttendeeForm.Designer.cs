@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendeeForm));
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -61,120 +62,142 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(13, 71);
+            this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
+            this.lblFirstName.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblFirstName.Location = new System.Drawing.Point(12, 28);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(88, 21);
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "First Name";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(115, 63);
+            this.txtFirstName.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtFirstName.Location = new System.Drawing.Point(168, 23);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(169, 26);
             this.txtFirstName.TabIndex = 1;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(115, 110);
+            this.txtLastName.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtLastName.Location = new System.Drawing.Point(168, 82);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName.Size = new System.Drawing.Size(169, 26);
             this.txtLastName.TabIndex = 3;
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(13, 118);
+            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
+            this.lblLastName.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblLastName.Location = new System.Drawing.Point(12, 91);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.Size = new System.Drawing.Size(86, 21);
             this.lblLastName.TabIndex = 2;
             this.lblLastName.Text = "Last Name";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(115, 159);
+            this.txtEmail.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtEmail.Location = new System.Drawing.Point(168, 139);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(169, 26);
             this.txtEmail.TabIndex = 5;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(13, 167);
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblEmail.Location = new System.Drawing.Point(12, 143);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.Size = new System.Drawing.Size(49, 21);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email";
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(115, 212);
+            this.txtContact.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtContact.Location = new System.Drawing.Point(168, 200);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(100, 20);
+            this.txtContact.Size = new System.Drawing.Size(169, 26);
             this.txtContact.TabIndex = 7;
             // 
             // lblContact
             // 
             this.lblContact.AutoSize = true;
-            this.lblContact.Location = new System.Drawing.Point(13, 220);
+            this.lblContact.BackColor = System.Drawing.Color.Transparent;
+            this.lblContact.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblContact.Location = new System.Drawing.Point(12, 205);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(44, 13);
+            this.lblContact.Size = new System.Drawing.Size(67, 21);
             this.lblContact.TabIndex = 6;
             this.lblContact.Text = "Contact";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(518, 63);
+            this.txtAddress.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtAddress.Location = new System.Drawing.Point(564, 23);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtAddress.Size = new System.Drawing.Size(166, 26);
             this.txtAddress.TabIndex = 9;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(416, 71);
+            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddress.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblAddress.Location = new System.Drawing.Point(392, 28);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(45, 13);
+            this.lblAddress.Size = new System.Drawing.Size(69, 21);
             this.lblAddress.TabIndex = 8;
             this.lblAddress.Text = "Address";
             // 
             // txtTicketType
             // 
-            this.txtTicketType.Location = new System.Drawing.Point(518, 117);
+            this.txtTicketType.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtTicketType.Location = new System.Drawing.Point(564, 79);
             this.txtTicketType.Name = "txtTicketType";
-            this.txtTicketType.Size = new System.Drawing.Size(100, 20);
+            this.txtTicketType.Size = new System.Drawing.Size(166, 26);
             this.txtTicketType.TabIndex = 11;
             // 
             // lblTicketType
             // 
             this.lblTicketType.AutoSize = true;
-            this.lblTicketType.Location = new System.Drawing.Point(416, 125);
+            this.lblTicketType.BackColor = System.Drawing.Color.Transparent;
+            this.lblTicketType.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblTicketType.Location = new System.Drawing.Point(392, 82);
             this.lblTicketType.Name = "lblTicketType";
-            this.lblTicketType.Size = new System.Drawing.Size(64, 13);
+            this.lblTicketType.Size = new System.Drawing.Size(91, 21);
             this.lblTicketType.TabIndex = 10;
             this.lblTicketType.Text = "Ticket Type";
             // 
             // txtAttendingDays
             // 
-            this.txtAttendingDays.Location = new System.Drawing.Point(518, 174);
+            this.txtAttendingDays.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtAttendingDays.Location = new System.Drawing.Point(564, 138);
             this.txtAttendingDays.Name = "txtAttendingDays";
-            this.txtAttendingDays.Size = new System.Drawing.Size(100, 20);
+            this.txtAttendingDays.Size = new System.Drawing.Size(166, 26);
             this.txtAttendingDays.TabIndex = 13;
             // 
             // lblAttendingDays
             // 
             this.lblAttendingDays.AutoSize = true;
-            this.lblAttendingDays.Location = new System.Drawing.Point(416, 182);
+            this.lblAttendingDays.BackColor = System.Drawing.Color.Transparent;
+            this.lblAttendingDays.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblAttendingDays.Location = new System.Drawing.Point(392, 143);
             this.lblAttendingDays.Name = "lblAttendingDays";
-            this.lblAttendingDays.Size = new System.Drawing.Size(103, 13);
+            this.lblAttendingDays.Size = new System.Drawing.Size(155, 21);
             this.lblAttendingDays.TabIndex = 12;
             this.lblAttendingDays.Text = "Attending days (No.)";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(518, 229);
+            this.btnAdd.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(516, 186);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 35);
+            this.btnAdd.Size = new System.Drawing.Size(100, 40);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -198,10 +221,10 @@
             this.IsAvailable,
             this.Edit,
             this.Delete});
-            this.dgvAttendees.Location = new System.Drawing.Point(16, 345);
+            this.dgvAttendees.Location = new System.Drawing.Point(16, 275);
             this.dgvAttendees.Name = "dgvAttendees";
             this.dgvAttendees.ReadOnly = true;
-            this.dgvAttendees.Size = new System.Drawing.Size(734, 150);
+            this.dgvAttendees.Size = new System.Drawing.Size(734, 236);
             this.dgvAttendees.TabIndex = 17;
             this.dgvAttendees.Click += new System.EventHandler(this.dgvAttendees_Click);
             // 
@@ -288,9 +311,11 @@
             // 
             // AttendeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 507);
+            this.BackgroundImage = global::ConventionManager.Properties.Resources.background1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(762, 549);
             this.Controls.Add(this.dgvAttendees);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtAttendingDays);
@@ -307,9 +332,14 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblFirstName);
+            this.Font = new System.Drawing.Font("Franklin Gothic Demi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AttendeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddAttendee";
+            this.Text = "Manage Attendee";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AttendeeForm_FormClosed);
             this.Load += new System.EventHandler(this.AddAttendee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendees)).EndInit();

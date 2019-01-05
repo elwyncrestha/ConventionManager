@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventForm));
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -57,114 +58,134 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 45);
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblName.Location = new System.Drawing.Point(12, 51);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.Size = new System.Drawing.Size(51, 21);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(124, 38);
+            this.txtName.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtName.Location = new System.Drawing.Point(124, 44);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(256, 20);
+            this.txtName.Size = new System.Drawing.Size(256, 26);
             this.txtName.TabIndex = 1;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(124, 88);
+            this.txtDescription.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.txtDescription.Location = new System.Drawing.Point(124, 102);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(256, 128);
+            this.txtDescription.Size = new System.Drawing.Size(256, 147);
             this.txtDescription.TabIndex = 3;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(12, 95);
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblDescription.Location = new System.Drawing.Point(12, 110);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.Size = new System.Drawing.Size(92, 21);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Description";
             // 
             // dtpStartDate
             // 
             this.dtpStartDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
+            this.dtpStartDate.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(532, 38);
+            this.dtpStartDate.Location = new System.Drawing.Point(532, 44);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(158, 20);
+            this.dtpStartDate.Size = new System.Drawing.Size(158, 26);
             this.dtpStartDate.TabIndex = 4;
             // 
             // dtpEndDate
             // 
             this.dtpEndDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
+            this.dtpEndDate.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(532, 88);
+            this.dtpEndDate.Location = new System.Drawing.Point(532, 102);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(158, 20);
+            this.dtpEndDate.Size = new System.Drawing.Size(158, 26);
             this.dtpEndDate.TabIndex = 5;
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(435, 44);
+            this.lblStartDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblStartDate.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblStartDate.Location = new System.Drawing.Point(435, 51);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(55, 13);
+            this.lblStartDate.Size = new System.Drawing.Size(84, 21);
             this.lblStartDate.TabIndex = 6;
             this.lblStartDate.Text = "Start Date";
             // 
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(435, 95);
+            this.lblEndDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblEndDate.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblEndDate.Location = new System.Drawing.Point(435, 110);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(52, 13);
+            this.lblEndDate.Size = new System.Drawing.Size(75, 21);
             this.lblEndDate.TabIndex = 7;
             this.lblEndDate.Text = "End Date";
             // 
             // lblRoom
             // 
             this.lblRoom.AutoSize = true;
-            this.lblRoom.Location = new System.Drawing.Point(435, 141);
+            this.lblRoom.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoom.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblRoom.Location = new System.Drawing.Point(435, 163);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(35, 13);
+            this.lblRoom.Size = new System.Drawing.Size(52, 21);
             this.lblRoom.TabIndex = 8;
             this.lblRoom.Text = "Room";
             // 
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(435, 187);
+            this.lblCapacity.BackColor = System.Drawing.Color.Transparent;
+            this.lblCapacity.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblCapacity.Location = new System.Drawing.Point(435, 216);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(79, 13);
+            this.lblCapacity.Size = new System.Drawing.Size(118, 21);
             this.lblCapacity.TabIndex = 9;
             this.lblCapacity.Text = "Room Capacity";
             // 
             // cbxRoom
             // 
             this.cbxRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRoom.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.cbxRoom.FormattingEnabled = true;
-            this.cbxRoom.Location = new System.Drawing.Point(532, 133);
+            this.cbxRoom.Location = new System.Drawing.Point(532, 153);
             this.cbxRoom.Name = "cbxRoom";
-            this.cbxRoom.Size = new System.Drawing.Size(158, 21);
+            this.cbxRoom.Size = new System.Drawing.Size(158, 29);
             this.cbxRoom.TabIndex = 10;
             this.cbxRoom.SelectedIndexChanged += new System.EventHandler(this.cbxRoom_SelectedIndexChanged);
             // 
             // lblCapacityValue
             // 
             this.lblCapacityValue.AutoSize = true;
-            this.lblCapacityValue.Location = new System.Drawing.Point(529, 187);
+            this.lblCapacityValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblCapacityValue.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.lblCapacityValue.Location = new System.Drawing.Point(573, 216);
             this.lblCapacityValue.Name = "lblCapacityValue";
-            this.lblCapacityValue.Size = new System.Drawing.Size(13, 13);
+            this.lblCapacityValue.Size = new System.Drawing.Size(19, 21);
             this.lblCapacityValue.TabIndex = 11;
             this.lblCapacityValue.Text = "0";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(124, 260);
+            this.btnAdd.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(124, 278);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 40);
+            this.btnAdd.Size = new System.Drawing.Size(100, 46);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -186,10 +207,10 @@
             this.EventDescription,
             this.Edit,
             this.Delete});
-            this.dgvEvent.Location = new System.Drawing.Point(15, 350);
+            this.dgvEvent.Location = new System.Drawing.Point(15, 359);
             this.dgvEvent.Name = "dgvEvent";
             this.dgvEvent.ReadOnly = true;
-            this.dgvEvent.Size = new System.Drawing.Size(697, 162);
+            this.dgvEvent.Size = new System.Drawing.Size(697, 232);
             this.dgvEvent.TabIndex = 13;
             this.dgvEvent.Click += new System.EventHandler(this.dgvEvent_Click);
             // 
@@ -262,9 +283,11 @@
             // 
             // EventForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 522);
+            this.BackgroundImage = global::ConventionManager.Properties.Resources.background1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(724, 602);
             this.Controls.Add(this.dgvEvent);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblCapacityValue);
@@ -279,8 +302,14 @@
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
+            this.Font = new System.Drawing.Font("Franklin Gothic Demi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EventForm";
-            this.Text = "EventForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Manage Event";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventForm_FormClosed);
             this.Load += new System.EventHandler(this.EventForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvent)).EndInit();

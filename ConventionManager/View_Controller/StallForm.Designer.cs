@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StallForm));
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtLocationCode = new System.Windows.Forms.TextBox();
@@ -42,8 +43,6 @@
             this.lblStallType = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvStall = new System.Windows.Forms.DataGridView();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.StallId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StallLocationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,112 +54,134 @@
             this.Exhibitors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStall)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(13, 54);
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(13, 62);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.Size = new System.Drawing.Size(51, 21);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(117, 46);
+            this.txtName.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(173, 57);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.Size = new System.Drawing.Size(146, 26);
             this.txtName.TabIndex = 1;
             // 
             // txtLocationCode
             // 
-            this.txtLocationCode.Location = new System.Drawing.Point(117, 102);
+            this.txtLocationCode.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocationCode.Location = new System.Drawing.Point(173, 120);
             this.txtLocationCode.Name = "txtLocationCode";
-            this.txtLocationCode.Size = new System.Drawing.Size(100, 20);
+            this.txtLocationCode.Size = new System.Drawing.Size(146, 26);
             this.txtLocationCode.TabIndex = 3;
             // 
             // lblLocationCode
             // 
             this.lblLocationCode.AutoSize = true;
-            this.lblLocationCode.Location = new System.Drawing.Point(13, 110);
+            this.lblLocationCode.BackColor = System.Drawing.Color.Transparent;
+            this.lblLocationCode.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocationCode.Location = new System.Drawing.Point(13, 127);
             this.lblLocationCode.Name = "lblLocationCode";
-            this.lblLocationCode.Size = new System.Drawing.Size(76, 13);
+            this.lblLocationCode.Size = new System.Drawing.Size(113, 21);
             this.lblLocationCode.TabIndex = 2;
             this.lblLocationCode.Text = "Location Code";
             // 
             // txtCapacity
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(117, 157);
+            this.txtCapacity.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapacity.Location = new System.Drawing.Point(173, 181);
             this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(100, 20);
+            this.txtCapacity.Size = new System.Drawing.Size(146, 26);
             this.txtCapacity.TabIndex = 5;
             // 
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(13, 165);
+            this.lblCapacity.BackColor = System.Drawing.Color.Transparent;
+            this.lblCapacity.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCapacity.Location = new System.Drawing.Point(13, 190);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(48, 13);
+            this.lblCapacity.Size = new System.Drawing.Size(72, 21);
             this.lblCapacity.TabIndex = 4;
             this.lblCapacity.Text = "Capacity";
             // 
             // txtResources
             // 
-            this.txtResources.Location = new System.Drawing.Point(117, 220);
+            this.txtResources.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResources.Location = new System.Drawing.Point(172, 244);
             this.txtResources.Name = "txtResources";
-            this.txtResources.Size = new System.Drawing.Size(100, 20);
+            this.txtResources.Size = new System.Drawing.Size(146, 26);
             this.txtResources.TabIndex = 7;
             // 
             // lblResources
             // 
             this.lblResources.AutoSize = true;
-            this.lblResources.Location = new System.Drawing.Point(13, 228);
+            this.lblResources.BackColor = System.Drawing.Color.Transparent;
+            this.lblResources.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResources.Location = new System.Drawing.Point(12, 249);
             this.lblResources.Name = "lblResources";
-            this.lblResources.Size = new System.Drawing.Size(58, 13);
+            this.lblResources.Size = new System.Drawing.Size(87, 21);
             this.lblResources.TabIndex = 6;
             this.lblResources.Text = "Resources";
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(356, 54);
+            this.lblStartDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblStartDate.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDate.Location = new System.Drawing.Point(355, 62);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(55, 13);
+            this.lblStartDate.Size = new System.Drawing.Size(84, 21);
             this.lblStartDate.TabIndex = 8;
             this.lblStartDate.Text = "Start Date";
             // 
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(356, 110);
+            this.lblEndDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblEndDate.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndDate.Location = new System.Drawing.Point(356, 122);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(52, 13);
+            this.lblEndDate.Size = new System.Drawing.Size(75, 21);
             this.lblEndDate.TabIndex = 10;
             this.lblEndDate.Text = "End Date";
             // 
             // txtStallType
             // 
-            this.txtStallType.Location = new System.Drawing.Point(460, 157);
+            this.txtStallType.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStallType.Location = new System.Drawing.Point(460, 181);
             this.txtStallType.Name = "txtStallType";
-            this.txtStallType.Size = new System.Drawing.Size(100, 20);
+            this.txtStallType.Size = new System.Drawing.Size(211, 26);
             this.txtStallType.TabIndex = 13;
             // 
             // lblStallType
             // 
             this.lblStallType.AutoSize = true;
-            this.lblStallType.Location = new System.Drawing.Point(356, 165);
+            this.lblStallType.BackColor = System.Drawing.Color.Transparent;
+            this.lblStallType.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStallType.Location = new System.Drawing.Point(356, 190);
             this.lblStallType.Name = "lblStallType";
-            this.lblStallType.Size = new System.Drawing.Size(51, 13);
+            this.lblStallType.Size = new System.Drawing.Size(75, 21);
             this.lblStallType.TabIndex = 12;
             this.lblStallType.Text = "StallType";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(359, 217);
+            this.btnAdd.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(460, 226);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(95, 38);
+            this.btnAdd.Size = new System.Drawing.Size(95, 44);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -184,30 +205,12 @@
             this.Exhibitors,
             this.Edit,
             this.Delete});
-            this.dgvStall.Location = new System.Drawing.Point(13, 342);
+            this.dgvStall.Location = new System.Drawing.Point(13, 333);
             this.dgvStall.Name = "dgvStall";
             this.dgvStall.ReadOnly = true;
-            this.dgvStall.Size = new System.Drawing.Size(685, 150);
+            this.dgvStall.Size = new System.Drawing.Size(685, 235);
             this.dgvStall.TabIndex = 15;
             this.dgvStall.Click += new System.EventHandler(this.dgvStall_Click);
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(460, 45);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpStartDate.TabIndex = 16;
-            // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(460, 104);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpEndDate.TabIndex = 17;
             // 
             // StallId
             // 
@@ -290,11 +293,33 @@
             this.Delete.ToolTipText = "Delete";
             this.Delete.UseColumnTextForLinkValue = true;
             // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
+            this.dtpStartDate.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartDate.Location = new System.Drawing.Point(460, 52);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(211, 26);
+            this.dtpStartDate.TabIndex = 16;
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.CustomFormat = "yyyy-MM-dd hh:mm:ss tt";
+            this.dtpEndDate.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEndDate.Location = new System.Drawing.Point(460, 115);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(211, 26);
+            this.dtpEndDate.TabIndex = 17;
+            // 
             // StallForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 525);
+            this.BackgroundImage = global::ConventionManager.Properties.Resources.background1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(710, 606);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.dtpStartDate);
             this.Controls.Add(this.dgvStall);
@@ -311,8 +336,14 @@
             this.Controls.Add(this.lblLocationCode);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
+            this.Font = new System.Drawing.Font("Franklin Gothic Demi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "StallForm";
-            this.Text = "Stall";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Manage Stall";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StallForm_FormClosed);
             this.Load += new System.EventHandler(this.StallForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStall)).EndInit();
