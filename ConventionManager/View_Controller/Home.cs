@@ -18,56 +18,35 @@ namespace ConventionManager
             InitializeComponent();
         }
 
-        private void mstrAddAttendee_Click(object sender, EventArgs e)
+        private void mstrManageAttendee_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormLoader.loadAttendeeForm();
             this.Close();
         }
 
-        private void mstrDisplayAttendees_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormLoader.loadAttendeeForm();
-            this.Close();
-        }
-
-        private void mstrAddStall_Click(object sender, EventArgs e)
+        private void mstrManageStall_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormLoader.loadStallForm();
             this.Close();
         }
 
-        private void mstrDisplayStalls_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormLoader.loadStallForm();
-            this.Close();
-        }
-
-        private void mstrAddRoom_Click(object sender, EventArgs e)
+        private void mstrManageRoom_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormLoader.loadRoomForm();
             this.Close();
         }
 
-        private void mstrAddEvent_Click(object sender, EventArgs e)
+        private void mstrManageEvent_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormLoader.loadEventForm();
             this.Close();
         }
 
-        private void mstrDisplayEvents_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormLoader.loadEventForm();
-            this.Close();
-        }
-
-        private void mstrAddSeminar_Click(object sender, EventArgs e)
+        private void mstrManageSeminar_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormLoader.loadSeminarForm();
@@ -95,6 +74,14 @@ namespace ConventionManager
             this.Close();
         }
 
+        private void mstrRoomUsage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RoomUsageForm form = new RoomUsageForm();
+            form.ShowDialog();
+            this.Close();
+        }
+
         private void mstrTEST_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -103,12 +90,6 @@ namespace ConventionManager
             this.Close();
         }
 
-        private void mstrRoomUsage_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RoomUsageForm form = new RoomUsageForm();
-            form.ShowDialog();
-            this.Close();
-        }
+
     }
 }
