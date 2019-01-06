@@ -41,6 +41,8 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.gbxEvent = new System.Windows.Forms.GroupBox();
+            this.lblRoomCapacityValue = new System.Windows.Forms.Label();
+            this.lblRoomCapacity = new System.Windows.Forms.Label();
             this.lblFilledValue = new System.Windows.Forms.Label();
             this.lblFilled = new System.Windows.Forms.Label();
             this.lblEvent = new System.Windows.Forms.Label();
@@ -50,10 +52,15 @@
             this.lblAttendee = new System.Windows.Forms.Label();
             this.cbxAttendee = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblRoomCapacityValue = new System.Windows.Forms.Label();
-            this.lblRoomCapacity = new System.Windows.Forms.Label();
+            this.dgvAttendeeEvent = new System.Windows.Forms.DataGridView();
+            this.EventId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AttendeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AttendeeEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.gbxEvent.SuspendLayout();
             this.gbxAttendee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendeeEvent)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRoomNameValue
@@ -178,6 +185,24 @@
             this.gbxEvent.TabStop = false;
             this.gbxEvent.Text = "Event";
             // 
+            // lblRoomCapacityValue
+            // 
+            this.lblRoomCapacityValue.AutoSize = true;
+            this.lblRoomCapacityValue.Location = new System.Drawing.Point(141, 230);
+            this.lblRoomCapacityValue.Name = "lblRoomCapacityValue";
+            this.lblRoomCapacityValue.Size = new System.Drawing.Size(36, 21);
+            this.lblRoomCapacityValue.TabIndex = 20;
+            this.lblRoomCapacityValue.Text = "null";
+            // 
+            // lblRoomCapacity
+            // 
+            this.lblRoomCapacity.AutoSize = true;
+            this.lblRoomCapacity.Location = new System.Drawing.Point(8, 230);
+            this.lblRoomCapacity.Name = "lblRoomCapacity";
+            this.lblRoomCapacity.Size = new System.Drawing.Size(118, 21);
+            this.lblRoomCapacity.TabIndex = 19;
+            this.lblRoomCapacity.Text = "Room Capacity";
+            // 
             // lblFilledValue
             // 
             this.lblFilledValue.AutoSize = true;
@@ -273,23 +298,61 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblRoomCapacityValue
+            // dgvAttendeeEvent
             // 
-            this.lblRoomCapacityValue.AutoSize = true;
-            this.lblRoomCapacityValue.Location = new System.Drawing.Point(141, 230);
-            this.lblRoomCapacityValue.Name = "lblRoomCapacityValue";
-            this.lblRoomCapacityValue.Size = new System.Drawing.Size(36, 21);
-            this.lblRoomCapacityValue.TabIndex = 20;
-            this.lblRoomCapacityValue.Text = "null";
+            this.dgvAttendeeEvent.AllowUserToAddRows = false;
+            this.dgvAttendeeEvent.AllowUserToDeleteRows = false;
+            this.dgvAttendeeEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAttendeeEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAttendeeEvent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EventId,
+            this.AttendeeId,
+            this.EventName,
+            this.AttendeeEmail,
+            this.Delete});
+            this.dgvAttendeeEvent.Location = new System.Drawing.Point(15, 376);
+            this.dgvAttendeeEvent.Name = "dgvAttendeeEvent";
+            this.dgvAttendeeEvent.ReadOnly = true;
+            this.dgvAttendeeEvent.Size = new System.Drawing.Size(647, 203);
+            this.dgvAttendeeEvent.TabIndex = 10;
+            this.dgvAttendeeEvent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAttendeeEvent_CellContentClick);
             // 
-            // lblRoomCapacity
+            // EventId
             // 
-            this.lblRoomCapacity.AutoSize = true;
-            this.lblRoomCapacity.Location = new System.Drawing.Point(8, 230);
-            this.lblRoomCapacity.Name = "lblRoomCapacity";
-            this.lblRoomCapacity.Size = new System.Drawing.Size(118, 21);
-            this.lblRoomCapacity.TabIndex = 19;
-            this.lblRoomCapacity.Text = "Room Capacity";
+            this.EventId.DataPropertyName = "EventId";
+            this.EventId.HeaderText = "EventId";
+            this.EventId.Name = "EventId";
+            this.EventId.ReadOnly = true;
+            // 
+            // AttendeeId
+            // 
+            this.AttendeeId.DataPropertyName = "AttendeeId";
+            this.AttendeeId.HeaderText = "AttendeeId";
+            this.AttendeeId.Name = "AttendeeId";
+            this.AttendeeId.ReadOnly = true;
+            // 
+            // EventName
+            // 
+            this.EventName.DataPropertyName = "EventName";
+            this.EventName.HeaderText = "Event Name";
+            this.EventName.Name = "EventName";
+            this.EventName.ReadOnly = true;
+            // 
+            // AttendeeEmail
+            // 
+            this.AttendeeEmail.DataPropertyName = "AttendeeEmail";
+            this.AttendeeEmail.HeaderText = "Attendee Email";
+            this.AttendeeEmail.Name = "AttendeeEmail";
+            this.AttendeeEmail.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
             // 
             // AddAttendeeToEvent
             // 
@@ -297,7 +360,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ConventionManager.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(674, 364);
+            this.ClientSize = new System.Drawing.Size(674, 591);
+            this.Controls.Add(this.dgvAttendeeEvent);
             this.Controls.Add(this.gbxEvent);
             this.Controls.Add(this.gbxAttendee);
             this.Controls.Add(this.btnAdd);
@@ -315,6 +379,7 @@
             this.gbxEvent.PerformLayout();
             this.gbxAttendee.ResumeLayout(false);
             this.gbxAttendee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendeeEvent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,5 +409,11 @@
         private System.Windows.Forms.Label lblFilled;
         private System.Windows.Forms.Label lblRoomCapacityValue;
         private System.Windows.Forms.Label lblRoomCapacity;
+        private System.Windows.Forms.DataGridView dgvAttendeeEvent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AttendeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AttendeeEmail;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
 }

@@ -24,6 +24,7 @@ namespace ConventionManager.View_Controller
         {
             loadAttendees();
             loadEvents();
+            loadDGV();
         }
 
         private void loadAttendees()
@@ -38,6 +39,21 @@ namespace ConventionManager.View_Controller
             cbxEvent.DataSource = dbContext.Events.ToList();
             cbxEvent.DisplayMember = "EventName";
             cbxEvent.ValueMember = "EventId";
+        }
+
+        private void loadDGV()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("EventId", typeof(int));
+            dt.Columns.Add("AttendeeId", typeof(int));
+            dt.Columns.Add("EventName", typeof(string));
+            dt.Columns.Add("AttendeeEmail", typeof(string));
+            List<AttendeeEvent> list = dbContext.AttendeeEvents.ToList();
+            foreach (AttendeeEvent ae in list)
+                dt.Rows.Add(ae.EventId,ae.AttendeeId,ae.Event.EventName, ae.Attendee.AttendeeEmail);
+            dgvAttendeeEvent.DataSource = dt;
+            dgvAttendeeEvent.Columns["AttendeeId"].Visible = false;
+            dgvAttendeeEvent.Columns["EventId"].Visible = false;
         }
 
         private void cbxAttendee_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,6 +144,24 @@ namespace ConventionManager.View_Controller
             this.Hide();
             FormLoader.loadHome();
             this.Close();
+        }
+
+        private void dgvAttendeeEvent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvAttendeeEvent.Rows[e.RowIndex].Cells["Delete"].Value.Equals("Delete"))
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure ?", "Confirm Delete", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int attendeeId = Convert.ToInt32(dgvAttendeeEvent.Rows[e.RowIndex].Cells["AttendeeId"].Value);
+                    int eventId = Convert.ToInt32(dgvAttendeeEvent.Rows[e.RowIndex].Cells["EventId"].Value);
+                    AttendeeEvent attendeeEvent = dbContext.AttendeeEvents.Where(ae => ae.AttendeeId == attendeeId).Where(ae => ae.EventId == eventId).Single();
+                    dbContext.AttendeeEvents.Remove(attendeeEvent);
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Attendee removed from the event");
+                    loadDGV();
+                }
+            }
         }
     }
 }
