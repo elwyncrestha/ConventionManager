@@ -52,5 +52,12 @@ namespace ConventionManager.View_Controller
                 // do nothing
             }
         }
+
+        private void RoomUsageForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadHome();
+            this.Close();
+        }
     }
 }

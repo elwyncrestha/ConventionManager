@@ -67,5 +67,11 @@ namespace ConventionManager.View_Controller
             RoomUsageForm form = new RoomUsageForm();
             form.ShowDialog();
         }
+
+        public static void loadAttendeeDetailForm()
+        {
+            AttendeeDetail form = new AttendeeDetail();
+            form.ShowDialog();
+        }
     }
 }

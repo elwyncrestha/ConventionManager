@@ -46,13 +46,14 @@
             this.mstrRoomUsage = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrTEST = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxConventionManager = new System.Windows.Forms.GroupBox();
-            this.lblIntro = new System.Windows.Forms.Label();
-            this.lblDetail1 = new System.Windows.Forms.Label();
-            this.lblDetail2 = new System.Windows.Forms.Label();
-            this.lblDetail3 = new System.Windows.Forms.Label();
-            this.lblDetail4 = new System.Windows.Forms.Label();
-            this.lblDetail5 = new System.Windows.Forms.Label();
             this.lblDetail6 = new System.Windows.Forms.Label();
+            this.lblDetail5 = new System.Windows.Forms.Label();
+            this.lblDetail4 = new System.Windows.Forms.Label();
+            this.lblDetail3 = new System.Windows.Forms.Label();
+            this.lblDetail2 = new System.Windows.Forms.Label();
+            this.lblDetail1 = new System.Windows.Forms.Label();
+            this.lblIntro = new System.Windows.Forms.Label();
+            this.mstrViewAttendeeDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.stripHome.SuspendLayout();
             this.gbxConventionManager.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,8 @@
             // attendeeToolStripMenuItem
             // 
             this.attendeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mstrManageAttendee});
+            this.mstrManageAttendee,
+            this.mstrViewAttendeeDetail});
             this.attendeeToolStripMenuItem.Name = "attendeeToolStripMenuItem";
             this.attendeeToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
             this.attendeeToolStripMenuItem.Text = "Attendee";
@@ -68,7 +70,7 @@
             // mstrManageAttendee
             // 
             this.mstrManageAttendee.Name = "mstrManageAttendee";
-            this.mstrManageAttendee.Size = new System.Drawing.Size(210, 26);
+            this.mstrManageAttendee.Size = new System.Drawing.Size(231, 26);
             this.mstrManageAttendee.Text = "Manage Attendee";
             this.mstrManageAttendee.Click += new System.EventHandler(this.mstrManageAttendee_Click);
             // 
@@ -206,50 +208,14 @@
             this.gbxConventionManager.TabStop = false;
             this.gbxConventionManager.Text = "Convention Manager System";
             // 
-            // lblIntro
+            // lblDetail6
             // 
-            this.lblIntro.AutoSize = true;
-            this.lblIntro.Location = new System.Drawing.Point(6, 44);
-            this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(381, 21);
-            this.lblIntro.TabIndex = 2;
-            this.lblIntro.Text = "A multi-feature system to well manage conventions.";
-            // 
-            // lblDetail1
-            // 
-            this.lblDetail1.AutoSize = true;
-            this.lblDetail1.Location = new System.Drawing.Point(6, 76);
-            this.lblDetail1.Name = "lblDetail1";
-            this.lblDetail1.Size = new System.Drawing.Size(381, 21);
-            this.lblDetail1.TabIndex = 3;
-            this.lblDetail1.Text = "This system tracks and manage following elements:";
-            // 
-            // lblDetail2
-            // 
-            this.lblDetail2.AutoSize = true;
-            this.lblDetail2.Location = new System.Drawing.Point(6, 122);
-            this.lblDetail2.Name = "lblDetail2";
-            this.lblDetail2.Size = new System.Drawing.Size(209, 21);
-            this.lblDetail2.TabIndex = 4;
-            this.lblDetail2.Text = "- Rooms and Stall Locations";
-            // 
-            // lblDetail3
-            // 
-            this.lblDetail3.AutoSize = true;
-            this.lblDetail3.Location = new System.Drawing.Point(6, 143);
-            this.lblDetail3.Name = "lblDetail3";
-            this.lblDetail3.Size = new System.Drawing.Size(93, 21);
-            this.lblDetail3.TabIndex = 5;
-            this.lblDetail3.Text = "- Attendees";
-            // 
-            // lblDetail4
-            // 
-            this.lblDetail4.AutoSize = true;
-            this.lblDetail4.Location = new System.Drawing.Point(6, 164);
-            this.lblDetail4.Name = "lblDetail4";
-            this.lblDetail4.Size = new System.Drawing.Size(58, 21);
-            this.lblDetail4.TabIndex = 6;
-            this.lblDetail4.Text = "- Stalls";
+            this.lblDetail6.AutoSize = true;
+            this.lblDetail6.Location = new System.Drawing.Point(6, 206);
+            this.lblDetail6.Name = "lblDetail6";
+            this.lblDetail6.Size = new System.Drawing.Size(66, 21);
+            this.lblDetail6.TabIndex = 8;
+            this.lblDetail6.Text = "- Events";
             // 
             // lblDetail5
             // 
@@ -260,14 +226,57 @@
             this.lblDetail5.TabIndex = 7;
             this.lblDetail5.Text = "- Seminars";
             // 
-            // lblDetail6
+            // lblDetail4
             // 
-            this.lblDetail6.AutoSize = true;
-            this.lblDetail6.Location = new System.Drawing.Point(6, 206);
-            this.lblDetail6.Name = "lblDetail6";
-            this.lblDetail6.Size = new System.Drawing.Size(66, 21);
-            this.lblDetail6.TabIndex = 8;
-            this.lblDetail6.Text = "- Events";
+            this.lblDetail4.AutoSize = true;
+            this.lblDetail4.Location = new System.Drawing.Point(6, 164);
+            this.lblDetail4.Name = "lblDetail4";
+            this.lblDetail4.Size = new System.Drawing.Size(58, 21);
+            this.lblDetail4.TabIndex = 6;
+            this.lblDetail4.Text = "- Stalls";
+            // 
+            // lblDetail3
+            // 
+            this.lblDetail3.AutoSize = true;
+            this.lblDetail3.Location = new System.Drawing.Point(6, 143);
+            this.lblDetail3.Name = "lblDetail3";
+            this.lblDetail3.Size = new System.Drawing.Size(93, 21);
+            this.lblDetail3.TabIndex = 5;
+            this.lblDetail3.Text = "- Attendees";
+            // 
+            // lblDetail2
+            // 
+            this.lblDetail2.AutoSize = true;
+            this.lblDetail2.Location = new System.Drawing.Point(6, 122);
+            this.lblDetail2.Name = "lblDetail2";
+            this.lblDetail2.Size = new System.Drawing.Size(209, 21);
+            this.lblDetail2.TabIndex = 4;
+            this.lblDetail2.Text = "- Rooms and Stall Locations";
+            // 
+            // lblDetail1
+            // 
+            this.lblDetail1.AutoSize = true;
+            this.lblDetail1.Location = new System.Drawing.Point(6, 76);
+            this.lblDetail1.Name = "lblDetail1";
+            this.lblDetail1.Size = new System.Drawing.Size(381, 21);
+            this.lblDetail1.TabIndex = 3;
+            this.lblDetail1.Text = "This system tracks and manage following elements:";
+            // 
+            // lblIntro
+            // 
+            this.lblIntro.AutoSize = true;
+            this.lblIntro.Location = new System.Drawing.Point(6, 44);
+            this.lblIntro.Name = "lblIntro";
+            this.lblIntro.Size = new System.Drawing.Size(381, 21);
+            this.lblIntro.TabIndex = 2;
+            this.lblIntro.Text = "A multi-feature system to well manage conventions.";
+            // 
+            // mstrViewAttendeeDetail
+            // 
+            this.mstrViewAttendeeDetail.Name = "mstrViewAttendeeDetail";
+            this.mstrViewAttendeeDetail.Size = new System.Drawing.Size(231, 26);
+            this.mstrViewAttendeeDetail.Text = "View Attendee Detail";
+            this.mstrViewAttendeeDetail.Click += new System.EventHandler(this.mstrViewAttendeeDetail_Click);
             // 
             // Home
             // 
@@ -322,5 +331,6 @@
         private System.Windows.Forms.Label lblDetail4;
         private System.Windows.Forms.Label lblDetail3;
         private System.Windows.Forms.Label lblDetail2;
+        private System.Windows.Forms.ToolStripMenuItem mstrViewAttendeeDetail;
     }
 }

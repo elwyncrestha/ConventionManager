@@ -90,6 +90,11 @@ namespace ConventionManager
             this.Close();
         }
 
-
+        private void mstrViewAttendeeDetail_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLoader.loadAttendeeDetailForm();
+            this.Close();
+        }
     }
 }

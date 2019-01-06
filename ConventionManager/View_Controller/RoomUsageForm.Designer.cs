@@ -87,6 +87,7 @@
             this.Name = "RoomUsageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Room Usage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RoomUsageForm_FormClosed);
             this.Load += new System.EventHandler(this.RoomUsageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomUsage)).EndInit();
             this.ResumeLayout(false);
