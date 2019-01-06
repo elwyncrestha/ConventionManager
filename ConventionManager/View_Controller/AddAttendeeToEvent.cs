@@ -63,7 +63,7 @@ namespace ConventionManager.View_Controller
             }
             catch (Exception ex)
             {
-                lblEventStartDateValue.Text = lblEventEndDateValue.Text = lblRoomNameValue.Text = lblFilledValue.Text = "Choose event";
+                lblEventStartDateValue.Text = lblEventEndDateValue.Text = lblRoomNameValue.Text = lblFilledValue.Text = lblRoomCapacityValue.Text = "Choose event";
             }
         }
 
@@ -74,6 +74,7 @@ namespace ConventionManager.View_Controller
             lblEventEndDateValue.Text = _event.EventEndDate.ToString();
             lblRoomNameValue.Text = _event.Room.RoomName;
             lblFilledValue.Text = dbContext.AttendeeEvents.Where(a => a.EventId == eventId).Count().ToString();
+            lblRoomCapacityValue.Text = _event.Room.RoomCapacity.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

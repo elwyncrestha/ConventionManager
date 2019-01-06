@@ -52,6 +52,8 @@
             this.lblSeminarStartDate = new System.Windows.Forms.Label();
             this.lblSeminarEndDate = new System.Windows.Forms.Label();
             this.lblSeminarStartDateValue = new System.Windows.Forms.Label();
+            this.lblRoomCapacityValue = new System.Windows.Forms.Label();
+            this.lblRoomCapacity = new System.Windows.Forms.Label();
             this.gbxAttendee.SuspendLayout();
             this.gbxSeminar.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +74,7 @@
             this.gbxAttendee.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.gbxAttendee.Location = new System.Drawing.Point(15, 14);
             this.gbxAttendee.Name = "gbxAttendee";
-            this.gbxAttendee.Size = new System.Drawing.Size(276, 230);
+            this.gbxAttendee.Size = new System.Drawing.Size(276, 273);
             this.gbxAttendee.TabIndex = 11;
             this.gbxAttendee.TabStop = false;
             this.gbxAttendee.Text = "Attendee";
@@ -172,7 +174,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(264, 279);
+            this.btnAdd.Location = new System.Drawing.Point(264, 306);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(98, 46);
             this.btnAdd.TabIndex = 10;
@@ -202,6 +204,8 @@
             // gbxSeminar
             // 
             this.gbxSeminar.BackColor = System.Drawing.Color.Transparent;
+            this.gbxSeminar.Controls.Add(this.lblRoomCapacityValue);
+            this.gbxSeminar.Controls.Add(this.lblRoomCapacity);
             this.gbxSeminar.Controls.Add(this.lblFilledValue);
             this.gbxSeminar.Controls.Add(this.lblFilled);
             this.gbxSeminar.Controls.Add(this.lblRoomNameValue);
@@ -215,7 +219,7 @@
             this.gbxSeminar.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.gbxSeminar.Location = new System.Drawing.Point(297, 14);
             this.gbxSeminar.Name = "gbxSeminar";
-            this.gbxSeminar.Size = new System.Drawing.Size(365, 230);
+            this.gbxSeminar.Size = new System.Drawing.Size(365, 273);
             this.gbxSeminar.TabIndex = 12;
             this.gbxSeminar.TabStop = false;
             this.gbxSeminar.Text = "Seminar";
@@ -292,6 +296,24 @@
             this.lblSeminarStartDateValue.TabIndex = 10;
             this.lblSeminarStartDateValue.Text = "null";
             // 
+            // lblRoomCapacityValue
+            // 
+            this.lblRoomCapacityValue.AutoSize = true;
+            this.lblRoomCapacityValue.Location = new System.Drawing.Point(139, 231);
+            this.lblRoomCapacityValue.Name = "lblRoomCapacityValue";
+            this.lblRoomCapacityValue.Size = new System.Drawing.Size(36, 21);
+            this.lblRoomCapacityValue.TabIndex = 22;
+            this.lblRoomCapacityValue.Text = "null";
+            // 
+            // lblRoomCapacity
+            // 
+            this.lblRoomCapacity.AutoSize = true;
+            this.lblRoomCapacity.Location = new System.Drawing.Point(6, 231);
+            this.lblRoomCapacity.Name = "lblRoomCapacity";
+            this.lblRoomCapacity.Size = new System.Drawing.Size(118, 21);
+            this.lblRoomCapacity.TabIndex = 21;
+            this.lblRoomCapacity.Text = "Room Capacity";
+            // 
             // AddAttendeeToSeminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
@@ -345,5 +367,7 @@
         private System.Windows.Forms.Label lblIsPresenter;
         private System.Windows.Forms.Label lblFilledValue;
         private System.Windows.Forms.Label lblFilled;
+        private System.Windows.Forms.Label lblRoomCapacityValue;
+        private System.Windows.Forms.Label lblRoomCapacity;
     }
 }

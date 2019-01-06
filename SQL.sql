@@ -114,6 +114,3 @@ select * from Seminar;
 select * from AttendeeStall;
 select * from AttendeeEvent;
 select * from AttendeeSeminar;
-
-select RoomId, EventStartDate, EventEndDate from Event;
-select RoomId, SeminarStartDate, SeminarEndDate from Seminar;

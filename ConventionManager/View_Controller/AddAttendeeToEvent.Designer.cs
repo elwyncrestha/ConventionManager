@@ -50,6 +50,8 @@
             this.lblAttendee = new System.Windows.Forms.Label();
             this.cbxAttendee = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lblRoomCapacityValue = new System.Windows.Forms.Label();
+            this.lblRoomCapacity = new System.Windows.Forms.Label();
             this.gbxEvent.SuspendLayout();
             this.gbxAttendee.SuspendLayout();
             this.SuspendLayout();
@@ -156,6 +158,8 @@
             // gbxEvent
             // 
             this.gbxEvent.BackColor = System.Drawing.Color.Transparent;
+            this.gbxEvent.Controls.Add(this.lblRoomCapacityValue);
+            this.gbxEvent.Controls.Add(this.lblRoomCapacity);
             this.gbxEvent.Controls.Add(this.lblFilledValue);
             this.gbxEvent.Controls.Add(this.lblFilled);
             this.gbxEvent.Controls.Add(this.lblRoomNameValue);
@@ -169,7 +173,7 @@
             this.gbxEvent.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.gbxEvent.Location = new System.Drawing.Point(297, 14);
             this.gbxEvent.Name = "gbxEvent";
-            this.gbxEvent.Size = new System.Drawing.Size(365, 230);
+            this.gbxEvent.Size = new System.Drawing.Size(365, 273);
             this.gbxEvent.TabIndex = 9;
             this.gbxEvent.TabStop = false;
             this.gbxEvent.Text = "Event";
@@ -225,7 +229,7 @@
             this.gbxAttendee.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.gbxAttendee.Location = new System.Drawing.Point(15, 14);
             this.gbxAttendee.Name = "gbxAttendee";
-            this.gbxAttendee.Size = new System.Drawing.Size(276, 230);
+            this.gbxAttendee.Size = new System.Drawing.Size(276, 273);
             this.gbxAttendee.TabIndex = 8;
             this.gbxAttendee.TabStop = false;
             this.gbxAttendee.Text = "Attendee";
@@ -261,13 +265,31 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(264, 279);
+            this.btnAdd.Location = new System.Drawing.Point(264, 306);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(98, 46);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lblRoomCapacityValue
+            // 
+            this.lblRoomCapacityValue.AutoSize = true;
+            this.lblRoomCapacityValue.Location = new System.Drawing.Point(141, 230);
+            this.lblRoomCapacityValue.Name = "lblRoomCapacityValue";
+            this.lblRoomCapacityValue.Size = new System.Drawing.Size(36, 21);
+            this.lblRoomCapacityValue.TabIndex = 20;
+            this.lblRoomCapacityValue.Text = "null";
+            // 
+            // lblRoomCapacity
+            // 
+            this.lblRoomCapacity.AutoSize = true;
+            this.lblRoomCapacity.Location = new System.Drawing.Point(8, 230);
+            this.lblRoomCapacity.Name = "lblRoomCapacity";
+            this.lblRoomCapacity.Size = new System.Drawing.Size(118, 21);
+            this.lblRoomCapacity.TabIndex = 19;
+            this.lblRoomCapacity.Text = "Room Capacity";
             // 
             // AddAttendeeToEvent
             // 
@@ -320,5 +342,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblFilledValue;
         private System.Windows.Forms.Label lblFilled;
+        private System.Windows.Forms.Label lblRoomCapacityValue;
+        private System.Windows.Forms.Label lblRoomCapacity;
     }
 }

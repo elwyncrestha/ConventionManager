@@ -50,7 +50,7 @@ namespace ConventionManager.View_Controller
             }
             catch (Exception ex)
             {
-                lblFirstNameValue.Text = lblLastNameValue.Text = lblContactValue.Text = "Choose attendee";
+                lblFirstNameValue.Text = lblLastNameValue.Text = lblContactValue.Text = lblRoomCapacityValue.Text = "Choose attendee";
             }
         }
 
@@ -73,6 +73,7 @@ namespace ConventionManager.View_Controller
             lblSeminarEndDateValue.Text = seminar.SeminarEndDate.ToString();
             lblRoomNameValue.Text = seminar.Room.RoomName;
             lblFilledValue.Text = dbContext.AttendeeSeminars.Where(a => a.SeminarId == seminarId).Count().ToString();
+            lblRoomCapacityValue.Text = seminar.Room.RoomCapacity.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
