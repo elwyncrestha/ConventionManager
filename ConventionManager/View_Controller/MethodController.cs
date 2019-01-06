@@ -37,31 +37,90 @@ namespace ConventionManager.View_Controller
             return filled < capacity;
         }
 
+        private bool dateAvailable(DateTime start, DateTime end, DateTime startDate, DateTime endDate)
+        {
+            /*
+             * Elvin Test Data eg:
+             * startDate-endDate: 2020-2024
+             * 
+             * start-end total possible combinations:
+             * Date Range |  return
+             * 2019-2025  |  false
+             * 2019-2022  |  false
+             * 2021-2023  |  false
+             * 2023-2025  |  false
+             * 2018-2019  |  true
+             * 2025-2026  |  true
+             */
+            if (DateTime.Compare(startDate, start) < 0 && DateTime.Compare(endDate, start) < 0 &&
+                DateTime.Compare(startDate, end) < 0 && DateTime.Compare(endDate, end) < 0)
+                return true;
+            else if (DateTime.Compare(startDate, start) > 0 && DateTime.Compare(endDate, start) > 0 &&
+                    DateTime.Compare(startDate, end) > 0 && DateTime.Compare(endDate, end) > 0)
+                return true;
+            else
+                return false;
+        }
+
         public bool roomStatus(int roomId, DateTime startDate, DateTime endDate)
         {
             // check event
-            List<Event> eventList = dbContext.Events.ToList();
+            List<Event> eventList = dbContext.Events.Where(a => a.RoomId==roomId).ToList();
             foreach(Event _eve in eventList)
             {
                 DateTime start = _eve.EventStartDate;
                 DateTime end = _eve.EventEndDate;
 
-                if (DateTime.Compare(startDate, start) <= 0 && DateTime.Compare(endDate, start) >= 0)
-                    return false;
-                else if (DateTime.Compare(startDate, end) <= 0 && DateTime.Compare(endDate, end) >= 0)
+                if (!dateAvailable(start, end, startDate, endDate))
                     return false;
             }
 
             // check seminar
-            List<Seminar> seminarList = dbContext.Seminars.ToList();
+            List<Seminar> seminarList = dbContext.Seminars.Where(a => a.RoomId == roomId).ToList();
             foreach(Seminar seminar in seminarList)
             {
                 DateTime start = seminar.SeminarStartDate;
                 DateTime end = seminar.SeminarEndDate;
 
-                if (DateTime.Compare(startDate, start) <= 0 && DateTime.Compare(endDate, start) >= 0)
+                if (!dateAvailable(start, end, startDate, endDate))
                     return false;
-                else if (DateTime.Compare(startDate, end) <= 0 && DateTime.Compare(endDate, end) >= 0)
+            }
+
+            return true;
+        }
+
+        public bool attendeeStatus(int attendeeId, DateTime startDate, DateTime endDate)
+        {
+            // check  event
+            List<Event> eventList = dbContext.AttendeeEvents.Where(ae => ae.AttendeeId == attendeeId).Select(ae => ae.Event).ToList();
+            foreach(Event _eve in eventList)
+            {
+                DateTime start = _eve.EventStartDate;
+                DateTime end = _eve.EventEndDate;
+
+                if (!dateAvailable(start, end, startDate, endDate))
+                    return false;
+            }
+
+            // check seminar
+            List<Seminar> seminarList = dbContext.AttendeeSeminars.Where(a => a.AttendeeId == attendeeId).Select(a => a.Seminar).ToList();
+            foreach (Seminar seminar in seminarList)
+            {
+                DateTime start = seminar.SeminarStartDate;
+                DateTime end = seminar.SeminarEndDate;
+
+                if (!dateAvailable(start, end, startDate, endDate))
+                    return false;
+            }
+
+            // check stall
+            List<Stall> stallList = dbContext.AttendeeStalls.Where(a => a.AttendeeId == attendeeId).Select(a => a.Stall).ToList();
+            foreach (Stall stall in stallList)
+            {
+                DateTime start = stall.StallStartDate;
+                DateTime end = stall.StallEndDate;
+
+                if (!dateAvailable(start, end, startDate, endDate))
                     return false;
             }
 

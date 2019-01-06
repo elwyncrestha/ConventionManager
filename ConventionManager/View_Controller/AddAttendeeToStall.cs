@@ -89,19 +89,27 @@ namespace ConventionManager.View_Controller
                     IsExhibitor = chkIsExhibitor.Checked
                 };
 
-                dbContext.AttendeeStalls.Add(attendeeStall);
-                try
+                Stall stall = dbContext.Stalls.Find(attendeeStall.StallId);
+                if (methodController.attendeeStatus(attendeeStall.AttendeeId, stall.StallStartDate, stall.StallEndDate))
                 {
-                    dbContext.SaveChanges();
+                    dbContext.AttendeeStalls.Add(attendeeStall);
+                    try
+                    {
+                        dbContext.SaveChanges();
 
-                    MessageBox.Show("Attendee added to the stall successfully!!!");
-                    updateGBXStall((int)cbxStall.SelectedValue);
-                    return;
+                        MessageBox.Show("Attendee added to the stall successfully!!!");
+                        updateGBXStall((int)cbxStall.SelectedValue);
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Duplicate entry!!!");
+                        return;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Duplicate entry!!!");
-                    return;
+                    MessageBox.Show("Attendee busy on other event or seminar or stall");
                 }
             }
             else

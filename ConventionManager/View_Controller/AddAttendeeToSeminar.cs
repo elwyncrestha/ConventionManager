@@ -90,19 +90,27 @@ namespace ConventionManager.View_Controller
                     IsPresenter = chkIsPresenter.Checked
                 };
 
-                dbContext.AttendeeSeminars.Add(attendeeSeminar);
-                try
+                Seminar seminar = dbContext.Seminars.Find(attendeeSeminar.SeminarId);
+                if (methodController.attendeeStatus(attendeeSeminar.AttendeeId, seminar.SeminarStartDate, seminar.SeminarEndDate))
                 {
-                    dbContext.SaveChanges();
+                    dbContext.AttendeeSeminars.Add(attendeeSeminar);
+                    try
+                    {
+                        dbContext.SaveChanges();
 
-                    MessageBox.Show("Attendee added to the seminar successfully!!!");
-                    updateGBXSeminar((int)cbxSeminar.SelectedValue);
-                    return;
+                        MessageBox.Show("Attendee added to the seminar successfully!!!");
+                        updateGBXSeminar((int)cbxSeminar.SelectedValue);
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Duplicate entry!!!");
+                        return;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Duplicate entry!!!");
-                    return;
+                    MessageBox.Show("Attendee busy on other event or seminar or stall");
                 }
             }
             else

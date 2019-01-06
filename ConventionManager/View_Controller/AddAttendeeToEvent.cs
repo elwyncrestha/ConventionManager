@@ -90,21 +90,29 @@ namespace ConventionManager.View_Controller
                     EventId = (int)cbxEvent.SelectedValue
                 };
 
-                dbContext.AttendeeEvents.Add(attendeeEvent);
-
-                try
+                Event _eve = dbContext.Events.Find(attendeeEvent.EventId);
+                if (methodController.attendeeStatus(attendeeEvent.AttendeeId, _eve.EventStartDate, _eve.EventEndDate))
                 {
-                    MessageBox.Show("Attendee:" + attendeeEvent.AttendeeId.ToString() + "\nEvent:" + attendeeEvent.EventId.ToString());
-                    dbContext.SaveChanges();
+                    dbContext.AttendeeEvents.Add(attendeeEvent);
 
-                    MessageBox.Show("Attendee added to the event successfully!!!");
-                    updateGBXEvent((int)cbxEvent.SelectedValue);
-                    return;
+                    try
+                    {
+                        MessageBox.Show("Attendee:" + attendeeEvent.AttendeeId.ToString() + "\nEvent:" + attendeeEvent.EventId.ToString());
+                        dbContext.SaveChanges();
+
+                        MessageBox.Show("Attendee added to the event successfully!!!");
+                        updateGBXEvent((int)cbxEvent.SelectedValue);
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Duplicate entry!!!");
+                        return;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Duplicate entry!!!");
-                    return;
+                    MessageBox.Show("Attendee busy on other event or seminar or stall");
                 }
             }
             else

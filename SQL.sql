@@ -12,7 +12,6 @@ create table Attendee
 	AttendeeAddress varchar(255) not null,
 	TicketType varchar(255) not null,
 	AttendingDays int not null,
-	IsAvailable bit not null,
 	constraint pk_Attendee primary key (AttendeeId),
 	constraint ix_AttendeeEmail unique (AttendeeEmail)
 );

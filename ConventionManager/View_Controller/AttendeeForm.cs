@@ -79,7 +79,6 @@ namespace ConventionManager.View_Controller
                 attendee.TicketType = txtTicketType.Text.Trim();
                 attendee.AttendeeAddress = txtAddress.Text.Trim();
                 attendee.AttendingDays = Convert.ToInt32(txtAttendingDays.Text.Trim());
-                attendee.IsAvailable = true;
 
                 try
                 {
