@@ -82,18 +82,10 @@ namespace ConventionManager
             this.Close();
         }
 
-        private void mstrTEST_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TEST form = new TEST();
-            form.ShowDialog();
-            this.Close();
-        }
-
         private void mstrViewAttendeeDetail_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormLoader.loadAttendeeDetailForm();
+            FormLoader.loadAttendeeDetailForm(true, "");
             this.Close();
         }
     }

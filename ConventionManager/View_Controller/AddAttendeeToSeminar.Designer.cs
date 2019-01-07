@@ -44,6 +44,8 @@
             this.lblSeminar = new System.Windows.Forms.Label();
             this.cbxSeminar = new System.Windows.Forms.ComboBox();
             this.gbxSeminar = new System.Windows.Forms.GroupBox();
+            this.lblRoomCapacityValue = new System.Windows.Forms.Label();
+            this.lblRoomCapacity = new System.Windows.Forms.Label();
             this.lblFilledValue = new System.Windows.Forms.Label();
             this.lblFilled = new System.Windows.Forms.Label();
             this.lblRoomNameValue = new System.Windows.Forms.Label();
@@ -52,10 +54,16 @@
             this.lblSeminarStartDate = new System.Windows.Forms.Label();
             this.lblSeminarEndDate = new System.Windows.Forms.Label();
             this.lblSeminarStartDateValue = new System.Windows.Forms.Label();
-            this.lblRoomCapacityValue = new System.Windows.Forms.Label();
-            this.lblRoomCapacity = new System.Windows.Forms.Label();
+            this.dgvAttendeeSeminar = new System.Windows.Forms.DataGridView();
+            this.SeminarId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AttendeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeminarName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AttendeeEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsPresenter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.gbxAttendee.SuspendLayout();
             this.gbxSeminar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendeeSeminar)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxAttendee
@@ -224,6 +232,24 @@
             this.gbxSeminar.TabStop = false;
             this.gbxSeminar.Text = "Seminar";
             // 
+            // lblRoomCapacityValue
+            // 
+            this.lblRoomCapacityValue.AutoSize = true;
+            this.lblRoomCapacityValue.Location = new System.Drawing.Point(139, 231);
+            this.lblRoomCapacityValue.Name = "lblRoomCapacityValue";
+            this.lblRoomCapacityValue.Size = new System.Drawing.Size(36, 21);
+            this.lblRoomCapacityValue.TabIndex = 22;
+            this.lblRoomCapacityValue.Text = "null";
+            // 
+            // lblRoomCapacity
+            // 
+            this.lblRoomCapacity.AutoSize = true;
+            this.lblRoomCapacity.Location = new System.Drawing.Point(6, 231);
+            this.lblRoomCapacity.Name = "lblRoomCapacity";
+            this.lblRoomCapacity.Size = new System.Drawing.Size(118, 21);
+            this.lblRoomCapacity.TabIndex = 21;
+            this.lblRoomCapacity.Text = "Room Capacity";
+            // 
             // lblFilledValue
             // 
             this.lblFilledValue.AutoSize = true;
@@ -296,23 +322,68 @@
             this.lblSeminarStartDateValue.TabIndex = 10;
             this.lblSeminarStartDateValue.Text = "null";
             // 
-            // lblRoomCapacityValue
+            // dgvAttendeeSeminar
             // 
-            this.lblRoomCapacityValue.AutoSize = true;
-            this.lblRoomCapacityValue.Location = new System.Drawing.Point(139, 231);
-            this.lblRoomCapacityValue.Name = "lblRoomCapacityValue";
-            this.lblRoomCapacityValue.Size = new System.Drawing.Size(36, 21);
-            this.lblRoomCapacityValue.TabIndex = 22;
-            this.lblRoomCapacityValue.Text = "null";
+            this.dgvAttendeeSeminar.AllowUserToAddRows = false;
+            this.dgvAttendeeSeminar.AllowUserToDeleteRows = false;
+            this.dgvAttendeeSeminar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAttendeeSeminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAttendeeSeminar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SeminarId,
+            this.AttendeeId,
+            this.SeminarName,
+            this.AttendeeEmail,
+            this.IsPresenter,
+            this.Delete});
+            this.dgvAttendeeSeminar.Location = new System.Drawing.Point(15, 376);
+            this.dgvAttendeeSeminar.Name = "dgvAttendeeSeminar";
+            this.dgvAttendeeSeminar.ReadOnly = true;
+            this.dgvAttendeeSeminar.Size = new System.Drawing.Size(647, 203);
+            this.dgvAttendeeSeminar.TabIndex = 13;
             // 
-            // lblRoomCapacity
+            // SeminarId
             // 
-            this.lblRoomCapacity.AutoSize = true;
-            this.lblRoomCapacity.Location = new System.Drawing.Point(6, 231);
-            this.lblRoomCapacity.Name = "lblRoomCapacity";
-            this.lblRoomCapacity.Size = new System.Drawing.Size(118, 21);
-            this.lblRoomCapacity.TabIndex = 21;
-            this.lblRoomCapacity.Text = "Room Capacity";
+            this.SeminarId.DataPropertyName = "SeminarId";
+            this.SeminarId.HeaderText = "SeminarId";
+            this.SeminarId.Name = "SeminarId";
+            this.SeminarId.ReadOnly = true;
+            // 
+            // AttendeeId
+            // 
+            this.AttendeeId.DataPropertyName = "AttendeeId";
+            this.AttendeeId.HeaderText = "AttendeeId";
+            this.AttendeeId.Name = "AttendeeId";
+            this.AttendeeId.ReadOnly = true;
+            // 
+            // SeminarName
+            // 
+            this.SeminarName.DataPropertyName = "SeminarName";
+            this.SeminarName.HeaderText = "Seminar Name";
+            this.SeminarName.Name = "SeminarName";
+            this.SeminarName.ReadOnly = true;
+            // 
+            // AttendeeEmail
+            // 
+            this.AttendeeEmail.DataPropertyName = "AttendeeEmail";
+            this.AttendeeEmail.HeaderText = "Attendee Email";
+            this.AttendeeEmail.Name = "AttendeeEmail";
+            this.AttendeeEmail.ReadOnly = true;
+            // 
+            // IsPresenter
+            // 
+            this.IsPresenter.DataPropertyName = "IsPresenter";
+            this.IsPresenter.HeaderText = "Is Presenter";
+            this.IsPresenter.Name = "IsPresenter";
+            this.IsPresenter.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
             // 
             // AddAttendeeToSeminar
             // 
@@ -320,7 +391,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ConventionManager.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(674, 364);
+            this.ClientSize = new System.Drawing.Size(674, 591);
+            this.Controls.Add(this.dgvAttendeeSeminar);
             this.Controls.Add(this.gbxAttendee);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.gbxSeminar);
@@ -338,6 +410,7 @@
             this.gbxAttendee.PerformLayout();
             this.gbxSeminar.ResumeLayout(false);
             this.gbxSeminar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendeeSeminar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,5 +442,12 @@
         private System.Windows.Forms.Label lblFilled;
         private System.Windows.Forms.Label lblRoomCapacityValue;
         private System.Windows.Forms.Label lblRoomCapacity;
+        private System.Windows.Forms.DataGridView dgvAttendeeSeminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeminarId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AttendeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SeminarName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AttendeeEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsPresenter;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
 }

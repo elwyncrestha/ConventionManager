@@ -95,6 +95,12 @@
       <DependentUpon>AttendeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ConventionManagerDbContext.cs" />
+    <Compile Include="View_Controller\ConventionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Controller\ConventionManager.Designer.cs">
+      <DependentUpon>ConventionManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_Controller\EventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <EmbeddedResource Include="View_Controller\AttendeeForm.resx">
       <DependentUpon>AttendeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View_Controller\ConventionManager.resx">
+      <DependentUpon>ConventionManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View_Controller\EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,7 +196,6 @@
     <EmbeddedResource Include="View_Controller\TEST.resx">
       <DependentUpon>TEST.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -23,6 +23,7 @@ namespace ConventionManager.View_Controller
         {
             loadAttendees();
             loadSeminars();
+            loadDGV();
         }
 
         private void loadAttendees()
@@ -37,6 +38,22 @@ namespace ConventionManager.View_Controller
             cbxSeminar.DataSource = dbContext.Seminars.ToList();
             cbxSeminar.DisplayMember = "SeminarName";
             cbxSeminar.ValueMember = "SeminarId";
+        }
+
+        private void loadDGV()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("SeminarId", typeof(int));
+            dt.Columns.Add("AttendeeId", typeof(int));
+            dt.Columns.Add("SeminarName", typeof(string));
+            dt.Columns.Add("AttendeeEmail", typeof(string));
+            dt.Columns.Add("IsPresenter", typeof(bool));
+            List<AttendeeSeminar> list = dbContext.AttendeeSeminars.ToList();
+            foreach (AttendeeSeminar a in list)
+                dt.Rows.Add(a.SeminarId, a.AttendeeId, a.Seminar.SeminarName, a.Attendee.AttendeeEmail, a.IsPresenter);
+            dgvAttendeeSeminar.DataSource = dt;
+            dgvAttendeeSeminar.Columns["AttendeeId"].Visible = false;
+            dgvAttendeeSeminar.Columns["SeminarId"].Visible = false;
         }
 
         private void cbxAttendee_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,6 +117,7 @@ namespace ConventionManager.View_Controller
 
                         MessageBox.Show("Attendee added to the seminar successfully!!!");
                         updateGBXSeminar((int)cbxSeminar.SelectedValue);
+                        loadDGV();
                         return;
                     }
                     catch (Exception ex)

@@ -22,3 +22,4 @@ D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager
 D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.TEST.resources
 D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.RoomUsageForm.resources
 D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.AttendeeDetail.resources
+D:\Elvin\3W\6_C#\ConventionManager\ConventionManager\obj\Debug\ConventionManager.View_Controller.ConventionManager.resources

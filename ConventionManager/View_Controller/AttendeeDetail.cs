@@ -13,19 +13,28 @@ namespace ConventionManager.View_Controller
 {
     public partial class AttendeeDetail : Form
     {
+        private bool isAdmin = false;
+        private string email = null;
         ConventionManagerDbContext dbContext = new ConventionManagerDbContext();
 
-        public AttendeeDetail()
+        public AttendeeDetail(bool isAdmin, string email)
         {
+            this.isAdmin = isAdmin;
+            this.email = email;
             InitializeComponent();
         }
 
         private void AttendeeDetail_Load(object sender, EventArgs e)
         {
+            // admin filter
+            cbxAttendee.Visible = isAdmin;
+
             // load attendee
             cbxAttendee.DataSource = dbContext.Attendees.ToList();
             cbxAttendee.ValueMember = "AttendeeEmail";
             cbxAttendee.ValueMember = "AttendeeId";
+            if (!isAdmin)
+                loadAttendee(dbContext.Attendees.Where(a => a.AttendeeEmail.Equals(email)).Select(a => a.AttendeeId).Single());
         }
 
         private void loadAttendee(int attendeeId)
@@ -77,7 +86,10 @@ namespace ConventionManager.View_Controller
         private void AttendeeDetail_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
-            FormLoader.loadHome();
+            if (isAdmin)
+                FormLoader.loadHome();
+            else
+                FormLoader.loadConventionManager();
             this.Close();
         }
     }

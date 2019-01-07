@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.attendeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrManageAttendee = new System.Windows.Forms.ToolStripMenuItem();
+            this.mstrViewAttendeeDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrManageEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrAddAttendeeToEvent = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@
             this.roomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrManageRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.mstrRoomUsage = new System.Windows.Forms.ToolStripMenuItem();
-            this.mstrTEST = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxConventionManager = new System.Windows.Forms.GroupBox();
             this.lblDetail6 = new System.Windows.Forms.Label();
             this.lblDetail5 = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@
             this.lblDetail2 = new System.Windows.Forms.Label();
             this.lblDetail1 = new System.Windows.Forms.Label();
             this.lblIntro = new System.Windows.Forms.Label();
-            this.mstrViewAttendeeDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.stripHome.SuspendLayout();
             this.gbxConventionManager.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +72,13 @@
             this.mstrManageAttendee.Size = new System.Drawing.Size(231, 26);
             this.mstrManageAttendee.Text = "Manage Attendee";
             this.mstrManageAttendee.Click += new System.EventHandler(this.mstrManageAttendee_Click);
+            // 
+            // mstrViewAttendeeDetail
+            // 
+            this.mstrViewAttendeeDetail.Name = "mstrViewAttendeeDetail";
+            this.mstrViewAttendeeDetail.Size = new System.Drawing.Size(231, 26);
+            this.mstrViewAttendeeDetail.Text = "View Attendee Detail";
+            this.mstrViewAttendeeDetail.Click += new System.EventHandler(this.mstrViewAttendeeDetail_Click);
             // 
             // eventToolStripMenuItem
             // 
@@ -152,8 +158,7 @@
             this.eventToolStripMenuItem,
             this.seminarToolStripMenuItem,
             this.stallToolStripMenuItem,
-            this.roomToolStripMenuItem,
-            this.mstrTEST});
+            this.roomToolStripMenuItem});
             this.stripHome.Location = new System.Drawing.Point(0, 0);
             this.stripHome.Name = "stripHome";
             this.stripHome.Size = new System.Drawing.Size(438, 29);
@@ -182,13 +187,6 @@
             this.mstrRoomUsage.Size = new System.Drawing.Size(185, 26);
             this.mstrRoomUsage.Text = "Room Usage";
             this.mstrRoomUsage.Click += new System.EventHandler(this.mstrRoomUsage_Click);
-            // 
-            // mstrTEST
-            // 
-            this.mstrTEST.Name = "mstrTEST";
-            this.mstrTEST.Size = new System.Drawing.Size(56, 25);
-            this.mstrTEST.Text = "TEST";
-            this.mstrTEST.Click += new System.EventHandler(this.mstrTEST_Click);
             // 
             // gbxConventionManager
             // 
@@ -271,13 +269,6 @@
             this.lblIntro.TabIndex = 2;
             this.lblIntro.Text = "A multi-feature system to well manage conventions.";
             // 
-            // mstrViewAttendeeDetail
-            // 
-            this.mstrViewAttendeeDetail.Name = "mstrViewAttendeeDetail";
-            this.mstrViewAttendeeDetail.Size = new System.Drawing.Size(231, 26);
-            this.mstrViewAttendeeDetail.Text = "View Attendee Detail";
-            this.mstrViewAttendeeDetail.Click += new System.EventHandler(this.mstrViewAttendeeDetail_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
@@ -321,7 +312,6 @@
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToStall;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToEvent;
         private System.Windows.Forms.ToolStripMenuItem mstrAddAttendeeToSeminar;
-        private System.Windows.Forms.ToolStripMenuItem mstrTEST;
         private System.Windows.Forms.ToolStripMenuItem mstrRoomUsage;
         private System.Windows.Forms.GroupBox gbxConventionManager;
         private System.Windows.Forms.Label lblDetail1;

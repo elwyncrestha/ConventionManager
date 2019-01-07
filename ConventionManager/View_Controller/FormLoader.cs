@@ -68,9 +68,15 @@ namespace ConventionManager.View_Controller
             form.ShowDialog();
         }
 
-        public static void loadAttendeeDetailForm()
+        public static void loadAttendeeDetailForm(bool isAdmin, string email)
         {
-            AttendeeDetail form = new AttendeeDetail();
+            AttendeeDetail form = new AttendeeDetail(isAdmin, email);
+            form.ShowDialog();
+        }
+
+        public static void loadConventionManager()
+        {
+            ConventionManager form = new ConventionManager();
             form.ShowDialog();
         }
     }

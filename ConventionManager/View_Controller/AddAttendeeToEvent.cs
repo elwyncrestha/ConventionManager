@@ -118,6 +118,7 @@ namespace ConventionManager.View_Controller
 
                         MessageBox.Show("Attendee added to the event successfully!!!");
                         updateGBXEvent((int)cbxEvent.SelectedValue);
+                        loadDGV();
                         return;
                     }
                     catch (Exception ex)
