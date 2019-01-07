@@ -52,8 +52,16 @@
             this.lblLocationCode = new System.Windows.Forms.Label();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.lblLocationCodeValue = new System.Windows.Forms.Label();
+            this.dgvAttendeeStall = new System.Windows.Forms.DataGridView();
+            this.StallId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AttendeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AttendeeEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsPresenter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.gbxAttendee.SuspendLayout();
             this.gbxStall.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendeeStall)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAttendee
@@ -90,16 +98,16 @@
             this.cbxStall.FormattingEnabled = true;
             this.cbxStall.Location = new System.Drawing.Point(79, 23);
             this.cbxStall.Name = "cbxStall";
-            this.cbxStall.Size = new System.Drawing.Size(191, 29);
+            this.cbxStall.Size = new System.Drawing.Size(205, 29);
             this.cbxStall.TabIndex = 3;
             this.cbxStall.SelectedIndexChanged += new System.EventHandler(this.cbxStall_SelectedIndexChanged);
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(238, 283);
+            this.btnAdd.Location = new System.Drawing.Point(264, 306);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(107, 39);
+            this.btnAdd.Size = new System.Drawing.Size(98, 46);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -121,7 +129,7 @@
             this.gbxAttendee.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.gbxAttendee.Location = new System.Drawing.Point(15, 14);
             this.gbxAttendee.Name = "gbxAttendee";
-            this.gbxAttendee.Size = new System.Drawing.Size(276, 230);
+            this.gbxAttendee.Size = new System.Drawing.Size(276, 273);
             this.gbxAttendee.TabIndex = 5;
             this.gbxAttendee.TabStop = false;
             this.gbxAttendee.Text = "Attendee";
@@ -215,7 +223,7 @@
             this.gbxStall.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F);
             this.gbxStall.Location = new System.Drawing.Point(297, 14);
             this.gbxStall.Name = "gbxStall";
-            this.gbxStall.Size = new System.Drawing.Size(276, 230);
+            this.gbxStall.Size = new System.Drawing.Size(365, 273);
             this.gbxStall.TabIndex = 6;
             this.gbxStall.TabStop = false;
             this.gbxStall.Text = "Stall";
@@ -292,13 +300,78 @@
             this.lblLocationCodeValue.TabIndex = 10;
             this.lblLocationCodeValue.Text = "null";
             // 
+            // dgvAttendeeStall
+            // 
+            this.dgvAttendeeStall.AllowUserToAddRows = false;
+            this.dgvAttendeeStall.AllowUserToDeleteRows = false;
+            this.dgvAttendeeStall.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAttendeeStall.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAttendeeStall.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.StallId,
+            this.AttendeeId,
+            this.StallName,
+            this.AttendeeEmail,
+            this.IsPresenter,
+            this.Delete});
+            this.dgvAttendeeStall.Location = new System.Drawing.Point(15, 376);
+            this.dgvAttendeeStall.Name = "dgvAttendeeStall";
+            this.dgvAttendeeStall.ReadOnly = true;
+            this.dgvAttendeeStall.Size = new System.Drawing.Size(647, 203);
+            this.dgvAttendeeStall.TabIndex = 14;
+            this.dgvAttendeeStall.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAttendeeStall_CellContentClick);
+            // 
+            // StallId
+            // 
+            this.StallId.DataPropertyName = "StallId";
+            this.StallId.HeaderText = "StallId";
+            this.StallId.Name = "StallId";
+            this.StallId.ReadOnly = true;
+            // 
+            // AttendeeId
+            // 
+            this.AttendeeId.DataPropertyName = "AttendeeId";
+            this.AttendeeId.HeaderText = "AttendeeId";
+            this.AttendeeId.Name = "AttendeeId";
+            this.AttendeeId.ReadOnly = true;
+            // 
+            // StallName
+            // 
+            this.StallName.DataPropertyName = "StallName";
+            this.StallName.HeaderText = "Stall Name";
+            this.StallName.Name = "StallName";
+            this.StallName.ReadOnly = true;
+            // 
+            // AttendeeEmail
+            // 
+            this.AttendeeEmail.DataPropertyName = "AttendeeEmail";
+            this.AttendeeEmail.HeaderText = "Attendee Email";
+            this.AttendeeEmail.Name = "AttendeeEmail";
+            this.AttendeeEmail.ReadOnly = true;
+            // 
+            // IsPresenter
+            // 
+            this.IsPresenter.DataPropertyName = "IsExhibitor";
+            this.IsPresenter.HeaderText = "Is Exhibitor";
+            this.IsPresenter.Name = "IsPresenter";
+            this.IsPresenter.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            // 
             // AddAttendeeToStall
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ConventionManager.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(595, 354);
+            this.ClientSize = new System.Drawing.Size(674, 591);
+            this.Controls.Add(this.dgvAttendeeStall);
             this.Controls.Add(this.gbxStall);
             this.Controls.Add(this.gbxAttendee);
             this.Controls.Add(this.btnAdd);
@@ -316,6 +389,7 @@
             this.gbxAttendee.PerformLayout();
             this.gbxStall.ResumeLayout(false);
             this.gbxStall.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendeeStall)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,5 +419,12 @@
         private System.Windows.Forms.Label lblFilled;
         private System.Windows.Forms.CheckBox chkIsExhibitor;
         private System.Windows.Forms.Label lblIsExhibitor;
+        private System.Windows.Forms.DataGridView dgvAttendeeStall;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StallId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AttendeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StallName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AttendeeEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsPresenter;
+        private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
 }

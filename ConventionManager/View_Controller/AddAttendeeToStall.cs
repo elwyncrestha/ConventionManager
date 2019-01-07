@@ -24,6 +24,7 @@ namespace ConventionManager.View_Controller
         {
             loadAttendees();
             loadStalls();
+            loadDGV();
         }
 
         private void loadAttendees()
@@ -38,6 +39,22 @@ namespace ConventionManager.View_Controller
             cbxStall.DataSource = dbContext.Stalls.ToList();
             cbxStall.DisplayMember = "StallName";
             cbxStall.ValueMember = "StallId";
+        }
+
+        private void loadDGV()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("StallId", typeof(int));
+            dt.Columns.Add("AttendeeId", typeof(int));
+            dt.Columns.Add("StallName", typeof(string));
+            dt.Columns.Add("AttendeeEmail", typeof(string));
+            dt.Columns.Add("IsExhibitor", typeof(bool));
+            List<AttendeeStall> list = dbContext.AttendeeStalls.ToList();
+            foreach (AttendeeStall a in list)
+                dt.Rows.Add(a.StallId, a.AttendeeId, a.Stall.StallName, a.Attendee.AttendeeEmail, a.IsExhibitor);
+            dgvAttendeeStall.DataSource = dt;
+            dgvAttendeeStall.Columns["AttendeeId"].Visible = false;
+            dgvAttendeeStall.Columns["StallId"].Visible = false;
         }
 
         private void cbxAttendee_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,6 +116,7 @@ namespace ConventionManager.View_Controller
 
                         MessageBox.Show("Attendee added to the stall successfully!!!");
                         updateGBXStall((int)cbxStall.SelectedValue);
+                        loadDGV();
                         return;
                     }
                     catch (Exception ex)
@@ -125,6 +143,26 @@ namespace ConventionManager.View_Controller
             this.Hide();
             FormLoader.loadHome();
             this.Close();
+        }
+        
+
+        private void dgvAttendeeStall_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvAttendeeStall.Rows[e.RowIndex].Cells["Delete"].Value.Equals("Delete"))
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure?", "Confirm deletion", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int attendeeId = Convert.ToInt32(dgvAttendeeStall.Rows[e.RowIndex].Cells["AttendeeId"].Value);
+                    int stallId = Convert.ToInt32(dgvAttendeeStall.Rows[e.RowIndex].Cells["StallId"].Value);
+                    AttendeeStall attendeeStall = dbContext.AttendeeStalls.Where(a => a.AttendeeId == attendeeId).Where(a => a.StallId == stallId).Single();
+                    dbContext.AttendeeStalls.Remove(attendeeStall);
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Attendee removed from the stall!!!");
+                    loadDGV();
+                    return;
+                }
+            }
         }
     }
 }

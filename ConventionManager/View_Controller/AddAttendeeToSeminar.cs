@@ -145,5 +145,24 @@ namespace ConventionManager.View_Controller
             FormLoader.loadHome();
             this.Close();
         }
+
+        private void dgvAttendeeSeminar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvAttendeeSeminar.Rows[e.RowIndex].Cells["Delete"].Value.Equals("Delete"))
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure?", "Confirm deletion", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int attendeeId = Convert.ToInt32(dgvAttendeeSeminar.Rows[e.RowIndex].Cells["AttendeeId"].Value);
+                    int seminarId = Convert.ToInt32(dgvAttendeeSeminar.Rows[e.RowIndex].Cells["SeminarId"].Value);
+                    AttendeeSeminar attendeeSeminar = dbContext.AttendeeSeminars.Where(a => a.AttendeeId == attendeeId).Where(a => a.SeminarId == seminarId).Single();
+                    dbContext.AttendeeSeminars.Remove(attendeeSeminar);
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Attendee removed from the seminar!!!");
+                    loadDGV();
+                    return;
+                }
+            }
+        }
     }
 }

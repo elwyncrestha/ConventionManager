@@ -340,6 +340,7 @@
             this.dgvAttendeeSeminar.ReadOnly = true;
             this.dgvAttendeeSeminar.Size = new System.Drawing.Size(647, 203);
             this.dgvAttendeeSeminar.TabIndex = 13;
+            this.dgvAttendeeSeminar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAttendeeSeminar_CellContentClick);
             // 
             // SeminarId
             // 
