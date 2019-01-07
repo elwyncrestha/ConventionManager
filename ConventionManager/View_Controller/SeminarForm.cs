@@ -139,9 +139,19 @@ namespace ConventionManager.View_Controller
                 DialogResult dialogResult = MessageBox.Show("Are you sure ?", "Confirm Delete", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    // on delete cascade only on AttendeeId in AttendeeSeminar
+                    // first remove data held by foreign key in AttendeeSeminar
+                    var seminars = dbContext.AttendeeSeminars.Where(a => a.SeminarId == seminarCode).ToList();
+                    foreach (var del in seminars)
+                        dbContext.AttendeeSeminars.Remove(del);
+                    dbContext.SaveChanges();
+
+                    // then remove seminar
                     dbContext.Seminars.Remove(dbContext.Seminars.Find(seminarCode));
                     dbContext.SaveChanges();
                     loadDGV();
+
+                    MessageBox.Show("Seminar deleted!!!");
                 }
                 btnAdd.Text = "ADD";
             }

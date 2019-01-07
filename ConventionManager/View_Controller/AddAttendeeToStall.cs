@@ -148,7 +148,8 @@ namespace ConventionManager.View_Controller
 
         private void dgvAttendeeStall_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvAttendeeStall.Rows[e.RowIndex].Cells["Delete"].Value.Equals("Delete"))
+            
+            if (dgvAttendeeStall.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.Equals("Delete"))
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure?", "Confirm deletion", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)

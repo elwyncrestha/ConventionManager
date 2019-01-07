@@ -167,9 +167,19 @@ namespace ConventionManager.View_Controller
                 DialogResult dialogResult = MessageBox.Show("Are you sure ?", "Confirm Delete", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    // on delete cascade only on AttendeeId in AttendeeStall
+                    // first remove data held by foreign key in AttendeeStall
+                    var stalls = dbContext.AttendeeStalls.Where(a => a.StallId == stallCode).ToList();
+                    foreach (var del in stalls)
+                        dbContext.AttendeeStalls.Remove(del);
+                    dbContext.SaveChanges();
+
+                    // then remove stall
                     dbContext.Stalls.Remove(dbContext.Stalls.Find(stallCode));
                     dbContext.SaveChanges();
                     reloadDGV();
+
+                    MessageBox.Show("Stall deleted!!!");
                 }
                 btnAdd.Text = "ADD";
             }

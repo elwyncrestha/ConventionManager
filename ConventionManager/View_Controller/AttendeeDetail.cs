@@ -67,18 +67,21 @@ namespace ConventionManager.View_Controller
             //string category = Convert.ToString(cbxCategory.SelectedValue);
             DataTable dt = new DataTable();
             dt.Columns.Add("Registered in", typeof(string));
+            dt.Columns.Add("Start date", typeof(DateTime));
+            dt.Columns.Add("End date", typeof(DateTime));
+            dt.Columns.Add("Location", typeof(string));
 
-            List<string> list = dbContext.AttendeeEvents.Where(ae => ae.AttendeeId == attendeeId).Select(ae => ae.Event.EventName).ToList();
-            foreach (string entry in list)
-                dt.Rows.Add(entry);
+            List<AttendeeEvent> list1 = dbContext.AttendeeEvents.Where(ae => ae.AttendeeId == attendeeId).ToList();
+            foreach (AttendeeEvent entry in list1)
+                dt.Rows.Add(entry.Event.EventName,entry.Event.EventStartDate,entry.Event.EventEndDate,entry.Event.Room.RoomLocationCode);
 
-            list = dbContext.AttendeeSeminars.Where(a => a.AttendeeId == attendeeId).Select(a => a.Seminar.SeminarName).ToList();
-            foreach (string entry in list)
-                dt.Rows.Add(entry);
+            List<AttendeeSeminar> list2 = dbContext.AttendeeSeminars.Where(a => a.AttendeeId == attendeeId).ToList();
+            foreach (AttendeeSeminar entry in list2)
+                dt.Rows.Add(entry.Seminar.SeminarName,entry.Seminar.SeminarStartDate,entry.Seminar.SeminarEndDate,entry.Seminar.Room.RoomLocationCode);
 
-            list = dbContext.AttendeeStalls.Where(a => a.AttendeeId == attendeeId).Select(a => a.Stall.StallName).ToList();
-            foreach (string entry in list)
-                dt.Rows.Add(entry);
+            List<AttendeeStall> list3 = dbContext.AttendeeStalls.Where(a => a.AttendeeId == attendeeId).ToList();
+            foreach (AttendeeStall entry in list3)
+                dt.Rows.Add(entry.Stall.StallName,entry.Stall.StallStartDate,entry.Stall.StallEndDate,entry.Stall.StallLocationCode);
 
             dgvAttendeeDetails.DataSource = dt;
         }

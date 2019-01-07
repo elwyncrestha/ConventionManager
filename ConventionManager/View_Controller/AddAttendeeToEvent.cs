@@ -113,7 +113,6 @@ namespace ConventionManager.View_Controller
 
                     try
                     {
-                        MessageBox.Show("Attendee:" + attendeeEvent.AttendeeId.ToString() + "\nEvent:" + attendeeEvent.EventId.ToString());
                         dbContext.SaveChanges();
 
                         MessageBox.Show("Attendee added to the event successfully!!!");
@@ -149,7 +148,7 @@ namespace ConventionManager.View_Controller
 
         private void dgvAttendeeEvent_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvAttendeeEvent.Rows[e.RowIndex].Cells["Delete"].Value.Equals("Delete"))
+            if (dgvAttendeeEvent.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.Equals("Delete"))
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure ?", "Confirm Delete", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)

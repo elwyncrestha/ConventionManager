@@ -84,7 +84,7 @@
             this.txtLocationCode.Location = new System.Drawing.Point(173, 120);
             this.txtLocationCode.Name = "txtLocationCode";
             this.txtLocationCode.Size = new System.Drawing.Size(146, 26);
-            this.txtLocationCode.TabIndex = 3;
+            this.txtLocationCode.TabIndex = 2;
             // 
             // lblLocationCode
             // 
@@ -103,7 +103,7 @@
             this.txtCapacity.Location = new System.Drawing.Point(173, 181);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(146, 26);
-            this.txtCapacity.TabIndex = 5;
+            this.txtCapacity.TabIndex = 3;
             // 
             // lblCapacity
             // 
@@ -122,7 +122,7 @@
             this.txtResources.Location = new System.Drawing.Point(172, 244);
             this.txtResources.Name = "txtResources";
             this.txtResources.Size = new System.Drawing.Size(146, 26);
-            this.txtResources.TabIndex = 7;
+            this.txtResources.TabIndex = 4;
             // 
             // lblResources
             // 
@@ -163,7 +163,7 @@
             this.txtStallType.Location = new System.Drawing.Point(460, 181);
             this.txtStallType.Name = "txtStallType";
             this.txtStallType.Size = new System.Drawing.Size(211, 26);
-            this.txtStallType.TabIndex = 13;
+            this.txtStallType.TabIndex = 7;
             // 
             // lblStallType
             // 
@@ -182,7 +182,7 @@
             this.btnAdd.Location = new System.Drawing.Point(460, 226);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 44);
-            this.btnAdd.TabIndex = 14;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -209,7 +209,7 @@
             this.dgvStall.Name = "dgvStall";
             this.dgvStall.ReadOnly = true;
             this.dgvStall.Size = new System.Drawing.Size(685, 235);
-            this.dgvStall.TabIndex = 15;
+            this.dgvStall.TabIndex = 9;
             this.dgvStall.Click += new System.EventHandler(this.dgvStall_Click);
             // 
             // StallId
@@ -301,7 +301,7 @@
             this.dtpStartDate.Location = new System.Drawing.Point(460, 52);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(211, 26);
-            this.dtpStartDate.TabIndex = 16;
+            this.dtpStartDate.TabIndex = 5;
             // 
             // dtpEndDate
             // 
@@ -311,7 +311,7 @@
             this.dtpEndDate.Location = new System.Drawing.Point(460, 115);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(211, 26);
-            this.dtpEndDate.TabIndex = 17;
+            this.dtpEndDate.TabIndex = 6;
             // 
             // StallForm
             // 

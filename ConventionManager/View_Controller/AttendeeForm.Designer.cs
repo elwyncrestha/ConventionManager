@@ -53,7 +53,6 @@
             this.AttendeeAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AttendingDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendees)).BeginInit();
@@ -218,7 +217,6 @@
             this.AttendeeAddress,
             this.TicketType,
             this.AttendingDays,
-            this.IsAvailable,
             this.Edit,
             this.Delete});
             this.dgvAttendees.Location = new System.Drawing.Point(16, 275);
@@ -283,13 +281,6 @@
             this.AttendingDays.HeaderText = "Attending Days";
             this.AttendingDays.Name = "AttendingDays";
             this.AttendingDays.ReadOnly = true;
-            // 
-            // IsAvailable
-            // 
-            this.IsAvailable.DataPropertyName = "IsAvailable";
-            this.IsAvailable.HeaderText = "Is Available";
-            this.IsAvailable.Name = "IsAvailable";
-            this.IsAvailable.ReadOnly = true;
             // 
             // Edit
             // 
@@ -374,7 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AttendeeAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketType;
         private System.Windows.Forms.DataGridViewTextBoxColumn AttendingDays;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsAvailable;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
     }
