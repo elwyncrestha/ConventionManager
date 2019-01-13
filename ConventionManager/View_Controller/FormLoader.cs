@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConventionManager.View_Controller
 {
@@ -10,73 +11,73 @@ namespace ConventionManager.View_Controller
     {
         public static void loadHome()
         {
-            Home form = new Home();
+            Form form = new Home();
             form.ShowDialog();
         }
 
         public static void loadAttendeeForm()
         {
-            AttendeeForm form = new AttendeeForm();
+            Form form = new AttendeeForm();
             form.ShowDialog();
         }
         
         public static void loadStallForm()
         {
-            StallForm form = new StallForm();
+            Form form = new StallForm();
             form.ShowDialog();
         }
 
         public static void loadRoomForm()
         {
-            RoomForm form = new RoomForm();
+            Form form = new RoomForm();
             form.ShowDialog();
         }
 
         public static void loadEventForm()
         {
-            EventForm form = new EventForm();
+            Form form = new EventForm();
             form.ShowDialog();
         }
 
         public static void loadSeminarForm()
         {
-            SeminarForm form = new SeminarForm();
+            Form form = new SeminarForm();
             form.ShowDialog();
         }
 
         public static void loadAddAttendeeToStallForm()
         {
-            AddAttendeeToStall form = new AddAttendeeToStall();
+            Form form = new AddAttendeeToStall();
             form.ShowDialog();
         }
 
         public static void loadAddAttendeeToEventForm()
         {
-            AddAttendeeToEvent form = new AddAttendeeToEvent();
+            Form form = new AddAttendeeToEvent();
             form.ShowDialog();
         }
 
         public static void loadAddAttendeeToSeminarForm()
         {
-            AddAttendeeToSeminar form = new AddAttendeeToSeminar();
+            Form form = new AddAttendeeToSeminar();
             form.ShowDialog();
         }
 
         public static void loadRoomUsageForm()
         {
-            RoomUsageForm form = new RoomUsageForm();
+            Form form = new RoomUsageForm();
             form.ShowDialog();
         }
 
         public static void loadAttendeeDetailForm(bool isAdmin, string email)
         {
-            AttendeeDetail form = new AttendeeDetail(isAdmin, email);
+            Form form = new AttendeeDetail(isAdmin, email);
             form.ShowDialog();
         }
 
         public static void loadConventionManager()
         {
-            ConventionManager form = new ConventionManager();
+            Form form = new ConventionManager();
             form.ShowDialog();
         }
     }

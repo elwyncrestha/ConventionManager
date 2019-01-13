@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConventionManagerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Attendee" Abstract="false">
+    <Key>
+      <PropertyRef Name="AttendeeId" />
+    </Key>
+    <Property Name="AttendeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttendeeFName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttendeeLName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttendeeEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttendeeContact" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttendeeAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TicketType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AttendingDays" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AttendeeEvent" Relationship="Self.fk_AttendeeEvent_Attendee" FromRole="Attendee" ToRole="AttendeeEvent" />
+    <NavigationProperty Name="AttendeeSeminar" Relationship="Self.fk_AttendeeSeminar_Attendee" FromRole="Attendee" ToRole="AttendeeSeminar" />
+    <NavigationProperty Name="AttendeeStall" Relationship="Self.fk_AttendeeStall_Attendee" FromRole="Attendee" ToRole="AttendeeStall" />
+  </EntityType>
+  <EntityType Name="AttendeeEvent">
+    <Key>
+      <PropertyRef Name="AttendeeId" />
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="AttendeeId" Type="Int32" Nullable="false" />
+    <Property Name="EventId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Attendee" Relationship="Self.fk_AttendeeEvent_Attendee" FromRole="AttendeeEvent" ToRole="Attendee" />
+    <NavigationProperty Name="Event" Relationship="Self.fk_AttendeeEvent_Event" FromRole="AttendeeEvent" ToRole="Event" />
+  </EntityType>
+  <EntityType Name="AttendeeSeminar">
+    <Key>
+      <PropertyRef Name="AttendeeId" />
+      <PropertyRef Name="SeminarId" />
+    </Key>
+    <Property Name="AttendeeId" Type="Int32" Nullable="false" />
+    <Property Name="SeminarId" Type="Int32" Nullable="false" />
+    <Property Name="IsPresenter" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Attendee" Relationship="Self.fk_AttendeeSeminar_Attendee" FromRole="AttendeeSeminar" ToRole="Attendee" />
+    <NavigationProperty Name="Seminar" Relationship="Self.fk_AttendeeSeminar_Event" FromRole="AttendeeSeminar" ToRole="Seminar" />
+  </EntityType>
+  <EntityType Name="AttendeeStall">
+    <Key>
+      <PropertyRef Name="AttendeeId" />
+      <PropertyRef Name="StallId" />
+    </Key>
+    <Property Name="AttendeeId" Type="Int32" Nullable="false" />
+    <Property Name="StallId" Type="Int32" Nullable="false" />
+    <Property Name="IsExhibitor" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Attendee" Relationship="Self.fk_AttendeeStall_Attendee" FromRole="AttendeeStall" ToRole="Attendee" />
+    <NavigationProperty Name="Stall" Relationship="Self.fk_AttendeeStall_Stall" FromRole="AttendeeStall" ToRole="Stall" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EventStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AttendeeEvent" Relationship="Self.fk_AttendeeEvent_Event" FromRole="Event" ToRole="AttendeeEvent" />
+    <NavigationProperty Name="Room" Relationship="Self.fk_Event_Room" FromRole="Event" ToRole="Room" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Name="RoomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoomLocationCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoomCapacity" Type="Int32" Nullable="false" />
+    <Property Name="RoomResources" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Event" Relationship="Self.fk_Event_Room" FromRole="Room" ToRole="Event" />
+    <NavigationProperty Name="Seminar" Relationship="Self.fk_Seminar_Room" FromRole="Room" ToRole="Seminar" />
+  </EntityType>
+  <EntityType Name="Seminar">
+    <Key>
+      <PropertyRef Name="SeminarId" />
+    </Key>
+    <Property Name="SeminarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeminarName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SeminarStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SeminarEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RoomId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AttendeeSeminar" Relationship="Self.fk_AttendeeSeminar_Event" FromRole="Seminar" ToRole="AttendeeSeminar" />
+    <NavigationProperty Name="Room" Relationship="Self.fk_Seminar_Room" FromRole="Seminar" ToRole="Room" />
+  </EntityType>
+  <EntityType Name="Stall">
+    <Key>
+      <PropertyRef Name="StallId" />
+    </Key>
+    <Property Name="StallId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StallName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StallLocationCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StallCapacity" Type="Int32" Nullable="false" />
+    <Property Name="StallResources" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StallStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StallEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StallType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AttendeeStall" Relationship="Self.fk_AttendeeStall_Stall" FromRole="Stall" ToRole="AttendeeStall" />
+  </EntityType>
+  <Association Name="fk_AttendeeEvent_Attendee">
+    <End Role="Attendee" Type="Self.Attendee" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AttendeeEvent" Type="Self.AttendeeEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attendee">
+        <PropertyRef Name="AttendeeId" />
+      </Principal>
+      <Dependent Role="AttendeeEvent">
+        <PropertyRef Name="AttendeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AttendeeSeminar_Attendee">
+    <End Role="Attendee" Type="Self.Attendee" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AttendeeSeminar" Type="Self.AttendeeSeminar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attendee">
+        <PropertyRef Name="AttendeeId" />
+      </Principal>
+      <Dependent Role="AttendeeSeminar">
+        <PropertyRef Name="AttendeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AttendeeStall_Attendee">
+    <End Role="Attendee" Type="Self.Attendee" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AttendeeStall" Type="Self.AttendeeStall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attendee">
+        <PropertyRef Name="AttendeeId" />
+      </Principal>
+      <Dependent Role="AttendeeStall">
+        <PropertyRef Name="AttendeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AttendeeEvent_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="AttendeeEvent" Type="Self.AttendeeEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="AttendeeEvent">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AttendeeSeminar_Event">
+    <End Role="Seminar" Type="Self.Seminar" Multiplicity="1" />
+    <End Role="AttendeeSeminar" Type="Self.AttendeeSeminar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Seminar">
+        <PropertyRef Name="SeminarId" />
+      </Principal>
+      <Dependent Role="AttendeeSeminar">
+        <PropertyRef Name="SeminarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AttendeeStall_Stall">
+    <End Role="Stall" Type="Self.Stall" Multiplicity="1" />
+    <End Role="AttendeeStall" Type="Self.AttendeeStall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stall">
+        <PropertyRef Name="StallId" />
+      </Principal>
+      <Dependent Role="AttendeeStall">
+        <PropertyRef Name="StallId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Event_Room">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="RoomId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Seminar_Room">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="Seminar" Type="Self.Seminar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="RoomId" />
+      </Principal>
+      <Dependent Role="Seminar">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Attendee" EntityType="Self.Attendee" />
+    <EntitySet Name="AttendeeEvent" EntityType="Self.AttendeeEvent" />
+    <EntitySet Name="AttendeeSeminar" EntityType="Self.AttendeeSeminar" />
+    <EntitySet Name="AttendeeStall" EntityType="Self.AttendeeStall" />
+    <EntitySet Name="Event" EntityType="Self.Event" />
+    <EntitySet Name="Room" EntityType="Self.Room" />
+    <EntitySet Name="Seminar" EntityType="Self.Seminar" />
+    <EntitySet Name="Stall" EntityType="Self.Stall" />
+    <AssociationSet Name="fk_AttendeeEvent_Attendee" Association="Self.fk_AttendeeEvent_Attendee">
+      <End Role="Attendee" EntitySet="Attendee" />
+      <End Role="AttendeeEvent" EntitySet="AttendeeEvent" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AttendeeSeminar_Attendee" Association="Self.fk_AttendeeSeminar_Attendee">
+      <End Role="Attendee" EntitySet="Attendee" />
+      <End Role="AttendeeSeminar" EntitySet="AttendeeSeminar" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AttendeeStall_Attendee" Association="Self.fk_AttendeeStall_Attendee">
+      <End Role="Attendee" EntitySet="Attendee" />
+      <End Role="AttendeeStall" EntitySet="AttendeeStall" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AttendeeEvent_Event" Association="Self.fk_AttendeeEvent_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="AttendeeEvent" EntitySet="AttendeeEvent" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AttendeeSeminar_Event" Association="Self.fk_AttendeeSeminar_Event">
+      <End Role="Seminar" EntitySet="Seminar" />
+      <End Role="AttendeeSeminar" EntitySet="AttendeeSeminar" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AttendeeStall_Stall" Association="Self.fk_AttendeeStall_Stall">
+      <End Role="Stall" EntitySet="Stall" />
+      <End Role="AttendeeStall" EntitySet="AttendeeStall" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Event_Room" Association="Self.fk_Event_Room">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Seminar_Room" Association="Self.fk_Seminar_Room">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="Seminar" EntitySet="Seminar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

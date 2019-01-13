@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConventionManagerModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Attendee">
+      <EntityTypeMapping TypeName="ConventionManagerModel.Attendee">
+        <MappingFragment StoreEntitySet="Attendee">
+          <ScalarProperty Name="AttendeeId" ColumnName="AttendeeId" />
+          <ScalarProperty Name="AttendeeFName" ColumnName="AttendeeFName" />
+          <ScalarProperty Name="AttendeeLName" ColumnName="AttendeeLName" />
+          <ScalarProperty Name="AttendeeEmail" ColumnName="AttendeeEmail" />
+          <ScalarProperty Name="AttendeeContact" ColumnName="AttendeeContact" />
+          <ScalarProperty Name="AttendeeAddress" ColumnName="AttendeeAddress" />
+          <ScalarProperty Name="TicketType" ColumnName="TicketType" />
+          <ScalarProperty Name="AttendingDays" ColumnName="AttendingDays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttendeeEvent">
+      <EntityTypeMapping TypeName="ConventionManagerModel.AttendeeEvent">
+        <MappingFragment StoreEntitySet="AttendeeEvent">
+          <ScalarProperty Name="AttendeeId" ColumnName="AttendeeId" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttendeeSeminar">
+      <EntityTypeMapping TypeName="ConventionManagerModel.AttendeeSeminar">
+        <MappingFragment StoreEntitySet="AttendeeSeminar">
+          <ScalarProperty Name="AttendeeId" ColumnName="AttendeeId" />
+          <ScalarProperty Name="SeminarId" ColumnName="SeminarId" />
+          <ScalarProperty Name="IsPresenter" ColumnName="IsPresenter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttendeeStall">
+      <EntityTypeMapping TypeName="ConventionManagerModel.AttendeeStall">
+        <MappingFragment StoreEntitySet="AttendeeStall">
+          <ScalarProperty Name="AttendeeId" ColumnName="AttendeeId" />
+          <ScalarProperty Name="StallId" ColumnName="StallId" />
+          <ScalarProperty Name="IsExhibitor" ColumnName="IsExhibitor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event">
+      <EntityTypeMapping TypeName="ConventionManagerModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="EventStartDate" ColumnName="EventStartDate" />
+          <ScalarProperty Name="EventEndDate" ColumnName="EventEndDate" />
+          <ScalarProperty Name="EventDescription" ColumnName="EventDescription" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Room">
+      <EntityTypeMapping TypeName="ConventionManagerModel.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="RoomLocationCode" ColumnName="RoomLocationCode" />
+          <ScalarProperty Name="RoomCapacity" ColumnName="RoomCapacity" />
+          <ScalarProperty Name="RoomResources" ColumnName="RoomResources" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seminar">
+      <EntityTypeMapping TypeName="ConventionManagerModel.Seminar">
+        <MappingFragment StoreEntitySet="Seminar">
+          <ScalarProperty Name="SeminarId" ColumnName="SeminarId" />
+          <ScalarProperty Name="SeminarName" ColumnName="SeminarName" />
+          <ScalarProperty Name="SeminarStartDate" ColumnName="SeminarStartDate" />
+          <ScalarProperty Name="SeminarEndDate" ColumnName="SeminarEndDate" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stall">
+      <EntityTypeMapping TypeName="ConventionManagerModel.Stall">
+        <MappingFragment StoreEntitySet="Stall">
+          <ScalarProperty Name="StallId" ColumnName="StallId" />
+          <ScalarProperty Name="StallName" ColumnName="StallName" />
+          <ScalarProperty Name="StallLocationCode" ColumnName="StallLocationCode" />
+          <ScalarProperty Name="StallCapacity" ColumnName="StallCapacity" />
+          <ScalarProperty Name="StallResources" ColumnName="StallResources" />
+          <ScalarProperty Name="StallStartDate" ColumnName="StallStartDate" />
+          <ScalarProperty Name="StallEndDate" ColumnName="StallEndDate" />
+          <ScalarProperty Name="StallType" ColumnName="StallType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
