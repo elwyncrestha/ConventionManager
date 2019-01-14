@@ -77,8 +77,7 @@ namespace ConventionManager
         private void mstrRoomUsage_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RoomUsageForm form = new RoomUsageForm();
-            form.ShowDialog();
+            FormLoader.loadRoomUsageForm();
             this.Close();
         }
 

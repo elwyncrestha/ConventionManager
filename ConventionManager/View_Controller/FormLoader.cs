@@ -9,75 +9,76 @@ namespace ConventionManager.View_Controller
 {
     public class FormLoader
     {
+        static Form form;
         public static void loadHome()
         {
-            Form form = new Home();
+            form = new Home();
             form.ShowDialog();
         }
 
         public static void loadAttendeeForm()
         {
-            Form form = new AttendeeForm();
+            form = new AttendeeForm();
             form.ShowDialog();
         }
         
         public static void loadStallForm()
         {
-            Form form = new StallForm();
+            form = new StallForm();
             form.ShowDialog();
         }
 
         public static void loadRoomForm()
         {
-            Form form = new RoomForm();
+            form = new RoomForm();
             form.ShowDialog();
         }
 
         public static void loadEventForm()
         {
-            Form form = new EventForm();
+            form = new EventForm();
             form.ShowDialog();
         }
 
         public static void loadSeminarForm()
         {
-            Form form = new SeminarForm();
+            form = new SeminarForm();
             form.ShowDialog();
         }
 
         public static void loadAddAttendeeToStallForm()
         {
-            Form form = new AddAttendeeToStall();
+            form = new AddAttendeeToStall();
             form.ShowDialog();
         }
 
         public static void loadAddAttendeeToEventForm()
         {
-            Form form = new AddAttendeeToEvent();
+            form = new AddAttendeeToEvent();
             form.ShowDialog();
         }
 
         public static void loadAddAttendeeToSeminarForm()
         {
-            Form form = new AddAttendeeToSeminar();
+            form = new AddAttendeeToSeminar();
             form.ShowDialog();
         }
 
         public static void loadRoomUsageForm()
         {
-            Form form = new RoomUsageForm();
+            form = new RoomUsageForm();
             form.ShowDialog();
         }
 
         public static void loadAttendeeDetailForm(bool isAdmin, string email)
         {
-            Form form = new AttendeeDetail(isAdmin, email);
+            form = new AttendeeDetail(isAdmin, email);
             form.ShowDialog();
         }
 
         public static void loadConventionManager()
         {
-            Form form = new ConventionManager();
+            form = new ConventionManager();
             form.ShowDialog();
         }
     }
